@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
+            $table->enum('status', ['pending', 'active', 'rejected'])
+                ->default('pending');
             $table->string('password');
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
@@ -36,6 +38,9 @@ return new class extends Migration
             $table->text('user_agent')->nullable();
             $table->longText('payload');
             $table->integer('last_activity')->index();
+        });
+        Schema::table('users', function (Blueprint $table) {
+            $table->boolean('is_active')->default(false);
         });
     }
 

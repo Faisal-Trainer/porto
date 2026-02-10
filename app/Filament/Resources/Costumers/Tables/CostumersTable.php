@@ -6,6 +6,7 @@ use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
 class CostumersTable
@@ -14,7 +15,21 @@ class CostumersTable
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('username')
+                    ->searchable(),
+                TextColumn::make('email')
+                    ->label('Email address')
+                    ->searchable(),
+                TextColumn::make('phone')
+                    ->label('phone number')
+                    ->searchable(),
+                TextColumn::make('subject')
+                    ->label('category')
+                    ->searchable(),
+                TextColumn::make('message')
+                    ->label('message')
+                    ->searchable(),
+
             ])
             ->filters([
                 //

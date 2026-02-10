@@ -1,5 +1,5 @@
 <x-app-layout>
-    <section>
+    <section class="p-2.5 md:p-5">
         <div class="header text-center py-2.5">
             <h1 class="text-4xl md:text-5xl font-extrabold text-(--color-primary-950)">
                 Services for UMKM & Education Sector

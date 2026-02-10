@@ -1,7 +1,7 @@
 <x-app-layout>
     @section('title', 'Tentang Saya')
     {{-- ABOUT --}}
-    <section>
+    <section class="p-2.5 md:p-5">
         <div class="header text-center mb-6">
             <h1 class="text-3xl md:text-4xl font-bold text-(--color-primary-700)">
                 About Me

@@ -10,7 +10,6 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
-use Illuminate\Auth\AuthenticationException;
 use Spatie\Permission\Traits\HasRoles;
 use Filament\Panel;
 
@@ -19,12 +18,10 @@ class User extends Authenticatable implements MustVerifyEmail
     use HasApiTokens;
     use HasRoles;
     use HasPanelShield;
-    /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory;
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
-    // use MustVerifyEmail;
 
     /**
      * The attributes that are mass assignable.
@@ -35,6 +32,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'name',
         'email',
         'password',
+        'status',
+        'is_acrive',
     ];
 
     /**
@@ -68,6 +67,8 @@ class User extends Authenticatable implements MustVerifyEmail
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'is_active' => 'boolean',
+            'status' => 'string',
         ];
     }
     public function canLogin(): bool

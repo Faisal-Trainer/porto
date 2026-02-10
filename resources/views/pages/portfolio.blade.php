@@ -1,5 +1,5 @@
 <x-app-layout>
-    <section>
+    <section class="p-2.5 md:p-5">
         <div class="text-center mb-10">
             <h1 class="text-2xl md:text-4xl font-extrabold text-(--color-primary-950) tracking-wide">
                 My Project

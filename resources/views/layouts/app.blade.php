@@ -31,7 +31,7 @@
     <div class="min-h-screen">
         @livewire('navigation-menu')
         <!-- Page Content -->
-        <main class="flex-1 p-2.5 lg:p-5 mt-25 md:mt-35">
+        <main class="flex-1 mt-25 md:mt-35">
             {{ $slot }}
         </main>
     </div>
