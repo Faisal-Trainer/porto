@@ -16,9 +16,9 @@
             </div>
             @auth
                 <div class="navbar-action flex items-center ">
-                    <a href="{{ route('contact.show') }}"
+                    <x-nav-lnik href="{{ route('contact.show') }}"
                         class="contact-btn rounded-2xl text-2xl py-2 px-3 md:py-2.5 md:px-5">show
-                        message</a>
+                        message</x-nav-lnik>
                 </div>
             @endauth
             @if ($errors->any())

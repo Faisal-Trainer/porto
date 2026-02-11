@@ -1,11 +1,13 @@
 <x-app-layout>
+
+    {{-- PORTOFOLIO SECTION --}}
     <section class="p-2.5 md:p-5">
         <div class="text-center mb-10">
             <h1 class="text-2xl md:text-4xl font-extrabold text-(--color-primary-950) tracking-wide">
-                My Project
+                Selected Projects & Business Solutions
             </h1>
             <p class="text-(--color-primary-700) mt-2 text-lg">
-                Showcase of recent projects and client work.
+                Projects built to solve real SME & Talent growth challenges
             </p>
         </div>
         <div class="mb-5 flex flex-wrap justify-center gap-3">
@@ -44,6 +46,28 @@
             </div>
         </div>
     </section>
+
+    {{-- WHY SECTION --}}
+    <section class="bg-(--color-primary-400) p-2.5 md:p-5">
+        <div class="flex flex-col items-center justify-center leading-relaxed">
+            <h2 class="text-xl md:text-3xl font-bold text-(--color-primary-100)">The Challenge</h2>
+            <span class="text-xl text-(--color-primary-100)">
+                Many SMEs struggle with digital adoption and structured growth.</span>
+        </div>
+    </section>
+
+    {{-- JOURNAL SECTION --}}
+    <section class="p-2.5 md:p-5">
+        <div class="flex flex-col items-center justify-center leading-relaxed">
+            <h2 class="text-2xl md:text-4xl font-extrabold text-(--color-primary-950) tracking-wide">
+                Case study breakdown
+            </h2>
+            <span class="text-xl text-(--color-primary-600)">
+                Showcase of problem projects and solve the probelm.
+            </span>
+        </div>
+    </section>
+
 
     <script>
         const buttons = document.querySelectorAll('.btn');

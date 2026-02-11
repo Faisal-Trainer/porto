@@ -15,18 +15,18 @@
         <!-- Navigation Links -->
         <div class="gap-1.5 flex-row justify-center hidden lg:flex">
             <div class="navbar-menu">
-                <a href="{{ route('home') }}" :active="request()->routeIs('home')">
+                <x-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
                     {{ __('home') }}
-                </a>
-                <a href="{{ route('about') }}" :active="request()->routeIs('about')">
+                </x-nav-link>
+                <x-nav-link href="{{ route('about') }}" :active="request()->routeIs('about')">
                     {{ __('about') }}
-                </a>
-                <a href="{{ route('portfolio') }}" :active="request()->routeIs('portfolio')">
+                </x-nav-link>
+                <x-nav-link href="{{ route('portfolio') }}" :active="request()->routeIs('portfolio')">
                     {{ __('portofolio') }}
-                </a>
-                <a href="{{ route('service') }}" :active="request()->routeIs('service')">
+                </x-nav-link>
+                <x-nav-link href="{{ route('service') }}" :active="request()->routeIs('service')">
                     {{ __('service') }}
-                </a>
+                </x-nav-link>
             </div>
         </div>
 
@@ -145,8 +145,8 @@
         @endauth
         @guest
             <div class="navbar-action flex justify-center items-center">
-                <a href="{{ route('contact') }}"
-                    class="contact-btn rounded-2xl text-2xl py-2 px-3 md:py-2.5 md:px-5">Contact</a>
+                <x-dropdown-link href="{{ route('contact') }}"
+                    class="contact-btn rounded-2xl text-2xl py-2 px-3 md:py-2.5 md:px-5">Contact</x-dropdown-link>
             </div>
         @endguest
 
@@ -182,10 +182,12 @@
                     </div>
                     <div class="flex flex-col justify-around text-2xl md:text-3xl transition-all duration-500">
                         <!-- Account Management -->
-                        <a class="bar-HP" href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
-                            {{ __('Profile') }}
+                        <a href="{{ route('profile.show') }}" @class([
+                            'bar-HP',
+                            'text-purple-600 font-semibold' => request()->routeIs('profile.show'),
+                        ])>
+                            {{ __('profile') }}
                         </a>
-
                         @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                             <x-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
                                 {{ __('API Tokens') }}
@@ -236,16 +238,28 @@
                         @endif
                     </div>
                 @endauth
-                <a class="bar-HP" href="{{ route('home') }}" :active="request()->routeIs('home')">
+                <a href="{{ route('home') }}" @class([
+                    'bar-HP',
+                    'text-purple-600 font-semibold' => request()->routeIs('home'),
+                ])>
                     {{ __('home') }}
                 </a>
-                <a class="bar-HP" href="{{ route('about') }}" :active="request()->routeIs('about')">
+                <a href="{{ route('about') }}" @class([
+                    'bar-HP',
+                    'text-purple-600 font-semibold' => request()->routeIs('about'),
+                ])>
                     {{ __('about') }}
                 </a>
-                <a class="bar-HP" href="{{ route('portfolio') }}" :active="request()->routeIs('portfolio')">
-                    {{ __('portofolio') }}
+                <a href="{{ route('portfolio') }}" @class([
+                    'bar-HP',
+                    'text-purple-600 font-semibold' => request()->routeIs('portfolio'),
+                ])>
+                    {{ __('portfolio') }}
                 </a>
-                <a class="bar-HP" href="{{ route('service') }}" :active="request()->routeIs('service')">
+                <a href="{{ route('service') }}" @class([
+                    'bar-HP',
+                    'text-purple-600 font-semibold' => request()->routeIs('service'),
+                ])>
                     {{ __('service') }}
                 </a>
             </div>
