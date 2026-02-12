@@ -24,7 +24,7 @@
                                     <span>{{ $costumer->phone }}</span>
                                 </div>
                                 <span
-                                    class="text-(--color-primary-950) font-bold text-xl">{{ $costumer->subject }}</span>
+                                    class="text-(--color-primary-950) font-bold text-xl">{{ $costumer->category }}</span>
                                 <span class="text-base p-2.5">{{ $costumer->message }}</span>
                             </div>
                             <div class="p-2 grid grid-cols-2 gap-2">

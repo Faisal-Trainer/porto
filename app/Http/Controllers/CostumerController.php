@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\costumer;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
-class CostumerController extends Controller
+class CostumerController
 {
     /**
      * Display a listing of the resource.
@@ -33,7 +34,16 @@ class CostumerController extends Controller
             'username' => 'required|string|max:100',
             'email' => 'required|email|max:100',
             'phone' => 'required|string|max:20',
-            'subject' => 'required|string|max:1000',
+            'category' => [
+                'required',
+                Rule::in([
+                    'web_application',
+                    'education',
+                    'social_media',
+                    'it_support',
+                    'dashboard'
+                ])
+            ],
             'message' => 'required|string|max:1000',
         ]);
 

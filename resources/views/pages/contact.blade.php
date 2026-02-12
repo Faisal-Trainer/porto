@@ -16,9 +16,9 @@
             </div>
             @auth
                 <div class="navbar-action flex items-center ">
-                    <x-nav-lnik href="{{ route('contact.show') }}"
+                    <x-nav-link href="{{ route('contact.show') }}"
                         class="contact-btn rounded-2xl text-2xl py-2 px-3 md:py-2.5 md:px-5">show
-                        message</x-nav-lnik>
+                        message</x-nav-link>
                 </div>
             @endauth
             @if ($errors->any())
@@ -67,6 +67,8 @@
                         </a>
                     </div>
                 </div>
+
+
                 <div class="file">
                     <div class="form p-1.5 lg:p-6 space-y-6">
                         <form action="{{ route('contact.store') }}" method="POST">
@@ -99,9 +101,16 @@
                             </div>
                             <div class="input p-1.5 lg:p-6">
                                 <span class="text-base md:text-xl font-semibold">Subject *</span>
-                                <input class="label text-base md:text-xl p-3" name="subject" type="text"
-                                    placeholder="Topik atau Layanan yang Anda butuhkan">
-                                @error('subject')
+                                <select name="kategori"
+                                    class="label text-base md:text-xl p-3 w-full bg-white border rounded-md outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option value="disabled selected">Pilih Layanan yang Anda butuhkan</option>
+                                    <option value="web_application">Web Application</option>
+                                    <option value="education">Education</option>
+                                    <option value="social_media">Social Media</option>
+                                    <option value="it_support">IT Support</option>
+                                    <option value="dashboard">Dashboard</option>
+                                </select>
+                                @error('category')
                                     <span class="text-red-600 text-sm">{{ $message }}</span>
                                 @enderror
                             </div>

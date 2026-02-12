@@ -105,7 +105,7 @@
                     <li>• Basic SEO Optimization</li>
                     <li>• Contact & WhatsApp Integration</li>
                 </ul>
-                <a href="#" class="button mt-4 inline-block">Join as UMKM</a>
+                <a href="#" class="button mt-4 text-base px-2.5 py-1.5 rounded-xl">Start My Website</a>
             </div>
             <div class="service-card rounded-2xl p-3 md:p-6 text-center items-center flex flex-col">
                 <h3 class="text-xl md:text-2xl text-(--color-primary-950) font-bold">
@@ -120,7 +120,10 @@
                     <li>• SEO Strategy Implementation</li>
                     <li>• Performance Optimization</li>
                 </ul>
-                <a href="#" class="button mt-4 inline-block">Join as UMKM</a>
+                <a href="#"
+                    class="button mt-4 text-base px-2.5 py-1.5 before:w-full transition duration-500 rounded-xl">Build
+                    My Business
+                    System</a>
             </div>
             <div class="service-card rounded-2xl p-3 md:p-6 text-center items-center flex flex-col">
                 <h3 class="text-xl md:text-2xl text-(--color-primary-950) font-bold">
@@ -135,7 +138,11 @@
                     <li>• Data & Performance Monitoring</li>
                     <li>• Ongoing Strategic Consultation</li>
                 </ul>
-                <a href="#" class="button mt-4 inline-block">Join as UMKM</a>
+                <a href="#"
+                    class="button mt-4 text-base px-2.5 py-1.5 before:w-full transition duration-500 rounded-xl">Apply
+                    for
+                    Strategic
+                    Partnership</a>
             </div>
         </div>
     </section>

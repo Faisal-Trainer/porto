@@ -21,11 +21,11 @@
                 <x-nav-link href="{{ route('about') }}" :active="request()->routeIs('about')">
                     {{ __('about') }}
                 </x-nav-link>
-                <x-nav-link href="{{ route('portfolio') }}" :active="request()->routeIs('portfolio')">
-                    {{ __('portofolio') }}
-                </x-nav-link>
                 <x-nav-link href="{{ route('service') }}" :active="request()->routeIs('service')">
                     {{ __('service') }}
+                </x-nav-link>
+                <x-nav-link href="{{ route('portfolio') }}" :active="request()->routeIs('portfolio')">
+                    {{ __('portofolio') }}
                 </x-nav-link>
             </div>
         </div>
@@ -250,17 +250,17 @@
                 ])>
                     {{ __('about') }}
                 </a>
-                <a href="{{ route('portfolio') }}" @class([
-                    'bar-HP',
-                    'text-purple-600 font-semibold' => request()->routeIs('portfolio'),
-                ])>
-                    {{ __('portfolio') }}
-                </a>
                 <a href="{{ route('service') }}" @class([
                     'bar-HP',
                     'text-purple-600 font-semibold' => request()->routeIs('service'),
                 ])>
                     {{ __('service') }}
+                </a>
+                <a href="{{ route('portfolio') }}" @class([
+                    'bar-HP',
+                    'text-purple-600 font-semibold' => request()->routeIs('portfolio'),
+                ])>
+                    {{ __('portfolio') }}
                 </a>
             </div>
         </div>

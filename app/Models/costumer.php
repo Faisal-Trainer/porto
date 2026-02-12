@@ -10,7 +10,7 @@ class costumer extends Model
         'username',
         'email',
         'phone',
-        'subject',
+        'category',
         'message'
     ];
 }
