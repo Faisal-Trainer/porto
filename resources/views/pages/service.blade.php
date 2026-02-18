@@ -1,163 +1,342 @@
 <x-app-layout>
 
-    {{-- SERVICE SECTION --}}
-    <section class="p-2.5 md:p-5">
-        <div class="header text-center py-2.5">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-(--color-primary-950)">
-                Services for UMKM & Education Sector
+    {{-- ===================== SERVICE SECTION ===================== --}}
+    <section class="py-14 px-4 md:px-8">
+
+        {{-- Header --}}
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="text-xs font-bold uppercase tracking-widest text-(--color-primary-500) mb-3 block">Apa yang
+                Saya Kerjakan</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-(--color-primary-950) mb-4">
+                Layanan untuk UMKM<br>& Sektor Pendidikan
             </h1>
-            <p class="mt-3 text-sm md:text-base text-(--color-primary-900)">
-                Solusi digital komprehensif untuk kebutuhan bisnis modern.
+            <p class="text-sm md:text-base text-(--color-primary-700) leading-relaxed">
+                Bukan sekadar jasa — tapi solusi digital yang dirancang sesuai kebutuhan nyata bisnis kamu.
             </p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-5">
-            <div class="service-card rounded-2xl p-3 md:p-6 text-center items-center flex flex-col">
-                <div class="service-icon"><i class="fi fi-rr-code-simple"></i></div>
-                <h2 class="text-xl font-bold mb-2">Web Application</h2>
-                <p class="text-sm">Bangun website modern dengan tampilan elegan, cepat, dan aman untuk mendukung
-                    kebutuhan
-                    bisnismu.</p>
-                <ul class="space-y-2 font-bold text-(--color-primary-950)">
-                    <li>Responsive Design</li>
-                    <li>SEO Optimized</li>
-                    <li>Admin Panel & Dashboard</li>
+
+        {{-- Service Grid --}}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+
+            <div class="service-card rounded-2xl p-6 flex flex-col">
+                <div class="service-icon mb-4"><i class="fi fi-rr-code-simple"></i></div>
+                <h2 class="text-xl font-bold text-(--color-primary-950) mb-2">Web Application</h2>
+                <p class="text-sm text-(--color-primary-700) mb-4 leading-relaxed flex-1">
+                    Bangun website modern yang cepat, aman, dan relevan — dari landing page sederhana sampai sistem
+                    yang kompleks.
+                </p>
+                <ul class="space-y-1.5 text-sm font-semibold text-(--color-primary-900)">
+                    <li class="flex items-center gap-2"><span class="text-(--color-primary-500)">→</span> Responsive
+                        Design</li>
+                    <li class="flex items-center gap-2"><span class="text-(--color-primary-500)">→</span> SEO
+                        Optimized</li>
+                    <li class="flex items-center gap-2"><span class="text-(--color-primary-500)">→</span> Admin
+                        Panel & Dashboard</li>
                 </ul>
             </div>
 
-            <div class="service-card rounded-2xl p-3 md:p-6 text-center items-center flex flex-col">
-                <div class="service-icon"><i class="fi fi-rr-microchip"></i></div>
-                <h2 class="text-xl font-bold mb-2">IT Support</h2>
-                <p class="text-sm">Dukungan teknis menyeluruh untuk memastikan sistem bisnismu berjalan stabil setiap
-                    saat.
+            <div class="service-card rounded-2xl p-6 flex flex-col">
+                <div class="service-icon mb-4"><i class="fi fi-rr-microchip"></i></div>
+                <h2 class="text-xl font-bold text-(--color-primary-950) mb-2">IT Support & Maintenance</h2>
+                <p class="text-sm text-(--color-primary-700) mb-4 leading-relaxed flex-1">
+                    Dukungan teknis menyeluruh supaya sistem bisnis kamu berjalan stabil, aman, dan nggak tiba-tiba
+                    down.
                 </p>
-                <ul class="space-y-2 font-bold text-(--color-primary-950)">
-                    <li>System Maintanance</li>
-                    <li>Hardware & Software Setup</li>
-                    <li>24/7 Support</li>
+                <ul class="space-y-1.5 text-sm font-semibold text-(--color-primary-900)">
+                    <li class="flex items-center gap-2"><span class="text-(--color-primary-500)">→</span> System
+                        Maintenance</li>
+                    <li class="flex items-center gap-2"><span class="text-(--color-primary-500)">→</span> Hardware &
+                        Software Setup</li>
+                    <li class="flex items-center gap-2"><span class="text-(--color-primary-500)">→</span> 24/7
+                        Support</li>
                 </ul>
             </div>
 
-            <div class="service-card rounded-2xl p-3 md:p-6 text-center items-center flex flex-col">
-                <div class="service-icon"><i class="fi fi-rr-layout-fluid"></i></div>
-                <h2 class="text-xl font-bold mb-2">UI/UX Design</h2>
-                <p class="text-sm">Desain antarmuka intuitif yang menghadirkan pengalaman pengguna menyenangkan dan
-                    efisien.
+            <div class="service-card rounded-2xl p-6 flex flex-col">
+                <div class="service-icon mb-4"><i class="fi fi-rr-layout-fluid"></i></div>
+                <h2 class="text-xl font-bold text-(--color-primary-950) mb-2">UI/UX Design</h2>
+                <p class="text-sm text-(--color-primary-700) mb-4 leading-relaxed flex-1">
+                    Desain antarmuka yang intuitif, enak dilihat, dan bikin pengguna betah — bukan cuma cantik, tapi
+                    fungsional.
                 </p>
-                <ul class="space-y-2 font-bold text-(--color-primary-950)">
-                    <li>Minimalist design</li>
-                    <li>Glassmorphism & Clay Style</li>
-                    <li>User-Centered Approach</li>
+                <ul class="space-y-1.5 text-sm font-semibold text-(--color-primary-900)">
+                    <li class="flex items-center gap-2"><span class="text-(--color-primary-500)">→</span> Minimalist
+                        Design</li>
+                    <li class="flex items-center gap-2"><span class="text-(--color-primary-500)">→</span>
+                        Glassmorphism & Clay Style</li>
+                    <li class="flex items-center gap-2"><span class="text-(--color-primary-500)">→</span>
+                        User-Centered Approach</li>
                 </ul>
             </div>
-            <div class="service-card rounded-2xl p-3 md:p-6 text-center items-center flex flex-col">
-                <div class="service-icon"><i class="fi fi-rr-chart-line-up"></i></div>
-                <h2 class="text-xl font-semibold mb-3">Digital Consulting for UMKM</h2>
-                <p>Membantu UMKM meningkatkan penjualan & operasional lewat sistem digital yang realistis.</p>
-                <ul class="space-y-2 font-bold text-(--color-primary-950)">
-                    <li>Business Analysis</li>
-                    <li>Digital Marketing Roadmap</li>
-                    <li>Technology Integration</li>
+
+            <div class="service-card rounded-2xl p-6 flex flex-col">
+                <div class="service-icon mb-4"><i class="fi fi-rr-chart-line-up"></i></div>
+                <h2 class="text-xl font-bold text-(--color-primary-950) mb-2">Digital Consulting for UMKM</h2>
+                <p class="text-sm text-(--color-primary-700) mb-4 leading-relaxed flex-1">
+                    Bantu UMKM nentuin strategi digital yang realistis — bukan yang kelihatan keren tapi nggak cocok
+                    sama kondisi bisnis.
+                </p>
+                <ul class="space-y-1.5 text-sm font-semibold text-(--color-primary-900)">
+                    <li class="flex items-center gap-2"><span class="text-(--color-primary-500)">→</span> Business
+                        Analysis</li>
+                    <li class="flex items-center gap-2"><span class="text-(--color-primary-500)">→</span> Digital
+                        Marketing Roadmap</li>
+                    <li class="flex items-center gap-2"><span class="text-(--color-primary-500)">→</span>
+                        Technology Integration</li>
                 </ul>
             </div>
-            <div class="service-card rounded-2xl p-3 md:p-6 text-center items-center flex flex-col">
-                <div class="service-icon"><i class="fi fi-rr-school"></i></div>
-                <h2 class="text-xl font-semibold mb-3">Goes To School Program</h2>
-                <p>Program edukasi yang memberdayakan talenta muda agar siap menghadapi dunia digital profesional.</p>
-                <ul class="space-y-2 font-bold text-(--color-primary-950)">
-                    <li>Workshop & Mentorship</li>
-                    <li>Real Project Experience</li>
-                    <li>Career Guidance</li>
+
+            <div class="service-card rounded-2xl p-6 flex flex-col">
+                <div class="service-icon mb-4"><i class="fi fi-rr-school"></i></div>
+                <h2 class="text-xl font-bold text-(--color-primary-950) mb-2">Goes To School Program</h2>
+                <p class="text-sm text-(--color-primary-700) mb-4 leading-relaxed flex-1">
+                    Program edukasi yang membekali talenta muda dengan skill nyata, mindset industri, dan pengalaman
+                    proyek langsung.
+                </p>
+                <ul class="space-y-1.5 text-sm font-semibold text-(--color-primary-900)">
+                    <li class="flex items-center gap-2"><span class="text-(--color-primary-500)">→</span> Workshop
+                        & Mentorship</li>
+                    <li class="flex items-center gap-2"><span class="text-(--color-primary-500)">→</span> Real
+                        Project Experience</li>
+                    <li class="flex items-center gap-2"><span class="text-(--color-primary-500)">→</span> Career
+                        Guidance</li>
                 </ul>
             </div>
-            <div class="service-card rounded-2xl p-3 md:p-6 text-center items-center flex flex-col">
-                <div class="service-icon"><i class="fi fi-rr-share"></i></div>
-                <h2 class="text-xl font-semibold mb-3">Social Media Handling</h2>
-                <p>Deploy lebih cepat & stabil dengan workflow modern.</p>
-                <ul class="space-y-2 font-bold text-(--color-primary-950)">
-                    <li>Content Planning</li>
-                    <li>Analytics & Growth Strategy</li>
-                    <li>Branding Consistency</li>
+
+            <div class="service-card rounded-2xl p-6 flex flex-col">
+                <div class="service-icon mb-4"><i class="fi fi-rr-share"></i></div>
+                <h2 class="text-xl font-bold text-(--color-primary-950) mb-2">Social Media Handling</h2>
+                <p class="text-sm text-(--color-primary-700) mb-4 leading-relaxed flex-1">
+                    Kelola media sosial bisnis kamu secara konsisten dan terarah — biar branding kuat dan audiens
+                    terus tumbuh.
+                </p>
+                <ul class="space-y-1.5 text-sm font-semibold text-(--color-primary-900)">
+                    <li class="flex items-center gap-2"><span class="text-(--color-primary-500)">→</span> Content
+                        Planning</li>
+                    <li class="flex items-center gap-2"><span class="text-(--color-primary-500)">→</span>
+                        Analytics & Growth Strategy</li>
+                    <li class="flex items-center gap-2"><span class="text-(--color-primary-500)">→</span> Branding
+                        Consistency</li>
                 </ul>
             </div>
+
         </div>
     </section>
 
-    {{-- PRICE SECTION --}}
-    <section class="bg-(--color-primary-400) p-2.5 md:p-5">
-        <div class="flex flex-col items-center justify-center leading-relaxed">
-            <h2 class="text-xl md:text-3xl font-bold text-(--color-primary-100)">
-                Let’s Discuss Your Project Needs
-            </h2>
-            <span class="text-xl text-(--color-primary-100)">
-                Every business is unique — so is the solution.</span>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-5   ">
-            <div class="service-card rounded-2xl p-3 md:p-6 text-center items-center flex flex-col">
-                <h3 class="text-xl md:text-2xl text-(--color-primary-950) font-bold">
-                    Starter Web Presence
-                </h3>
-                <span>
-                    Ideal for businesses starting their digital journey
-                </span>
-                <ul class="mt-3 space-y-1">
-                    <li>• 1 Custom Landing Page</li>
-                    <li>• Mobile-Responsive Design</li>
-                    <li>• Basic SEO Optimization</li>
-                    <li>• Contact & WhatsApp Integration</li>
-                </ul>
-                <a href="#" class="button mt-4 text-base px-2.5 py-1.5 rounded-xl">Start My Website</a>
-            </div>
-            <div class="service-card rounded-2xl p-3 md:p-6 text-center items-center flex flex-col">
-                <h3 class="text-xl md:text-2xl text-(--color-primary-950) font-bold">
-                    Business Growth System
-                </h3>
-                <span>
-                    Structured digital system to improve operations and visibility
-                </span>
-                <ul class="mt-3 space-y-1">
-                    <li>• Multi-page Business Website</li>
-                    <li>• Admin Dashboard</li>
-                    <li>• SEO Strategy Implementation</li>
-                    <li>• Performance Optimization</li>
-                </ul>
-                <a href="#"
-                    class="button mt-4 text-base px-2.5 py-1.5 before:w-full transition duration-500 rounded-xl">Build
-                    My Business
-                    System</a>
-            </div>
-            <div class="service-card rounded-2xl p-3 md:p-6 text-center items-center flex flex-col">
-                <h3 class="text-xl md:text-2xl text-(--color-primary-950) font-bold">
-                    Digital Growth Partnership
-                </h3>
-                <span>
-                    Strategic collaboration to scale your business sustainably
-                </span>
-                <ul class="mt-3 space-y-1">
-                    <li>• Business Process Analysis</li>
-                    <li>• Custom Digital System Development</li>
-                    <li>• Data & Performance Monitoring</li>
-                    <li>• Ongoing Strategic Consultation</li>
-                </ul>
-                <a href="#"
-                    class="button mt-4 text-base px-2.5 py-1.5 before:w-full transition duration-500 rounded-xl">Apply
-                    for
-                    Strategic
-                    Partnership</a>
-            </div>
-        </div>
-    </section>
+    {{-- ===================== PRICE SECTION ===================== --}}
+    <section
+        class="relative py-16 px-4 md:px-8 overflow-hidden bg-linear-to-br from-(--color-primary-900) via-(--color-primary-800) to-(--color-primary-950)">
 
-    {{-- CUSTOMER SECTION --}}
-    <section class="p-2.5 md:p-5">
-        <div class="flex flex-col items-center justify-center leading-relaxed">
-            <h2 class="text-xl md:text-3xl font-bold text-(--color-primary-950)">
-                What Clients Say
+        {{-- Background blobs --}}
+        <div
+            class="absolute top-0 right-0 w-80 h-80 bg-(--color-primary-500) opacity-20 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2 pointer-events-none">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-80 h-80 bg-(--color-primary-400) opacity-20 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2 pointer-events-none">
+        </div>
+
+        {{-- Header --}}
+        <div class="text-center max-w-xl mx-auto mb-12 relative z-10">
+            <span
+                class="text-xs font-bold uppercase tracking-widest text-(--color-primary-300) mb-3 block">Investasi</span>
+            <h2 class="text-2xl md:text-4xl font-bold text-white mb-3">
+                Mulai dari yang Kamu Butuhkan
             </h2>
-            <p class="mt-3 text-sm md:text-base text-(--color-primary-900)">
-                Trusted by growing businesses and institutions.
+            <p class="text-(--color-primary-200) text-sm leading-relaxed">
+                Setiap bisnis punya titik mulai yang berbeda. Pilih tier yang sesuai — atau konsultasi dulu kalau
+                belum yakin.
             </p>
         </div>
+
+        {{-- Pricing Cards --}}
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto relative z-10">
+
+            {{-- Web 1.0 --}}
+            <div class="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md p-6 flex flex-col shadow-xl">
+                <div class="mb-5">
+                    <span
+                        class="text-xs font-bold uppercase tracking-widest bg-white/20 text-white px-3 py-1 rounded-full">Web
+                        1.0</span>
+                    <h3 class="text-xl font-bold text-white mt-3 mb-1">Landing Page</h3>
+                    <p class="text-(--color-primary-300) text-sm">Mulai online dengan cepat dan murah.</p>
+                </div>
+                <div class="border-t border-white/10 pt-5 mb-5">
+                    <p class="text-2xl font-extrabold text-white mb-1">Rp 500K <span
+                            class="text-sm font-normal text-(--color-primary-300)">/ mulai dari</span></p>
+                    <p class="text-xs text-(--color-primary-400)">Estimasi 3–7 hari kerja</p>
+                </div>
+                <ul class="space-y-2 text-sm text-(--color-primary-100) mb-6 flex-1">
+                    <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> 1 Custom
+                        Landing Page</li>
+                    <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span>
+                        Mobile-Responsive Design</li>
+                    <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> Basic SEO
+                        Optimization</li>
+                    <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> Integrasi
+                        tombol WhatsApp</li>
+                    <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> Tanpa biaya
+                        hosting server</li>
+                </ul>
+                <a href="{{ route('contact') }}"
+                    class="block text-center border border-white/40 hover:bg-white/20 text-white text-sm font-semibold py-2.5 rounded-xl transition-colors duration-200">
+                    Mulai dari sini →
+                </a>
+            </div>
+
+            {{-- Web 2.0 --}}
+            <div class="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md p-6 flex flex-col shadow-xl">
+                <div class="mb-5">
+                    <span
+                        class="text-xs font-bold uppercase tracking-widest bg-white/20 text-white px-3 py-1 rounded-full">Web
+                        2.0</span>
+                    <h3 class="text-xl font-bold text-white mt-3 mb-1">Web Application</h3>
+                    <p class="text-(--color-primary-300) text-sm">Sistem digital yang kerja buat bisnis kamu.</p>
+                </div>
+                <div class="border-t border-white/10 pt-5 mb-5">
+                    <p class="text-2xl font-extrabold text-white mb-1">Rp 3.000K <span
+                            class="text-sm font-normal text-(--color-primary-300)">/ mulai dari</span></p>
+                    <p class="text-xs text-(--color-primary-400)">Estimasi 2–6 minggu</p>
+                </div>
+                <ul class="space-y-2 text-sm text-(--color-primary-100) mb-6 flex-1">
+                    <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> Multi-page
+                        Business Website</li>
+                    <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> Login &
+                        manajemen user</li>
+                    <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> Admin
+                        Dashboard</li>
+                    <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> SEO Strategy
+                        Implementation</li>
+                    <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> Performance
+                        Optimization</li>
+                </ul>
+                <a href="{{ route('contact') }}"
+                    class="block text-center border border-white/40 hover:bg-white/20 text-white text-sm font-semibold py-2.5 rounded-xl transition-colors duration-200">
+                    Konsultasi gratis →
+                </a>
+            </div>
+
+            {{-- Web 2.5 --}}
+            <div
+                class="rounded-2xl border border-(--color-primary-400)/50 bg-white/15 backdrop-blur-md p-6 flex flex-col shadow-xl ring-1 ring-(--color-primary-400)/30 relative">
+                {{-- Popular badge --}}
+                <div class="absolute -top-3.5 left-1/2 -translate-x-1/2">
+                    <span
+                        class="bg-(--color-primary-500) text-white text-xs font-bold px-3 py-1 rounded-full shadow whitespace-nowrap">⭐
+                        Paling Banyak Dipilih</span>
+                </div>
+                <div class="mb-5 mt-2">
+                    <span
+                        class="text-xs font-bold uppercase tracking-widest bg-white/20 text-white px-3 py-1 rounded-full">Web
+                        2.5</span>
+                    <h3 class="text-xl font-bold text-white mt-3 mb-1">Advanced Web App</h3>
+                    <p class="text-(--color-primary-300) text-sm">Platform operasional bisnis yang scalable.</p>
+                </div>
+                <div class="border-t border-white/10 pt-5 mb-5">
+                    <p class="text-2xl font-extrabold text-white mb-1">Rp 8.000K <span
+                            class="text-sm font-normal text-(--color-primary-300)">/ mulai dari</span></p>
+                    <p class="text-xs text-(--color-primary-400)">Estimasi 1–3 bulan</p>
+                </div>
+                <ul class="space-y-2 text-sm text-(--color-primary-100) mb-6 flex-1">
+                    <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> Semua fitur
+                        Web 2.0</li>
+                    <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> Business
+                        Process Analysis</li>
+                    <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> Integrasi API
+                        & payment gateway</li>
+                    <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> Multi-role &
+                        hak akses tim</li>
+                    <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> Ongoing
+                        Strategic Consultation</li>
+                </ul>
+                <a href="{{ route('contact') }}"
+                    class="block text-center bg-white text-(--color-primary-900) hover:bg-(--color-primary-100) text-sm font-semibold py-2.5 rounded-xl transition-colors duration-200">
+                    Apply for Partnership →
+                </a>
+            </div>
+
+        </div>
+
+        {{-- Note --}}
+        <p class="text-center text-(--color-primary-400) text-xs mt-8 relative z-10">
+            Harga di atas adalah estimasi awal. Detail final ditentukan setelah diskusi kebutuhan. <a
+                href="{{ route('contact') }}" class="text-(--color-primary-200) underline">Konsultasi gratis</a>
+            dulu.
+        </p>
+
     </section>
 
+    {{-- ===================== TESTIMONIAL SECTION ===================== --}}
+    <section class="py-14 px-4 md:px-8">
+
+        <div class="text-center max-w-xl mx-auto mb-12">
+            <span class="text-xs font-bold uppercase tracking-widest text-(--color-primary-500) mb-3 block">Kata
+                Mereka</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-(--color-primary-950) mb-3">
+                Dipercaya oleh Bisnis yang Tumbuh
+            </h2>
+            <p class="text-sm text-(--color-primary-700)">
+                Bukan sekadar proyek selesai — tapi dampak yang terasa.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            {{-- Placeholder testimonial 1 --}}
+            <div class="service-card rounded-2xl p-6 flex flex-col gap-4">
+                <p class="text-sm text-(--color-primary-700) leading-relaxed flex-1 italic">
+                    "Sebelumnya orderan masih dicatat manual di buku. Sekarang semua masuk sistem, laporan langsung
+                    kelihatan. Beda banget operasionalnya."
+                </p>
+                <div class="flex items-center gap-3 border-t border-(--color-primary-100) pt-4">
+                    <div
+                        class="w-10 h-10 rounded-full bg-(--color-primary-200) flex items-center justify-center text-(--color-primary-600) font-bold text-sm shrink-0">
+                        A
+                    </div>
+                    <div>
+                        <p class="text-sm font-bold text-(--color-primary-950)">Nama Klien</p>
+                        <p class="text-xs text-(--color-primary-500)">Pemilik UMKM, Kota</p>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Placeholder testimonial 2 --}}
+            <div class="service-card rounded-2xl p-6 flex flex-col gap-4">
+                <p class="text-sm text-(--color-primary-700) leading-relaxed flex-1 italic">
+                    "Website-nya simpel tapi kelihatan profesional. Pelanggan jadi lebih percaya dan langsung bisa
+                    hubungi lewat WhatsApp."
+                </p>
+                <div class="flex items-center gap-3 border-t border-(--color-primary-100) pt-4">
+                    <div
+                        class="w-10 h-10 rounded-full bg-(--color-primary-200) flex items-center justify-center text-(--color-primary-600) font-bold text-sm shrink-0">
+                        B
+                    </div>
+                    <div>
+                        <p class="text-sm font-bold text-(--color-primary-950)">Nama Klien</p>
+                        <p class="text-xs text-(--color-primary-500)">Pemilik UMKM, Kota</p>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Placeholder testimonial 3 --}}
+            <div class="service-card rounded-2xl p-6 flex flex-col gap-4">
+                <p class="text-sm text-(--color-primary-700) leading-relaxed flex-1 italic">
+                    "Prosesnya jelas dari awal, nggak pake ribet. Dikasih tau step by step-nya dan hasilnya sesuai
+                    sama yang dibahas."
+                </p>
+                <div class="flex items-center gap-3 border-t border-(--color-primary-100) pt-4">
+                    <div
+                        class="w-10 h-10 rounded-full bg-(--color-primary-200) flex items-center justify-center text-(--color-primary-600) font-bold text-sm shrink-0">
+                        C
+                    </div>
+                    <div>
+                        <p class="text-sm font-bold text-(--color-primary-950)">Nama Klien</p>
+                        <p class="text-xs text-(--color-primary-500)">Pemilik UMKM, Kota</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
 
 </x-app-layout>

@@ -191,13 +191,15 @@
             <div
                 class="bg-white rounded-2xl overflow-hidden shadow-lg flex flex-col ring-2 ring-(--color-primary-700) relative">
                 {{-- Most Popular Badge --}}
-                <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                {{-- <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
                     <span class="bg-(--color-primary-700) text-white text-xs font-bold px-3 py-1 rounded-full shadow">⭐
                         Paling Banyak Dipilih</span>
-                </div>
+                </div> --}}
 
                 <div class="bg-(--color-primary-700) px-4 py-2 flex items-center justify-between">
                     <span class="text-xs font-bold uppercase tracking-widest text-(--color-primary-100)">Web 2.5</span>
+                    <span class="bg-(--color-primary-700) text-white text-xs font-bold px-3 py-1 rounded-full shadow">⭐
+                        Paling Banyak Dipilih</span>
                     <span
                         class="text-xs bg-(--color-primary-500) text-white px-2 py-0.5 rounded-full font-medium">Advanced
                         App</span>

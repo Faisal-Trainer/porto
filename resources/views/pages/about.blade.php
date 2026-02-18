@@ -1,88 +1,169 @@
 <x-app-layout>
     @section('title', 'Tentang Saya')
-    {{-- ABOUT --}}
-    <section class="p-2.5 md:p-5">
-        <div class="header text-center mb-6">
-            <h1 class="text-3xl md:text-4xl font-bold text-(--color-primary-700)">
-                About Me
-            </h1>
-            <p class="mt-3 text-sm md:text-base text-(--color-primary-900)">
+
+    {{-- ===================== ABOUT HERO ===================== --}}
+    <section class="py-14 px-4 md:px-8">
+
+        <div class="text-center max-w-xl mx-auto mb-12">
+            <span class="text-xs font-bold uppercase tracking-widest text-(--color-primary-500) mb-2 block">Siapa
+                Saya</span>
+            <h1 class="text-3xl md:text-4xl font-bold text-(--color-primary-950) mb-3">About Me</h1>
+            <p class="text-sm md:text-base text-(--color-primary-700)">
                 Passionate about empowering businesses through technology.
             </p>
         </div>
-        <div class="grid md:grid-cols-2 grid-cols-1 gap-2.5 md:gap-10 items-center mb-6">
-            <div class="card h-full p-6">
-                <h2 class="text-2xl text-(--color-primary-950) font-bold mb-4 underline decoration-(--color-accent-500)">
-                    My Journey</h2>
-                <div class="space-y-4 text-(--color-primary-950) leading-relaxed">
-                    <p>Saya adalah seorang web developer yang berspesialisasi dalam Laravel, Livewire, dan Tailwind CSS.
+
+        {{-- Journey + Skills --}}
+        <div class="grid md:grid-cols-2 grid-cols-1 gap-6 max-w-5xl mx-auto items-start mb-10">
+
+            {{-- My Journey --}}
+            <div class="card h-full p-6 flex flex-col gap-4">
+                <h2 class="text-xl font-bold text-(--color-primary-950) underline decoration-(--color-accent-500)">
+                    My Journey
+                </h2>
+                <div class="space-y-3 text-sm text-(--color-primary-800) leading-relaxed">
+                    <p>
+                        Saya adalah seorang web developer yang berspesialisasi dalam Laravel, Livewire, dan Tailwind
+                        CSS.
                         Dengan filosofi bahwa teknologi adalah cerminan dari ketekunan dan kejujuran, saya berkomitmen
-                        untuk
-                        memberikan solusi digital terbaik.</p>
-                    <p>Perjalanan saya ditempa oleh berbagai pengalaman yang menuntut ketahanan, strategi, dan disiplin.
-                        Hal
-                        tersebut membentuk pola pikir visioner, daya juang, serta konsistensi nilai yang kini saya
-                        terapkan
-                        dalam setiap proyek digital yang saya kerjakan.</p>
-                    <p>Saat ini, saya fokus pada pengembangan website, dukungan IT, dan konsultasi digital untuk
-                        membantu
-                        UKM dan talenta berkembang melalui teknologi.</p>
+                        untuk memberikan solusi digital terbaik.
+                    </p>
+                    <p>
+                        Perjalanan saya ditempa oleh berbagai pengalaman yang menuntut ketahanan, strategi, dan disiplin
+                        —
+                        membentuk pola pikir visioner, daya juang, serta konsistensi nilai yang kini saya terapkan
+                        dalam setiap proyek digital.
+                    </p>
+                    <p>
+                        Saat ini saya fokus pada pengembangan website, dukungan IT, dan konsultasi digital untuk
+                        membantu UMKM dan talent berkembang melalui teknologi.
+                    </p>
+                </div>
+
+                {{-- CTA --}}
+                <div class="flex flex-wrap gap-3 pt-2 mt-auto">
+                    {{-- Ganti href="#" dengan link CV asli setelah file CV tersedia --}}
+                    <a class="button text-sm px-5 py-2.5 rounded-xl font-semibold" href="#">
+                        Download CV
+                    </a>
+                    <a class="px-5 py-2.5 text-sm font-semibold rounded-xl border-2 border-(--color-primary-300) text-(--color-primary-700) hover:bg-(--color-primary-100) transition-colors duration-200"
+                        href="{{ route('portfolio') }}">
+                        See My Work →
+                    </a>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div class="card p-6">
-                    <div class="flex flex-row items-center">
-                        <i class="skill-icon fi fi-rr-api"></i>
-                        <h3 class="text-(--color-primary-600) text-semibold">
-                            Frontend Development
-                        </h3>
+            {{-- Skills --}}
+            <div class="grid grid-cols-2 gap-4">
+
+                <div class="card p-5 flex flex-col gap-3">
+                    <div class="flex items-center gap-2">
+                        <i class="skill-icon fi fi-rr-browser"></i>
+                        <h3 class="text-sm font-semibold text-(--color-primary-700)">Frontend</h3>
                     </div>
-                    <div class="skill-item">CSS3</div>
-                    <div class="skill-item">Bootstrap</div>
-                    <div class="skill-item">Tailwind CSS</div>
-                    <div class="skill-item">HTML5</div>
+                    <div class="flex flex-wrap flex-col gap-1.5">
+                        <span class="skill-item">HTML5</span>
+                        <span class="skill-item">CSS3</span>
+                        <span class="skill-item">Bootstrap</span>
+                        <span class="skill-item">Tailwind CSS</span>
+                    </div>
                 </div>
-                <div class="card p-6">
-                    <div class="flex flex-row items-center">
+
+                <div class="card p-5 flex flex-col gap-3">
+                    <div class="flex items-center gap-2">
                         <i class="skill-icon fi fi-rr-database-management"></i>
-                        <h3 class="text-(--color-primary-600) text-semibold">
-                            Backend & Database
-                        </h3>
+                        <h3 class="text-sm font-semibold text-(--color-primary-700)">Backend & DB</h3>
                     </div>
-                    <div class="skill-item">PHP</div>
-                    <div class="skill-item">MySQL</div>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="skill-item">PHP</span>
+                        <span class="skill-item">MySQL</span>
+                    </div>
                 </div>
-                <div class="card p-6">
-                    <div class="flex flex-row items-center">
+
+                <div class="card p-5 flex flex-col gap-3">
+                    <div class="flex items-center gap-2">
                         <i class="skill-icon fi fi-rr-globe"></i>
-                        <h3 class="text-(--color-primary-600) text-semibold">
-                            Tools & Framework
-                        </h3>
+                        <h3 class="text-sm font-semibold text-(--color-primary-700)">Framework</h3>
                     </div>
-                    <div class="skill-item">Laravel</div>
-                    <div class="skill-item">Next.js</div>
-                    <div class="skill-item">Nuxt.js</div>
-                    <div class="skill-item">Angular</div>
+                    <div class="flex flex-wrap flex-col gap-1.5">
+                        <span class="skill-item">Laravel</span>
+                        <span class="skill-item">Livewire</span>
+                        <span class="skill-item">Next.js</span>
+                        <span class="skill-item">Nuxt.js</span>
+                        <span class="skill-item">Angular</span>
+                    </div>
                 </div>
-                <div class="card p-6">
-                    <div class="flex flex-row items-center">
+
+                <div class="card p-5 flex flex-col gap-3">
+                    <div class="flex items-center gap-2">
                         <i class="skill-icon fi fi-rr-bolt"></i>
-                        <h3 class="text-(--color-primary-600) text-semibold">
-                            Soft Skill
-                        </h3>
+                        <h3 class="text-sm font-semibold text-(--color-primary-700)">Soft Skills</h3>
                     </div>
-                    <div class="skill-item">Problem Solving</div>
-                    <div class="skill-item">Team Leadership</div>
-                    <div class="skill-item">Client Communication</div>
-                    <div class="skill-item">Project Management</div>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="skill-item">Problem Solving</span>
+                        <span class="skill-item">Team Leadership</span>
+                        <span class="skill-item">Client Communication</span>
+                        <span class="skill-item">Project Management</span>
+                    </div>
                 </div>
-                {{-- CV --}}
+
             </div>
         </div>
-        <div class="flex md:gap-10 gap-6 pt-4 justify-center">
-            <a class="button" href="#">Download CV</a>
-            <a class="button" href="{{ route('portfolio') }}">See My Work</a>
+    </section>
+
+    {{-- ===================== VALUES / FILOSOFI ===================== --}}
+    <section class="bg-(--color-primary-400) py-14 px-4 md:px-8">
+        <div class="text-center max-w-xl mx-auto mb-10">
+            <span class="text-xs font-bold uppercase tracking-widest text-(--color-primary-200) mb-2 block">Prinsip
+                Kerja</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-(--color-primary-100) mb-3">
+                Nilai yang Saya Pegang
+            </h2>
+            <p class="text-(--color-primary-200) text-sm leading-relaxed">
+                Bukan sekadar kode — tapi komitmen, kejujuran, dan dampak nyata.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
+            <div class="card p-6 flex flex-col gap-3 text-center">
+                <div class="text-2xl text-(--color-primary-600) mx-auto">🎯</div>
+                <h3 class="font-bold text-(--color-primary-950)">Relevansi</h3>
+                <p class="text-sm text-(--color-primary-800) leading-relaxed">
+                    Setiap solusi yang saya bangun harus relevan dengan kebutuhan nyata bisnis — bukan sekadar keren di
+                    atas kertas.
+                </p>
+            </div>
+            <div class="card p-6 flex flex-col gap-3 text-center">
+                <div class="text-2xl text-(--color-primary-600) mx-auto">🤝</div>
+                <h3 class="font-bold text-(--color-primary-950)">Kejujuran</h3>
+                <p class="text-sm text-(--color-primary-800) leading-relaxed">
+                    Saya percaya hubungan kerja yang baik dimulai dari komunikasi yang jujur dan ekspektasi yang jelas
+                    dari awal.
+                </p>
+            </div>
+            <div class="card p-6 flex flex-col gap-3 text-center">
+                <div class="text-2xl text-(--color-primary-600) mx-auto">📈</div>
+                <h3 class="font-bold text-(--color-primary-950)">Keberlanjutan</h3>
+                <p class="text-sm text-(--color-primary-800) leading-relaxed">
+                    Solusi yang baik bukan yang selesai cepat, tapi yang bisa tumbuh dan berkembang bersama bisnis kamu.
+                </p>
+            </div>
         </div>
     </section>
+
+    {{-- ===================== CTA ===================== --}}
+    <section class="py-14 px-4 md:px-8 text-center">
+        <div class="max-w-xl mx-auto">
+            <h2 class="text-2xl md:text-3xl font-bold text-(--color-primary-950) mb-3">
+                Siap Berkolaborasi?
+            </h2>
+            <p class="text-sm text-(--color-primary-700) mb-6 leading-relaxed">
+                Kalau kamu punya proyek, ide, atau sekadar ingin diskusi — pintu selalu terbuka.
+            </p>
+            <a href="{{ route('contact') }}" class="inline-block button text-sm font-semibold px-8 py-3 rounded-xl">
+                Hubungi Saya →
+            </a>
+        </div>
+    </section>
+
 </x-app-layout>
