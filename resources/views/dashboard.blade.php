@@ -403,7 +403,7 @@
                     <li>• Mentoring & standar industri</li>
                     <li>• Pengalaman membangun portofolio</li>
                 </ul>
-                <a href="#" class="button mt-4 inline-block">Join as Talent</a>
+                <a href="{{ route('talent') }}" class="button mt-4 inline-block">Join as Talent</a>
             </div>
 
             <div class="card p-4">
@@ -413,7 +413,7 @@
                     <li>• Pendampingan teknologi terarah</li>
                     <li>• Kolaborasi dengan talent terlatih</li>
                 </ul>
-                <a href="#" class="button mt-4 inline-block">Join as UMKM</a>
+                <a href="{{ route('contact') }}" class="button mt-4 inline-block">Join as UMKM</a>
             </div>
         </div>
     </section>

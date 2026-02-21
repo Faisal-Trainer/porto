@@ -168,14 +168,12 @@
     </section>
 
     {{-- ===================== HOW I WORK SECTION ===================== --}}
-    <section
-        class="relative min-h-screen py-16 px-4 md:px-8 overflow-hidden bg-linear-to-br from-(--color-primary-900) via-(--color-primary-800) to-(--color-primary-950)">
-
+    <section class="py-14 px-4 md:px-8">
         <div class="text-center max-w-xl mx-auto mb-10">
-            <span class="text-xs font-bold uppercase tracking-widest text-(--color-primary-300) mb-2 block">Proses
+            <span class="text-xs font-bold uppercase tracking-widest text-(--color-primary-500) mb-2 block">Proses
                 Kerja</span>
-            <h2 class="text-2xl md:text-4xl font-bold text-(--color-primary-50) mb-3">How I Work</h2>
-            <p class="text-(--color-primary-100) text-sm leading-relaxed">
+            <h2 class="text-2xl md:text-4xl font-bold text-(--color-primary-950) mb-3">How I Work</h2>
+            <p class="text-(--color-primary-700) text-sm leading-relaxed">
                 Dari masalah bisnis hingga solusi digital yang siap digunakan — terstruktur, transparan, dan
                 kolaboratif.
             </p>

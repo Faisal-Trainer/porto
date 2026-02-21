@@ -93,22 +93,20 @@
 </head>
 
 <body class="min-h-screen flex flex-col bg-(--color-bg-light)">
-    <x-banner />
 
-    <div class="min-h-screen">
-        @livewire('navigation-menu')
-        <!-- Page Content -->
-        <main class="flex-1 mt-25 md:mt-35">
-            {{ $slot }}
-        </main>
-    </div>
+    @livewire('navigation-menu')
 
-    @stack('modals')
+    <main class="flex-1 mt-25 md:mt-35">
+        {{ $slot }}
+    </main>
 
-    @livewireScripts
     <footer>
         <x-footer />
     </footer>
+
+    @stack('modals')
+    @livewireScripts
+
 </body>
 
 </html>
