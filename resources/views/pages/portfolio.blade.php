@@ -27,7 +27,7 @@
 
         <div class="grid lg:grid-cols-4 grid-cols-1 gap-5 items-center mb-5">
             <div class="porto-card" data-category="Web-Development">
-                <img class="rounded-t-2xl object-cover w-full h-48" src="{{ asset('img/img1.webp') }}" alt="Project">
+                <img class="rounded-t-2xl object-cover w-full h-48" src="{{ asset('img/bg-menu.jpg') }}" alt="Project">
                 <div class="p-1.5 lg:p-3 text-center space-y-2.5">
                     <h2 class="text-xl font-bold text-(--color-primary-900)">Website App - Warung Siyas</h2>
                     <p class="text-sm text-(--color-primary-700)">
@@ -39,7 +39,8 @@
                         <span class="tech">tailwindcss</span>
                         <span class="tech">livewire</span>
                     </div>
-                    <a href="#" class="website-btn w-full rounded-xl inline-block text-center py-2 px-4">
+                    <a href="https://warungsiyas.com"
+                        class="website-btn w-full rounded-xl inline-block text-center py-2 px-4">
                         📂 Detail Project
                     </a>
                 </div>
@@ -75,8 +76,8 @@
                 </div>
 
                 {{-- Preview --}}
-                <a href="https://github.com/username/repo-landing-page" target="_blank" class="block overflow-hidden">
-                    <img src="#" alt="Preview Landing Page"
+                <a href="https://webporto-1-0.vercel.app" target="_blank" class="block overflow-hidden">
+                    <img src="{{ asset('img/porto1.png') }}" alt="Preview Landing Page"
                         class="w-full h-44 object-cover hover:scale-105 transition-transform duration-300">
                 </a>
 
