@@ -45,6 +45,44 @@
                     </a>
                 </div>
             </div>
+            <div class="porto-card" data-category="Web-Development">
+                <img class="rounded-t-2xl object-cover w-full h-48" src="{{ asset('img/bg-menu.jpg') }}" alt="Project">
+                <div class="p-1.5 lg:p-3 text-center space-y-2.5">
+                    <h2 class="text-xl font-bold text-(--color-primary-900)">Website App - Warung Siyas</h2>
+                    <p class="text-sm text-(--color-primary-700)">
+                        Dibangun sepenuhnya dari awal — mulai dari desain UI, struktur database,
+                        hingga fitur interaktif berbasis Laravel.
+                    </p>
+                    <div class="tag-tech">
+                        <span class="tech">laravel</span>
+                        <span class="tech">tailwindcss</span>
+                        <span class="tech">livewire</span>
+                    </div>
+                    <a href="https://coffee-pentagon.preview.emergentagent.com"
+                        class="website-btn w-full rounded-xl inline-block text-center py-2 px-4">
+                        📂 Detail Project
+                    </a>
+                </div>
+            </div>
+            <div class="porto-card" data-category="Web-Development">
+                <img class="rounded-t-2xl object-cover w-full h-48" src="{{ asset('img/bg-menu.jpg') }}" alt="Project">
+                <div class="p-1.5 lg:p-3 text-center space-y-2.5">
+                    <h2 class="text-xl font-bold text-(--color-primary-900)">Website App - Warung Siyas</h2>
+                    <p class="text-sm text-(--color-primary-700)">
+                        Dibangun sepenuhnya dari awal — mulai dari desain UI, struktur database,
+                        hingga fitur interaktif berbasis Laravel.
+                    </p>
+                    <div class="tag-tech">
+                        <span class="tech">laravel</span>
+                        <span class="tech">tailwindcss</span>
+                        <span class="tech">livewire</span>
+                    </div>
+                    <a href="{{ route('warungsiyas') }}"
+                        class="website-btn w-full rounded-xl inline-block text-center py-2 px-4">
+                        📂 Detail Project
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -152,7 +190,8 @@
 
                     <p class="text-xs font-semibold text-(--color-primary-500) uppercase tracking-wider mb-1">Cocok
                         untuk</p>
-                    <p class="text-sm text-(--color-primary-800) mb-4">UMKM aktif, toko online, bisnis dengan tim kecil.
+                    <p class="text-sm text-(--color-primary-800) mb-4">UMKM aktif, toko online, bisnis dengan tim
+                        kecil.
                     </p>
 
                     <p class="text-xs font-semibold text-(--color-primary-500) uppercase tracking-wider mb-2">Fitur

@@ -9,7 +9,10 @@ Route::get('/', fn() => view('pages.home'))->name('home');
 Route::get('/about', fn() => view('pages.about'))->name('about');
 Route::get('/service', fn() => view('pages.service'))->name('service');
 Route::get('/portfolio', fn() => view('pages.portfolio'))->name('portfolio');
-Route::get('/join', fn() => view('pages.join'))->name('join');
+
+// portofolio
+Route::get('/warungsiyas', fn() => view('portofolio.warungsiyas'))->name('warungsiyas');
+
 
 
 // Contact
