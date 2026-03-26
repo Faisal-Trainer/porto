@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Faisal Yusra | IT Support Spesialis · Web Developer & Digital Consultant')</title>
+    <title>@yield('title', 'Faisal Yusra | Web Developer & Digital Consultant Bukittinggi')</title>
 
     {{-- SEO Primary --}}
     <meta name="description" content="@yield('meta_description', 'Default description')" />

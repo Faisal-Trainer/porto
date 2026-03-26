@@ -1,5 +1,37 @@
 <x-app-layout>
 
+    {{-- SEO --}}
+    @section('title', 'Layanan | Faisal Yusra Web Developer')
+    @section('meta_description',
+        'Web app, IT support, UI/UX design, dan konsultasi digital untuk UMKM. Mulai dari
+        Rp500K. Konsultasi gratis, tanpa komitmen.')
+    @section('meta_keywords',
+        'jasa web development UMKM, IT support Bukittinggi,jasa buat website UMKM murah
+        Bukittinggi, konsultasi digital usaha kecil Sumatera Barat, harga jasa web developer Indonesia')
+    @section('canonical', url()->current())
+    <meta name="author" content="Muhammad Faisal Alyusra">
+    <meta name="robots" content="index, follow">
+
+    {{-- OPEN GRAPH --}}
+    <meta property="og:type" content="website">
+    @section('og_title', 'Layanan | Faisal Yusra Web Developer')
+    @section('og_description',
+        'Web app, IT support, UI/UX design, dan konsultasi digital untuk UMKM. Mulai dari Rp500K.
+        Konsultasi gratis, tanpa komitmen.')
+    @section('og_image', asset('img/profile.webp'))
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:site_name" content="Faisal Yusra">
+
+    {{-- Twitter / X Card --}}
+    <meta name="twitter:card" content="summary_large_image">
+    @section('twitter_title', 'Service — faisal yursa')
+    @section('twitter_description', 'Service')
+    @section('twitter_image', asset('img/profile.webp'))
+
+
+
     {{-- ===================== SERVICE SECTION ===================== --}}
     <section class="py-14 px-4 md:px-8">
 

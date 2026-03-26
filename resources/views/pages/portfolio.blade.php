@@ -1,5 +1,33 @@
 <x-app-layout>
 
+    {{-- SEO --}}
+    @section('title', 'Portofolio Proyek | Faisal Yusra Web Developer')
+    @section('meta_description',
+        'Lihat koleksi proyek web development untuk UMKM. Website app, landing page, dan solusi
+        digital yang telah saya bangun.')
+    @section('meta_keywords', 'portofolio web developer,portofolio website Bukittinggi, hasil kerja web developer')
+    @section('canonical', url()->current())
+    <meta name="author" content="Muhammad Faisal Alyusra">
+    <meta name="robots" content="index, follow">
+
+    {{-- OPEN GRAPH --}}
+    <meta property="og:type" content="website">
+    @section('og_title', 'Portofolio Proyek | Faisal Yusra Web Developer')
+    @section('og_description',
+        'Lihat koleksi proyek web development untuk UMKM. Website app, landing page, dan solusi
+        digital yang telah saya bangun.')
+    @section('og_image', asset('img/profile.webp'))
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:site_name" content="Faisal Yusra">
+
+    {{-- Twitter / X Card --}}
+    <meta name="twitter:card" content="summary_large_image">
+    @section('twitter_title', 'Portofolio — faisal yursa')
+    @section('twitter_description', 'Portofolio')
+    @section('twitter_image', asset('img/profile.webp'))
+
     {{-- PORTOFOLIO SECTION --}}
     <section class="p-2.5 md:p-5">
         <div class="text-center mb-10">

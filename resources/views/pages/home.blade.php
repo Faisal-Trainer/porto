@@ -1,22 +1,20 @@
 <x-app-layout>
 
-    @section('title', 'Faisal Yusra | IT Support Spesialis · Web Developer & Digital Consultant')
+    @section('title', 'Faisal Yusra | Web Developer & Digital Consultant Bukittinggi')
     @section('meta_description',
-        'Muhammad Faisal Alyusra — IT Support Spesialis, Web Developer & Digital Consultant
-        dari Bukittinggi. Membangun solusi digital untuk memberdayakan UMKM dan talent
-        muda Indonesia.')
-    @section('meta_keywords', 'IT Support, Web App Developer, Digital Consultant, umkm, talent')
+        'Jasa web development & digital consulting untuk UMKM. Membangun solusi digital yang
+        relevan dan berkelanjutan. Konsultasi gratis!')
+    @section('meta_keywords', 'web developer Bukittinggi,web app,digital consultant UMKM, jasa website, talent')
     @section('canonical', url()->current())
     <meta name="author" content="Muhammad Faisal Alyusra">
     <meta name="robots" content="index, follow">
 
     {{-- OPEN GRAPH --}}
     <meta property="og:type" content="website">
-    @section('og_title', 'aisal Yusra | IT Support Spesialis · Web Developer & Digital Consultant')
+    @section('og_title', 'Faisal Yusra | Web Developer & Digital Consultant Bukittinggi')
     @section('og_description',
-        'Muhammad Faisal Alyusra — IT Support Spesialis, Web Developer & Digital Consultant
-        dari Bukittinggi. Membangun solusi digital untuk memberdayakan UMKM dan talent
-        muda Indonesia.')
+        'Jasa web development & digital consulting untuk UMKM. Membangun solusi digital yang
+        relevan dan berkelanjutan. Konsultasi gratis')
     @section('og_image', asset('img/profile.webp'))
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">

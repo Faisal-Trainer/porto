@@ -1,5 +1,33 @@
 <x-app-layout>
-    @section('title', 'Tentang Saya')
+
+    {{-- SEO --}}
+    @section('title', 'Tentang Faisal Yusra | Web Developer di Bukittinggi')
+    @section('meta_description',
+        'Kenali Faisal Yusra, web developer spesialis Laravel & konsultan digital. Membantu
+        UMKM tumbuh dengan teknologi yang tepat. ')
+    @section('meta_keywords', 'tentang Faisal Yusra,web developer Laravel, programmer Bukittinggi,pengalaman web
+        developer Indonesia')
+    @section('canonical', url()->current())
+    <meta name="author" content="Muhammad Faisal Alyusra">
+    <meta name="robots" content="index, follow">
+
+    {{-- OPEN GRAPH --}}
+    <meta property="og:type" content="website">
+    @section('og_title', 'Tentang Faisal Yusra | Web Developer di Bukittinggi')
+    @section('og_description',
+        'Kenali Faisal Yusra, web developer spesialis Laravel & konsultan digital. Membantu UMKM
+        tumbuh dengan teknologi yang tepat.')
+    @section('og_image', asset('img/profile.webp'))
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:site_name" content="Faisal Yusra">
+
+    {{-- Twitter / X Card --}}
+    <meta name="twitter:card" content="summary_large_image">
+    @section('twitter_title', 'About — faisal yursa')
+    @section('twitter_description', 'About')
+    @section('twitter_image', asset('img/profile.webp'))
 
     {{-- ===================== ABOUT HERO ===================== --}}
     <section class="py-14 px-4 md:px-8">
