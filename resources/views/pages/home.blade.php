@@ -1,4 +1,34 @@
 <x-app-layout>
+
+    @section('title', 'Faisal Yusra | IT Support Spesialis · Web Developer & Digital Consultant')
+    @section('meta_description',
+        'Muhammad Faisal Alyusra — IT Support Spesialis, Web Developer & Digital Consultant
+        dari Bukittinggi. Membangun solusi digital untuk memberdayakan UMKM dan talent
+        muda Indonesia.')
+    @section('meta_keywords', 'IT Support, Web App Developer, Digital Consultant, umkm, talent')
+    @section('canonical', url()->current())
+    <meta name="author" content="Muhammad Faisal Alyusra">
+    <meta name="robots" content="index, follow">
+
+    {{-- OPEN GRAPH --}}
+    <meta property="og:type" content="website">
+    @section('og_title', 'aisal Yusra | IT Support Spesialis · Web Developer & Digital Consultant')
+    @section('og_description',
+        'Muhammad Faisal Alyusra — IT Support Spesialis, Web Developer & Digital Consultant
+        dari Bukittinggi. Membangun solusi digital untuk memberdayakan UMKM dan talent
+        muda Indonesia.')
+    @section('og_image', asset('img/profile.webp'))
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:site_name" content="Faisal Yusra">
+
+    {{-- Twitter / X Card --}}
+    <meta name="twitter:card" content="summary_large_image">
+    @section('twitter_title', 'landing page — faisal yursa')
+    @section('twitter_description', 'Landing Page')
+    @section('twitter_image', asset('img/profile.webp'))
+
     {{-- ===================== HERO SECTION ===================== --}}
     <section class="relative min-h-screen flex items-center overflow-hidden px-4 md:px-8 py-16">
 

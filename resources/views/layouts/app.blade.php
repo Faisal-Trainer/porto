@@ -3,36 +3,28 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@yield('title', 'Faisal Yusra | IT Support Spesialis · Web Developer & Digital Consultant')</title>
 
     {{-- SEO Primary --}}
-    <title>Faisal Yusra | IT Support Spesialis · Web Developer & Digital Consultant</title>
-    <meta name="description"
-        content="Muhammad Faisal Alyusra — IT Support Spesialis, Web Developer & Digital Consultant dari Bukittinggi. Membangun solusi digital dengan Laravel, Livewire & Tailwind untuk memberdayakan UMKM dan talent muda Indonesia.">
-    <meta name="keywords"
-        content="Faisal Yusra, Muhammad Faisal Alyusra, Web Developer, Laravel, Livewire, Filament, Tailwind CSS, Digital Consultant, IT Support Specialist, UMKM, Talent Development, Bukittinggi, Sumatera Barat">
-    <meta name="author" content="Muhammad Faisal Alyusra">
+    <meta name="description" content="@yield('meta_description', 'Default description')" />
+    <meta name="keywords" content="@yield('meta_keywords', 'default, keywords')" />
+    <meta name="author" content="Muhammad Faishal">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://faisalyusra.my.id">
+    <link rel="canonical" href="@yield('canonical', url()->current())" />
 
     {{-- Open Graph --}}
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://faisalyusra.my.id">
-    <meta property="og:title" content="Faisal Yusra | IT Support Spesialis · Web Developer & Digital Consultant">
-    <meta property="og:description"
-        content="Membangun solusi digital dengan Laravel & teknologi modern untuk memberdayakan UMKM dan talent muda. Terbuka untuk Web Dev, IT Consultant, dan IT Support.">
-    <meta property="og:image" content="{{ asset('img/loggo.webp') }}">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:locale" content="id_ID">
-    <meta property="og:site_name" content="Faisal Yusra">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@yield('og_title', 'Default OG Title')" />
+    <meta property="og:description" content="@yield('og_description', 'Default OG Description')" />
+    <meta property="og:url" content="@yield('og_url', url()->current())" />
+    <meta property="og:image" content="@yield('og_image', asset('img/default.webp'))" />
 
     {{-- Twitter / X Card --}}
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Faisal Yusra | Web Developer & Digital Consultant">
-    <meta name="twitter:description"
-        content="Membangun solusi digital dengan Laravel untuk memberdayakan UMKM dan talent muda Indonesia.">
-    <meta name="twitter:image" content="{{ asset('img/loggo.webp') }}">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="@yield('twitter_title', 'Default Twitter Title')" />
+    <meta name="twitter:description" content="@yield('twitter_description', 'Default Twitter Description')" />
+    <meta name="twitter:image" content="@yield('twitter_image', asset('img/default.webp'))" />
 
     {{-- CSRF --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">

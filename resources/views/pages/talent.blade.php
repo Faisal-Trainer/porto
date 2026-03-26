@@ -1,6 +1,28 @@
 <x-app-layout>
-    @section('title', 'Join as Talent')
 
+    {{-- SEO Meta Tags --}}
+    @section('title', 'Join as Talent | Faisal Yusra - Web Developer & Digital Consultant')
+    @section('meta_description',
+        'Bergabung sebagai Talent untuk konsultasi web development, IT support, UI/UX design,
+        dan digital consulting untuk UMKM. Konsultasi pertama gratis.')
+    @section('meta_keywords',
+        'konsultasi, landing page, web developer Bukittinggi, digital consultant UMKM,
+        developer Sumatera Barat, IT support, hubungi Faisal Yusra')
+    @section('canonical', url()->current())
+
+    <!-- Open Graph -->
+    @section('og_title', 'Hubungi Faisal Yusra | Web Developer & Digital Consultant')
+    @section('og_description',
+        'Diskusikan proyek kamu bersama Faisal Yusra. Spesialis web app, IT support, dan
+        konsultasi digital untuk UMKM.')
+    @section('og_image', asset('img/profile.webp'))
+
+    <!-- Twitter Cards -->
+    @section('twitter_title', 'Talent Faisal Yusra - Web Developer & Digital Consultant')
+    @section('twitter_description',
+        'Diskusikan proyek kamu bersama Faisal Yusra. Spesialis web app, IT support, dan
+        konsultasi digital untuk UMKM.')
+    @section('twitter_image', asset('img/profile.webp'))
     {{-- ===================== HERO ===================== --}}
     <section
         class="relative min-h-screen py-16 px-4 md:px-8 overflow-hidden bg-linear-to-br from-(--color-primary-900) via-(--color-primary-800) to-(--color-primary-950) flex items-center">
@@ -167,18 +189,12 @@
                             class="w-full bg-white/10 border border-white/20 text-white text-sm rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-(--color-primary-400) transition ">
                             <option value="" disabled selected class="text-gray-800">Pilih skill utama kamu...
                             </option>
-                            <option value="frontend" class="text-gray-800"
-                                {{ old('skill') == 'frontend' ? 'selected' : '' }}>Frontend Development</option>
-                            <option value="backend" class="text-gray-800"
-                                {{ old('skill') == 'backend' ? 'selected' : '' }}>Backend Development</option>
-                            <option value="fullstack" class="text-gray-800"
-                                {{ old('skill') == 'fullstack' ? 'selected' : '' }}>Fullstack Development</option>
-                            <option value="uiux" class="text-gray-800"
-                                {{ old('skill') == 'uiux' ? 'selected' : '' }}>UI/UX Design</option>
+                            <option value="uiux" class="text-gray-800" {{ old('skill') == 'uiux' ? 'selected' : '' }}>
+                                UI/UX Design</option>
                             <option value="social_media" class="text-gray-800"
                                 {{ old('skill') == 'social_media' ? 'selected' : '' }}>Social Media & Content</option>
-                            <option value="it_support" class="text-gray-800"
-                                {{ old('skill') == 'it_support' ? 'selected' : '' }}>IT Support</option>
+                            <option value="copywriting" class="text-gray-800"
+                                {{ old('skill') == 'copywriting' ? 'selected' : '' }}>Copy Writing</option>
                             <option value="other" class="text-gray-800"
                                 {{ old('skill') == 'other' ? 'selected' : '' }}>Lainnya</option>
                         </select>

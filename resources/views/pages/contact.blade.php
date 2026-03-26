@@ -1,33 +1,29 @@
     <x-app-layout>
-        @section('title', 'Hubungi Saya | Faisal Yusra - Web Developer & Digital Consultant')
 
         {{-- SEO Meta Tags --}}
-        @push('meta')
-            <meta name="description"
-                content="Hubungi Faisal Yusra untuk konsultasi web development, IT support, UI/UX design, dan digital consulting untuk UMKM. Konsultasi pertama gratis.">
-            <meta name="keywords"
-                content="web developer Bukittinggi, digital consultant UMKM, Laravel developer Sumatera Barat, IT support, hubungi Faisal Yusra">
-            <meta name="author" content="Faisal Yusra">
-            <meta name="robots" content="index, follow">
+        @section('title', 'Hubungi Saya | Faisal Yusra - Web Developer & Digital Consultant')
+        @section('meta_description',
+            'Hubungi Faisal Yusra untuk konsultasi web development, IT support, UI/UX design,
+            dan digital consulting untuk UMKM. Konsultasi pertama gratis.')
+        @section('meta_keywords',
+            'konsultasi, landing page, web developer Bukittinggi, digital consultant UMKM,
+            developer Sumatera Barat, IT support, hubungi Faisal Yusra')
+        @section('canonical', url()->current())
 
-            {{-- Open Graph --}}
-            <meta property="og:title" content="Hubungi Faisal Yusra | Web Developer & Digital Consultant">
-            <meta property="og:description"
-                content="Diskusikan proyek kamu bersama Faisal Yusra. Spesialis web app, IT support, dan konsultasi digital untuk UMKM.">
-            <meta property="og:url" content="{{ url('/contact') }}">
-            <meta property="og:type" content="website">
-            <meta property="og:image" content="{{ asset('img/profile.webp') }}">
+        <!-- Open Graph -->
+        @section('og_title', 'Diskusi Faisal Yusra | Web Developer & Digital Consultant')
+        @section('og_description',
+            'Diskusikan proyek kamu bersama Faisal Yusra. Spesialis web app, IT support, dan
+            konsultasi digital untuk UMKM.')
+        @section('og_image', asset('img/profile.webp'))
 
-            {{-- Twitter Card --}}
-            <meta name="twitter:card" content="summary_large_image">
-            <meta name="twitter:title" content="Hubungi Faisal Yusra | Web Developer & Digital Consultant">
-            <meta name="twitter:description"
-                content="Diskusikan proyek kamu bersama Faisal Yusra. Spesialis web app, IT support, dan konsultasi digital untuk UMKM.">
-            <meta name="twitter:image" content="{{ asset('img/profile.webp') }}">
+        <!-- Twitter Cards -->
+        @section('twitter_title', 'Hubungi Faisal Yusra - Web Developer & Digital Consultant')
+        @section('twitter_description',
+            'Diskusikan proyek kamu bersama Faisal Yusra. Spesialis web app, IT support, dan
+            konsultasi digital untuk UMKM.')
+        @section('twitter_image', asset('img/profile.webp'))
 
-            {{-- Canonical --}}
-            <link rel="canonical" href="{{ url('/contact') }}">
-        @endpush
 
         <section
             class="relative min-h-screen py-16 px-4 md:px-8 overflow-hidden bg-linear-to-br from-(--color-primary-900) via-(--color-primary-800) to-(--color-primary-950) flex items-center">
