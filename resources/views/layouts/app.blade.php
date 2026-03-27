@@ -18,7 +18,7 @@
     <meta property="og:title" content="@yield('og_title', 'Default OG Title')" />
     <meta property="og:description" content="@yield('og_description', 'Default OG Description')" />
     <meta property="og:url" content="@yield('og_url', url()->current())" />
-    <meta property="og:image" content="@yield('og_image', asset('img/default.webp'))" />
+    <meta property="og:image" content=" {{ asset('img/loggo.webp') }}" />
 
     {{-- Twitter / X Card --}}
     <meta name="twitter:card" content="summary_large_image" />

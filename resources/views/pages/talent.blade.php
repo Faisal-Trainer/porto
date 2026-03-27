@@ -1,28 +1,30 @@
 <x-app-layout>
 
     {{-- SEO Meta Tags --}}
-    @section('title', 'Join as Talent | Faisal Yusra - Web Developer & Digital Consultant')
+    @section('title', 'Join as Talent | Web Developer & Mentor bukittinggi')
     @section('meta_description',
-        'Bergabung sebagai Talent untuk konsultasi web development, IT support, UI/UX design,
-        dan digital consulting untuk UMKM. Konsultasi pertama gratis.')
+        'Bergabung sebagai Talent untuk menambah pengalaman dalam bidang web development, IT support, UI/UX design,
+        copy writing dan digital consulting.')
     @section('meta_keywords',
-        'konsultasi, landing page, web developer Bukittinggi, digital consultant UMKM,
-        developer Sumatera Barat, IT support, hubungi Faisal Yusra')
+        'konsultasi, talenta muda, web developer Bukittinggi, mentoring trainer,
+        developer Sumatera Barat, Mentoring dengan standar industri, hubungi Faisal Yusra')
     @section('canonical', url()->current())
 
     <!-- Open Graph -->
-    @section('og_title', 'Hubungi Faisal Yusra | Web Developer & Digital Consultant')
+    @section('og_title', 'Join as Talent | Web Developer & Mentor bukittinggi')
     @section('og_description',
-        'Diskusikan proyek kamu bersama Faisal Yusra. Spesialis web app, IT support, dan
-        konsultasi digital untuk UMKM.')
-    @section('og_image', asset('img/profile.webp'))
+        'Bergabung sebagai Talent untuk menambah pengalaman dalam bidang web development, IT support, UI/UX design,
+        copy writing dan digital consulting.')
+    @section('og_image', asset('img/loggo.webp'))
 
     <!-- Twitter Cards -->
-    @section('twitter_title', 'Talent Faisal Yusra - Web Developer & Digital Consultant')
+    @section('twitter_title', 'Talent Faisal Yusra - Web Developer & Mentor bukittinggi')
     @section('twitter_description',
-        'Diskusikan proyek kamu bersama Faisal Yusra. Spesialis web app, IT support, dan
-        konsultasi digital untuk UMKM.')
-    @section('twitter_image', asset('img/profile.webp'))
+        'Bergabung sebagai Talent untuk menambah pengalaman dalam bidang web development, IT support, UI/UX design,
+        copy writing dan digital consulting.')
+    @section('twitter_image', asset('img/loggo.webp'))
+
+
     {{-- ===================== HERO ===================== --}}
     <section
         class="relative min-h-screen py-16 px-4 md:px-8 overflow-hidden bg-linear-to-br from-(--color-primary-900) via-(--color-primary-800) to-(--color-primary-950) flex items-center">
