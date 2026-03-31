@@ -17,13 +17,8 @@
         'Lihat koleksi proyek web development untuk UMKM. Website app, landing page, dan solusi
         digital yang telah saya bangun.')
     @section('og_image', asset('img/profile.webp'))
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:locale" content="id_ID">
-    <meta property="og:site_name" content="Faisal Yusra">
 
     {{-- Twitter / X Card --}}
-    <meta name="twitter:card" content="summary_large_image">
     @section('twitter_title', 'Portofolio — faisal yursa')
     @section('twitter_description', 'Portofolio')
     @section('twitter_image', asset('img/profile.webp'))
@@ -54,20 +49,45 @@
         </div>
 
         <div class="grid lg:grid-cols-4 grid-cols-1 gap-5 items-center mb-5">
-            <div class="porto-card" data-category="Web-Development">
-                <img class="rounded-t-2xl object-cover w-full h-48" src="{{ asset('img/bg-menu.jpg') }}" alt="Project">
+
+            {{-- PORTO CARD --}}
+            <div class="porto-card overflow-hidden">
+                <img class="rounded-t-2xl object-cover w-full h-48" src="{{ asset('img/warung-siyas.webp') }}"
+                    alt="Project">
                 <div class="p-1.5 lg:p-3 text-center space-y-2.5">
-                    <h2 class="text-xl font-bold text-(--color-primary-900)">Website App - Warung Siyas</h2>
+                    <h2 class="text-xl font-bold text-(--color-primary-900)">Website App <br> Warung Siyas</h2>
                     <p class="text-sm text-(--color-primary-700)">
                         Dibangun sepenuhnya dari awal — mulai dari desain UI, struktur database,
                         hingga fitur interaktif berbasis Laravel.
                     </p>
                     <div class="tag-tech">
-                        <span class="tech">laravel</span>
                         <span class="tech">tailwindcss</span>
+                        <span class="tech">alpine.js</span>
+                        <span class="tech">laravel</span>
                         <span class="tech">livewire</span>
                     </div>
                     <a href="{{ route('warungsiyas') }}"
+                        class="website-btn w-full rounded-xl inline-block text-center py-2 px-4">
+                        📂 Detail Project
+                    </a>
+                </div>
+            </div>
+            <div class="porto-card overflow-hidden">
+                <img class="rounded-t-2xl object-cover w-full h-48" src="{{ asset('img/ank-parfume.webp') }}"
+                    alt="Project">
+                <div class="p-1.5 lg:p-3 text-center space-y-2.5">
+                    <h2 class="text-xl font-bold text-(--color-primary-900)">Website App <br> ANK PARFUME</h2>
+                    <p class="text-sm text-(--color-primary-700)">
+                        Dibangun sepenuhnya dari awal — mulai dari desain UI, struktur database,
+                        hingga fitur interaktif berbasis Laravel.
+                    </p>
+                    <div class="tag-tech">
+                        <span class="tech">tailwindcss</span>
+                        <span class="tech">alpine.js</span>
+                        <span class="tech">laravel</span>
+                        <span class="tech">livewire</span>
+                    </div>
+                    <a href="{{ route('ankparfume') }}"
                         class="website-btn w-full rounded-xl inline-block text-center py-2 px-4">
                         📂 Detail Project
                     </a>

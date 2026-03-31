@@ -19,6 +19,10 @@
     <meta property="og:description" content="@yield('og_description', 'Default OG Description')" />
     <meta property="og:url" content="@yield('og_url', url()->current())" />
     <meta property="og:image" content=" {{ asset('img/loggo.webp') }}" />
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="800">
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:site_name" content="Faisal Yusra">
 
     {{-- Twitter / X Card --}}
     <meta name="twitter:card" content="summary_large_image" />

@@ -12,6 +12,7 @@ Route::get('/portfolio', fn() => view('pages.portfolio'))->name('portfolio');
 
 // portofolio
 Route::get('/warungsiyas', fn() => view('portofolio.warungsiyas'))->name('warungsiyas');
+Route::get('/ankparfume', fn() => view('portofolio.ankparfume'))->name('ankparfume');
 
 
 

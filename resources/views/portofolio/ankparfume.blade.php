@@ -1,21 +1,21 @@
 <x-app-layout>
     <!-- SEO Meta Tags -->
-    @section('title', 'Warung Siyas - Studi Evolusi Web 1.0, 2.0, 2.5 & 3.0 | Faisal Yusra')
+    @section('title', 'ANK Parfume - Studi Evolusi Web 1.0, 2.0, 2.5 & 3.0 | Faisal Yusra')
     @section('meta_description',
-        'Portfolio project Warung Siyas oleh Faisal Yusra yang mengeksplorasi implementasi Web
+        'Portfolio project ANK Parfume oleh Faisal Yusra yang mengeksplorasi implementasi Web
         1.0, Web 2.0, Web 2.5, dan Web 3.0 dalam satu studi komparatif.')
     @section('meta_keywords', 'web app, web 1.0, web 2.0, web 3.0, evolusi web')
     @section('canonical', url()->current())
 
     <!-- Open Graph -->
-    @section('og_title', 'Warung Siyas - Studi Evolusi Web 1.0, 2.0, 2.5 & 3.0b')
-    @section('og_description', 'Detail Project Warung Siyass — Jelajahi evolusi lengkap dari website warung siyas')
-    @section('og_image', asset('img/logo/warungsiyas.webp'))
+    @section('og_title', 'ANK Parfume - Studi Evolusi Web 1.0, 2.0, 2.5 & 3.0b')
+    @section('og_description', 'Detail Project ANK Parfumes — Jelajahi evolusi lengkap dari website ANK Parfume')
+    @section('og_image', asset('img/logo/ankprfume.webp'))
 
     <!-- Twitter Cards -->
-    @section('twitter_title', 'WEB APP — Warung Siyas')
+    @section('twitter_title', 'WEB APP — ANK Parfume')
     @section('twitter_description', 'Detail Project')
-    @section('twitter_image', asset('img/logo/warungsiyas.webp'))
+    @section('twitter_image', asset('img/logo/ankprfume.webp'))
 
     {{-- HEADER SECTION --}}
     <header id="hero">
@@ -28,14 +28,14 @@
                 </div>
                 <!-- Main Title -->
                 <h1 class="text-2xl md:text-4xl font-bold text-(--color-primary-950)">
-                    <span>WARUNG SIYAS</span>
+                    <span>ANK Parfume</span>
                 </h1>
             </div>
 
 
             <!-- Tagline -->
             <p class="text-sm md:text-base text-(--color-accent-500) reveal delay-2 p-2.5">
-                Eksplorasi Warung Siyas dalam tiga pendekatan web: <br>
+                Eksplorasi ANK Parfume dalam tiga pendekatan web: <br>
                 Web 1.0, Web 2.0, dan Web 2.5
             </p>
 
@@ -254,7 +254,8 @@
                     <div class="preview-wrap">
                         <a href="https://webporto-1-0.vercel.app" target="_blank"
                             class="block overflow-hidden rounded-2xl">
-                            <img src="{{ asset('img/porto1.png') }}" alt="Preview Landing Page"
+                            <img src="{{ asset('img/ank-parfume.webp') }}"
+                                alt="Preview Landing Page ank parfume  bukittinggi"
                                 class="w-full h-74 object-cover hover:scale-105 transition-transform duration-300">
                         </a>
                     </div>
@@ -291,7 +292,8 @@
                     <div class="preview-wrap">
                         <a href="https://webporto-1-0.vercel.app" target="_blank"
                             class="block overflow-hidden rounded-2xl">
-                            <img src="{{ asset('img/porto1.png') }}" alt="Preview Landing Page"
+                            <img src="{{ asset('img/ank-parfume.webp') }}"
+                                alt="Preview Dinamis Page ANK Parfume  bukittinggi"
                                 class="w-full h-74 object-cover hover:scale-105 transition-transform duration-300">
                         </a>
                     </div>
@@ -495,7 +497,8 @@
                     <div class="preview-wrap">
                         <a href="https://webporto-1-0.vercel.app" target="_blank"
                             class="block overflow-hidden rounded-2xl">
-                            <img src="{{ asset('img/porto1.png') }}" alt="Preview Landing Page"
+                            <img src="{{ asset('img/ank-parfume.webp') }}"
+                                alt="Preview WEB APP ank parfume bukittinggi"
                                 class="w-full h-74 object-cover hover:scale-105 transition-transform duration-300">
                         </a>
                     </div>
@@ -535,7 +538,8 @@
                     <div class="preview-wrap">
                         <a href="https://webporto-1-0.vercel.app" target="_blank"
                             class="block overflow-hidden rounded-2xl">
-                            <img src="{{ asset('img/porto1.png') }}" alt="Preview Landing Page"
+                            <img src="{{ asset('img/ank-parfume.webp') }}"
+                                alt="Preview desentralisasi ank parfume bukittinggi"
                                 class="w-full h-74 object-cover hover:scale-105 transition-transform duration-300">
                         </a>
                     </div>
