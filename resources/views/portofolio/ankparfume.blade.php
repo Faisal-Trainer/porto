@@ -252,7 +252,7 @@
                         dibangun menggunakan HTML & CSS modern.
                     </span>
                     <div class="preview-wrap">
-                        <a href="https://webporto-1-0.vercel.app" target="_blank"
+                        <a href="https://ank-parfume.netlify.app" target="_blank"
                             class="block overflow-hidden rounded-2xl">
                             <img src="{{ asset('img/ank-parfume.webp') }}"
                                 alt="Preview Landing Page ank parfume  bukittinggi"
