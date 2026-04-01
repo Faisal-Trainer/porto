@@ -53,7 +53,7 @@
             {{-- PORTO CARD --}}
             <div class="porto-card overflow-hidden">
                 <img class="rounded-t-2xl object-cover w-full h-48" src="{{ asset('img/warung-siyas.webp') }}"
-                    alt="Project">
+                    alt="Project faisal yusra website warung siyas bukittinggi">
                 <div class="p-1.5 lg:p-3 text-center space-y-2.5">
                     <h2 class="text-xl font-bold text-(--color-primary-900)">Website App <br> Warung Siyas</h2>
                     <p class="text-sm text-(--color-primary-700)">
@@ -74,7 +74,7 @@
             </div>
             <div class="porto-card overflow-hidden">
                 <img class="rounded-t-2xl object-cover w-full h-48" src="{{ asset('img/ank-parfume.webp') }}"
-                    alt="Project">
+                    alt="Project faisal yusra website ANK Parfume bukittinggi">
                 <div class="p-1.5 lg:p-3 text-center space-y-2.5">
                     <h2 class="text-xl font-bold text-(--color-primary-900)">Website App <br> ANK PARFUME</h2>
                     <p class="text-sm text-(--color-primary-700)">

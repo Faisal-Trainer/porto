@@ -14,8 +14,6 @@ Route::get('/portfolio', fn() => view('pages.portfolio'))->name('portfolio');
 Route::get('/warungsiyas', fn() => view('portofolio.warungsiyas'))->name('warungsiyas');
 Route::get('/ankparfume', fn() => view('portofolio.ankparfume'))->name('ankparfume');
 
-
-
 // Contact
 Route::get('/contact', fn() => view('pages.contact'))->name('contact');
 Route::post('/contact', [CostumerController::class, 'store'])->name('contact.store');

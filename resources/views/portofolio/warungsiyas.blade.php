@@ -32,7 +32,22 @@
                 </h1>
             </div>
 
-
+            <span>
+                Project ini saya buat untuk mengeksplorasi bagaimana satu produk yang sama
+                bisa diimplementasikan dalam berbagai paradigma web.
+                Tujuannya:
+            </span>
+            <ul>
+                <li>
+                    - memahami perbedaan arsitektur
+                </li>
+                <li>
+                    - membandingkan performa & UX
+                </li>
+                <li>
+                    - melihat trade-off tiap pendekatan
+                </li>
+            </ul>
             <!-- Tagline -->
             <p class="text-sm md:text-base text-(--color-accent-500) reveal delay-2 p-2.5">
                 Eksplorasi Warung Siyas dalam tiga pendekatan web: <br>
@@ -99,8 +114,9 @@
                         </h2>
 
                         <p class="text-base leading-[1.65] text-(--accent) font-light mb-5">
-                            Website interaktif dengan user-generated content, dynamic UI, dan ekosistem platform
-                            terbuka.
+                            Website interaktif.
+                            User bisa berkontribusi langsung.
+                            Konten tidak lagi satu arah.
                         </p>
 
                         <div class="h-px bg-linear-to-r from-transparent via-white/10 to-transparent mb-4"></div>
