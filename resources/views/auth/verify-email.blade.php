@@ -5,12 +5,12 @@
         </x-slot>
 
         <div class="mb-4 w-90 text-sm text-gray-600">
-            {{ __('Before continuing, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}
+            {{ __('Terima kasih telah mendaftar! Langkah pertama: silakan verifikasi alamat email Anda dengan mengklik tautan yang baru saja kami kirimkan ke email Anda. Setelah email terverifikasi, akun Anda akan masuk ke antrean untuk disetujui oleh Administrator (tunggu verifikasi admin).') }}
         </div>
 
         @if (session('status') == 'verification-link-sent')
             <div class="mb-4 w-90 font-medium text-sm text-green-600">
-                {{ __('A new verification link has been sent to the email address you provided in your profile settings.') }}
+                {{ __('Tautan verifikasi baru telah dikirim ke alamat email yang Anda daftarkan.') }}
             </div>
         @endif
 

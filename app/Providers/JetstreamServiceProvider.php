@@ -29,7 +29,7 @@ class JetstreamServiceProvider extends ServiceProvider
 
         Vite::prefetch(concurrency: 3);
         Fortify::registerView(function () {
-            return view('auth.login');
+            return view('auth.register');
         });
     }
 

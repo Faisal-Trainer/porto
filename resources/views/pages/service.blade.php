@@ -209,7 +209,7 @@
                     <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> Tanpa biaya
                         hosting server</li>
                 </ul>
-                <a href="{{ route('contact') }}"
+                <a href="{{ route('contact.create') }}"
                     class="block text-center border border-white/40 hover:bg-white/20 text-white text-sm font-semibold py-2.5 rounded-xl transition-colors duration-200">
                     Mulai dari sini →
                 </a>
@@ -241,7 +241,7 @@
                     <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> Performance
                         Optimization</li>
                 </ul>
-                <a href="{{ route('contact') }}"
+                <a href="{{ route('contact.create') }}"
                     class="block text-center border border-white/40 hover:bg-white/20 text-white text-sm font-semibold py-2.5 rounded-xl transition-colors duration-200">
                     Konsultasi gratis →
                 </a>
@@ -280,7 +280,7 @@
                     <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> Ongoing
                         Strategic Consultation</li>
                 </ul>
-                <a href="{{ route('contact') }}"
+                <a href="{{ route('contact.create') }}"
                     class="block text-center bg-white text-(--color-primary-900) hover:bg-(--color-primary-100) text-sm font-semibold py-2.5 rounded-xl transition-colors duration-200">
                     Apply for Partnership →
                 </a>
@@ -291,7 +291,8 @@
         {{-- Note --}}
         <p class="text-center text-(--color-primary-400) text-xs mt-8 relative z-10">
             Harga di atas adalah estimasi awal. Detail final ditentukan setelah diskusi kebutuhan. <a
-                href="{{ route('contact') }}" class="text-(--color-primary-200) underline">Konsultasi gratis</a>
+                href="{{ route('contact.create') }}" class="text-(--color-primary-200) underline">Konsultasi
+                gratis</a>
             dulu.
         </p>
 

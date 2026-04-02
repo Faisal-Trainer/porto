@@ -54,6 +54,7 @@ class UsersTable
                     ->visible(fn($record) => $record->status === 'pending')
                     ->action(fn($record) => $record->update([
                         'status' => 'active',
+                        'is_active' => true,
                     ])),
                 Action::make('reject')
                     ->label('Reject')
@@ -63,6 +64,7 @@ class UsersTable
                     ->visible(fn($record) => $record->status === 'pending')
                     ->action(fn($record) => $record->update([
                         'status' => 'rejected',
+                        'is_active' => false,
                     ])),
             ])
             ->toolbarActions([

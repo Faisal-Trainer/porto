@@ -21,7 +21,20 @@ class UserForm
                 DateTimePicker::make('email_verified_at'),
                 TextInput::make('password')
                     ->password()
+                    ->required()
+                    ->dehydrated(fn ($state) => filled($state))
+                    ->required(fn (string $context): bool => $context === 'create'),
+                \Filament\Forms\Components\Select::make('status')
+                    ->options([
+                        'pending' => 'Pending',
+                        'active' => 'Active',
+                        'rejected' => 'Rejected',
+                    ])
+                    ->default('pending')
                     ->required(),
+                \Filament\Forms\Components\Toggle::make('is_active')
+                    ->label('Is Active?')
+                    ->default(false),
                 TextInput::make('current_team_id')
                     ->numeric()
                     ->default(null),

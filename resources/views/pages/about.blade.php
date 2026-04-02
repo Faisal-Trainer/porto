@@ -5,7 +5,8 @@
     @section('meta_description',
         'Kenali Faisal Yusra, web developer spesialis Laravel & konsultan digital. Membantu
         UMKM tumbuh dengan teknologi yang tepat. ')
-    @section('meta_keywords', 'tentang Faisal Yusra,web developer Laravel, programmer Bukittinggi,pengalaman web
+    @section('meta_keywords',
+        'tentang Faisal Yusra,web developer Laravel, programmer Bukittinggi,pengalaman web
         developer Indonesia')
     @section('canonical', url()->current())
     <meta name="author" content="Muhammad Faisal Alyusra">
@@ -188,7 +189,8 @@
             <p class="text-sm text-(--color-primary-700) mb-6 leading-relaxed">
                 Kalau kamu punya proyek, ide, atau sekadar ingin diskusi — pintu selalu terbuka.
             </p>
-            <a href="{{ route('contact') }}" class="inline-block button text-sm font-semibold px-8 py-3 rounded-xl">
+            <a href="{{ route('contact.create') }}"
+                class="inline-block button text-sm font-semibold px-8 py-3 rounded-xl">
                 Hubungi Saya →
             </a>
         </div>

@@ -170,7 +170,7 @@
                         </div>
                     </div>
 
-                    <a href="{{ route('contact') }}"
+                    <a href="{{ route('contact.create') }}"
                         class="mt-auto block text-center bg-(--color-primary-700) hover:bg-(--color-primary-800) text-white text-sm font-semibold py-2.5 rounded-xl transition-colors duration-200">
                         Mulai dari sini →
                     </a>
@@ -230,7 +230,7 @@
                         </div>
                     </div>
 
-                    <a href="{{ route('contact') }}"
+                    <a href="{{ route('contact.create') }}"
                         class="mt-auto block text-center bg-(--color-primary-700) hover:bg-(--color-primary-800) text-white text-sm font-semibold py-2.5 rounded-xl transition-colors duration-200">
                         Konsultasi gratis →
                     </a>
@@ -298,7 +298,7 @@
                         </div>
                     </div>
 
-                    <a href="{{ route('contact') }}"
+                    <a href="{{ route('contact.create') }}"
                         class="mt-auto block text-center bg-(--color-primary-700) hover:bg-(--color-primary-800) text-white text-sm font-semibold py-2.5 rounded-xl transition-colors duration-200">
                         Konsultasi gratis →
                     </a>
@@ -355,7 +355,7 @@
                         Estimasi harga & waktu menyesuaikan kebutuhan
                     </div>
 
-                    <a href="{{ route('contact') }}"
+                    <a href="{{ route('contact.create') }}"
                         class="mt-auto block text-center border-2 border-(--color-primary-400) text-(--color-primary-700) hover:bg-(--color-primary-100) text-sm font-semibold py-2.5 rounded-xl transition-colors duration-200">
                         Diskusi kebutuhan →
                     </a>
@@ -366,7 +366,7 @@
 
         {{-- Bottom note --}}
         <p class="text-center text-(--color-primary-200) text-sm mt-8">
-            Tidak yakin butuh yang mana? <a href="{{ route('contact') }}"
+            Tidak yakin butuh yang mana?<a href="{{ route('contact.create') }}"
                 class="underline font-medium text-(--color-primary-100) hover:text-white">Konsultasi gratis</a> dan
             kita tentukan bersama.
         </p>
@@ -687,7 +687,7 @@
                         </div>
 
                         <p class="text-(--color-primary-400) text-xs italic">
-                            🔭 Tertarik jadi yang pertama? <a href="{{ route('contact') }}"
+                            🔭 Tertarik jadi yang pertama? <a href="{{ route('contact.create') }}"
                                 class="text-(--color-primary-200) underline">Hubungi saya</a> dan kita diskusi arahnya.
                         </p>
                     </div>
@@ -699,7 +699,7 @@
         {{-- Bottom CTA --}}
         <div class="text-center mt-12 relative z-10">
             <p class="text-(--color-primary-300) text-sm mb-4">Masih bingung pilih yang mana?</p>
-            <a href="{{ route('contact') }}"
+            <a href="{{ route('contact.create') }}"
                 class="inline-block bg-white text-(--color-primary-900) hover:bg-(--color-primary-100) font-semibold text-sm px-8 py-3 rounded-xl transition-colors duration-200 shadow-lg">
                 Konsultasi gratis — 30 menit, no pressure
             </a>
