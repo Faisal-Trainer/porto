@@ -464,7 +464,7 @@
                     <li class="flex items-start gap-2"><span class="text-(--color-primary-500) mt-0.5">→</span>
                         Pengalaman membangun portofolio</li>
                 </ul>
-                <a href="{{ route('talent') }}"
+                <a href="{{ route('talent.create') }}"
                     class="button mt-auto inline-block text-center text-sm px-5 py-2.5 rounded-xl font-semibold">
                     Join as Talent →
                 </a>
@@ -480,7 +480,7 @@
                     <li class="flex items-start gap-2"><span class="text-(--color-primary-500) mt-0.5">→</span>
                         Kolaborasi dengan talent terlatih</li>
                 </ul>
-                <a href="{{ route('contact') }}"
+                <a href="{{ route('contact.create') }}"
                     class="button mt-auto inline-block text-center text-sm px-5 py-2.5 rounded-xl font-semibold">
                     Join as UMKM →
                 </a>

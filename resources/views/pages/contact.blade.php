@@ -229,7 +229,7 @@
                             <label class="text-xs font-semibold text-(--color-primary-300)" for="kategori">
                                 Layanan yang Dibutuhkan <span class="text-red-400">*</span>
                             </label>
-                            <select id="kategori" name="kategori"
+                            <select id="category" name="category"
                                 class="w-full bg-white/10 border border-white/20 text-white text-sm rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-(--color-primary-400) transition">
                                 <option value="" disabled selected class="text-gray-800">Pilih layanan...
                                 </option>

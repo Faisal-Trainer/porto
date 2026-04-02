@@ -145,7 +145,7 @@
         @endauth
         @guest
             <div class="navbar-action flex justify-center items-center">
-                <x-dropdown-link href="{{ route('contact') }}"
+                <x-dropdown-link href="{{ route('contact.create') }}"
                     class="contact-btn rounded-2xl text-2xl py-2 px-3 md:py-2.5 md:px-5">Contact</x-dropdown-link>
             </div>
         @endguest

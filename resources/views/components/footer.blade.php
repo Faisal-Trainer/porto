@@ -78,7 +78,7 @@
                     <li><a href="{{ route('service') }}"
                             class="text-(--color-primary-900) hover:text-(--color-primary-100) transition-colors duration-150">Service</a>
                     </li>
-                    <li><a href="{{ route('contact') }}"
+                    <li><a href="{{ route('contact.create') }}"
                             class="text-(--color-primary-900) hover:text-(--color-primary-100) transition-colors duration-150">Contact</a>
                     </li>
                 </ul>
@@ -97,7 +97,8 @@
                     Policy</a>
                 <a href="{{ route('terms.show') }}" class="hover:text-white transition-colors duration-150">Terms
                     of Service</a>
-                <a href="{{ route('contact') }}" class="hover:text-white transition-colors duration-150">Contact</a>
+                <a href="{{ route('contact.create') }}"
+                    class="hover:text-white transition-colors duration-150">Contact</a>
             </div>
         </div>
 

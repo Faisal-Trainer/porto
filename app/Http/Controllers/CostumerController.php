@@ -38,10 +38,12 @@ class CostumerController
                 'required',
                 Rule::in([
                     'web_application',
-                    'education',
-                    'social_media',
                     'it_support',
-                    'dashboard'
+                    'ui_ux',
+                    'digital_consulting',
+                    'goes_to_school',
+                    'social_media',
+                    'other'
                 ])
             ],
             'message' => 'required|string|max:1000',
@@ -49,7 +51,7 @@ class CostumerController
 
         costumer::create($data);
 
-        return redirect()->route('contact')->with('success', 'Terima kasih');
+        return redirect()->route('contact.create')->with('success', 'Terima kasih');
     }
     public function destroy(costumer $costumers)
     {

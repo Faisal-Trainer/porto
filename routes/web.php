@@ -15,12 +15,12 @@ Route::get('/warungsiyas', fn() => view('portofolio.warungsiyas'))->name('warung
 Route::get('/ankparfume', fn() => view('portofolio.ankparfume'))->name('ankparfume');
 
 // Contact
-Route::get('/contact', fn() => view('pages.contact'))->name('contact');
 Route::post('/contact', [CostumerController::class, 'store'])->name('contact.store');
+Route::get('/contact', [CostumerController::class, 'create'])->name('contact.create');
 
 // Talent
-Route::get('/talent', fn() => view('pages.talent'))->name('talent');
 Route::post('/talent', [TalentController::class, 'store'])->name('talent.store');
+Route::get('/talent', [TalentController::class, 'create'])->name('talent.create');
 
 
 // Auth protected

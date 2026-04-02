@@ -139,7 +139,8 @@
                     </div>
                 @endif
 
-                <form action="#" method="POST" enctype="multipart/form-data" class="space-y-4">
+                <form action="{{ route('talent.store') }}" method="POST" enctype="multipart/form-data"
+                    class="space-y-4">
                     @csrf
 
                     {{-- Nama & WA --}}
