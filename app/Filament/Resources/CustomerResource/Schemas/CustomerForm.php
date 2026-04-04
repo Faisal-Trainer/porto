@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Filament\Resources\Costumers\Schemas;
+namespace App\Filament\Resources\CustomerResource\Schemas;
 
 use Filament\Schemas\Schema;
 
-class CostumerForm
+class CustomerForm
 {
     public static function configure(Schema $schema): Schema
     {
@@ -14,3 +14,4 @@ class CostumerForm
             ]);
     }
 }
+

@@ -162,7 +162,7 @@
             </div>
 
             <div class="cta">
-                <a href="{{ config('app.url') }}/admin/costumers">
+                <a href="{{ config('app.url') }}/admin/customers">
                     Lihat di Admin Panel →
                 </a>
             </div>

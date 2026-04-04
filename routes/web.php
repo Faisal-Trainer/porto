@@ -1,30 +1,30 @@
 <?php
 
-use App\Http\Controllers\CostumerController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TalentController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 // Public routes
-Route::get('/', fn () => view('pages.home'))->name('home');
-Route::get('/about', fn () => view('pages.about'))->name('about');
-Route::get('/service', fn () => view('pages.service'))->name('service');
-Route::get('/portfolio', fn () => view('pages.portfolio'))->name('portfolio');
+Route::get('/', fn() => view('pages.home'))->name('home');
+Route::get('/about', fn() => view('pages.about'))->name('about');
+Route::get('/service', fn() => view('pages.service'))->name('service');
+Route::get('/portfolio', fn() => view('pages.portfolio'))->name('portfolio');
 
 // portofolio
-Route::get('/warungsiyas', fn () => view('portofolio.warungsiyas'))->name('warungsiyas');
-Route::get('/ankparfume', fn () => view('portofolio.ankparfume'))->name('ankparfume');
+Route::get('/warungsiyas', fn() => view('portofolio.warungsiyas'))->name('warungsiyas');
+Route::get('/ankparfume', fn() => view('portofolio.ankparfume'))->name('ankparfume');
 
 // Contact
 Route::middleware('throttle:5,1')->group(function () {
-    Route::post('/contact', [CostumerController::class, 'store'])->name('contact.store');
+    Route::post('/contact', [CustomerController::class, 'store'])->name('contact.store');
     Route::post('/talent', [TalentController::class, 'store'])->name('talent.store');
 });
-Route::get('/contact', [CostumerController::class, 'create'])->name('contact.create');
 
 // Talent
 Route::get('/talent', [TalentController::class, 'create'])->name('talent.create');
+Route::get('/contact', [CustomerController::class, 'create'])->name('contact.create');
 
 // Auth protected (Email Verified)
 Route::middleware([
@@ -49,3 +49,4 @@ Route::middleware([
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     });
 });
+

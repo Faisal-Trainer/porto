@@ -12,7 +12,6 @@ class Customer extends Model
     use LogsActivity;
     use SoftDeletes;
 
-    protected $table = 'costumers';
 
     protected $fillable = [
         'username',

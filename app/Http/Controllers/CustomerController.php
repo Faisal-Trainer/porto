@@ -8,7 +8,7 @@ use App\Mail\NewContactMail;
 use App\Models\Customer;
 use Illuminate\Support\Facades\Mail;
 
-class CostumerController extends Controller
+class CustomerController
 {
     public function index()
     {
@@ -39,3 +39,4 @@ class CostumerController extends Controller
         return redirect()->back()->with('success', 'Data berhasil dihapus.');
     }
 }
+

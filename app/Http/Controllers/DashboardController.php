@@ -7,7 +7,7 @@ use App\Models\Project;
 use App\Models\Talent;
 use App\Models\User;
 
-class DashboardController extends Controller
+class DashboardController
 {
     public function index()
     {
