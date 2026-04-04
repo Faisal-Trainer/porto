@@ -12,9 +12,9 @@ class CustomerController
 {
     public function index()
     {
-        $customers = Customer::latest()->get();
+        $customers = Customer::latest()->paginate(10);
 
-        return view('show.contact', compact('customers'));
+        return view('admin.contact', compact('customers'));
     }
 
     public function create()

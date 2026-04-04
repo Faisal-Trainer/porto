@@ -47,6 +47,12 @@ Route::middleware([
     // Only approved users can access these routes
     Route::middleware(['approved'])->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+        // Admin Only Routes
+        Route::middleware(['role:super_admin'])->prefix('admin')->name('admin.')->group(function () {
+            Route::get('/customers', [CustomerController::class, 'index'])->name('customers.index');
+            Route::get('/talents', [TalentController::class, 'index'])->name('talents.index');
+        });
     });
 });
 

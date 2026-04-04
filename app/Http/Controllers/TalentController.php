@@ -9,7 +9,7 @@ use App\Models\Talent;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
-class TalentController extends Controller
+class TalentController
 {
     /**
      * Tampilkan form daftar talent
@@ -54,10 +54,10 @@ class TalentController extends Controller
      */
     public function index()
     {
-        $talents = Talent::latest()->paginate(15);
+        $talents = Talent::latest()->paginate(10);
         $unreadCount = Talent::unread()->count();
 
-        return view('admin.talents.index', compact('talents', 'unreadCount'));
+        return view('admin.talent', compact('talents', 'unreadCount'));
     }
 
     /**
