@@ -6,10 +6,13 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Spatie\Activitylog\Support\LogOptions;
+use Spatie\Activitylog\Models\Concerns\LogsActivity;
 
-class project extends Model
+class Project extends Model
 {
     use HasFactory;
+    use LogsActivity;
 
     protected $fillable = [
         'judul',
@@ -18,19 +21,26 @@ class project extends Model
         'deskripsi',
         'thumbnail',
         'demo_url',
-        'tanggal_rilis'
+        'tanggal_rilis',
     ];
 
     protected $casts = [
         'tanggal_rilis' => 'date',
     ];
+
     public function technologies()
     {
-        return $this->belongsToMany(technology::class);
+        return $this->belongsToMany(Technology::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function getIsNewAttribute(): bool
     {
-        if (!$this->tanggal_rilis) {
+        if (! $this->tanggal_rilis) {
             return false;
         }
 
@@ -38,15 +48,25 @@ class project extends Model
             Carbon::now()->subDays(30)
         );
     }
-    protected static function boot()
+
+    protected static function boot(): void
     {
         parent::boot();
+
         static::creating(function ($project) {
             $project->slug = Str::slug($project->judul);
         });
     }
-    public function getRouteKeyName()
+
+    public function getRouteKeyName(): string
     {
         return 'slug';
+    }
+
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()
+            ->logFillable()
+            ->logOnlyDirty();
     }
 }

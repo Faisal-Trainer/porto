@@ -2,61 +2,40 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\costumer;
-use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
+use App\Actions\NotifyAdmins;
+use App\Http\Requests\StoreContactRequest;
+use App\Mail\NewContactMail;
+use App\Models\Customer;
+use Illuminate\Support\Facades\Mail;
 
-class CostumerController
+class CostumerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        $costumers = costumer::latest()->get();
-        return view('show.contact', compact('costumers'));
+        $customers = Customer::latest()->get();
+
+        return view('show.contact', compact('customers'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         return view('pages.contact');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function store(StoreContactRequest $request)
     {
-        $data = $request->validate([
-            'username' => 'required|string|max:100',
-            'email' => 'required|email|max:100',
-            'phone' => 'required|string|max:20',
-            'category' => [
-                'required',
-                Rule::in([
-                    'web_application',
-                    'it_support',
-                    'ui_ux',
-                    'digital_consulting',
-                    'goes_to_school',
-                    'social_media',
-                    'other'
-                ])
-            ],
-            'message' => 'required|string|max:1000',
-        ]);
+        $customer = Customer::create($request->validated());
 
-        costumer::create($data);
+        Mail::to(config('mail.admin_email'))->queue(new NewContactMail($customer));
+        NotifyAdmins::newContact($customer);
 
-        return redirect()->route('contact.create')->with('success', 'Terima kasih');
+        return redirect()->route('contact.create')->with('success', 'Terima kasih, pesan kamu sudah kami terima! Kami akan segera menghubungi kamu.');
     }
-    public function destroy(costumer $costumers)
-    {
-        $costumers->delete();
 
-        return redirect()->route('show.contact')->with('success', 'costumer berhasil di hapus.');
+    public function destroy(Customer $customer)
+    {
+        $customer->delete();
+
+        return redirect()->back()->with('success', 'Data berhasil dihapus.');
     }
 }

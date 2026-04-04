@@ -2,15 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
-class costumer extends Model
-{
-    protected $fillable = [
-        'username',
-        'email',
-        'phone',
-        'category',
-        'message'
-    ];
-}
+/**
+ * @deprecated Use App\Models\Customer instead
+ */
+class costumer extends Customer {}

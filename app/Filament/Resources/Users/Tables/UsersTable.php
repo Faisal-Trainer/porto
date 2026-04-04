@@ -5,7 +5,6 @@ namespace App\Filament\Resources\Users\Tables;
 use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
@@ -25,8 +24,8 @@ class UsersTable
                     ->sortable(),
                 TextColumn::make('status')
                     ->badge()
-                    ->color(fn(string $state): string => match ($state) {
-                        'pending'  => 'warning',
+                    ->color(fn (string $state): string => match ($state) {
+                        'pending' => 'warning',
                         'active' => 'success',
                         'rejected' => 'danger',
                     })
@@ -46,13 +45,13 @@ class UsersTable
                 //
             ])
             ->recordActions([
-                Action::make('active')
-                    ->label('active')
+                Action::make('approve')
+                    ->label('Approve')
                     ->icon('heroicon-o-check-circle')
                     ->color('success')
                     ->requiresConfirmation()
-                    ->visible(fn($record) => $record->status === 'pending')
-                    ->action(fn($record) => $record->update([
+                    ->visible(fn ($record) => $record->status === 'pending')
+                    ->action(fn ($record) => $record->update([
                         'status' => 'active',
                         'is_active' => true,
                     ])),
@@ -61,8 +60,8 @@ class UsersTable
                     ->icon('heroicon-o-x-circle')
                     ->color('danger')
                     ->requiresConfirmation()
-                    ->visible(fn($record) => $record->status === 'pending')
-                    ->action(fn($record) => $record->update([
+                    ->visible(fn ($record) => $record->status === 'pending')
+                    ->action(fn ($record) => $record->update([
                         'status' => 'rejected',
                         'is_active' => false,
                     ])),

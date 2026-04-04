@@ -9,7 +9,7 @@ use App\Filament\Resources\Costumers\Pages\ViewCostumer;
 use App\Filament\Resources\Costumers\Schemas\CostumerForm;
 use App\Filament\Resources\Costumers\Schemas\CostumerInfolist;
 use App\Filament\Resources\Costumers\Tables\CostumersTable;
-use App\Models\Costumer;
+use App\Models\Customer;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
@@ -18,7 +18,7 @@ use Filament\Tables\Table;
 
 class CostumerResource extends Resource
 {
-    protected static ?string $model = Costumer::class;
+    protected static ?string $model = Customer::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 

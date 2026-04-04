@@ -3,9 +3,15 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\Activitylog\Support\LogOptions;
+use Spatie\Activitylog\Models\Concerns\LogsActivity;
 
 class Talent extends Model
 {
+    use SoftDeletes;
+    use LogsActivity;
+
     protected $fillable = [
         'name',
         'email',
@@ -82,13 +88,13 @@ class Talent extends Model
     public function getSkillLabelAttribute(): string
     {
         return match ($this->skill) {
-            'frontend'     => 'Frontend Development',
-            'backend'      => 'Backend Development',
-            'fullstack'    => 'Fullstack Development',
-            'uiux'         => 'UI/UX Design',
+            'frontend' => 'Frontend Development',
+            'backend' => 'Backend Development',
+            'fullstack' => 'Fullstack Development',
+            'uiux' => 'UI/UX Design',
             'social_media' => 'Social Media & Content',
-            'it_support'   => 'IT Support',
-            default        => 'Lainnya',
+            'it_support' => 'IT Support',
+            default => 'Lainnya',
         };
     }
 
@@ -98,10 +104,10 @@ class Talent extends Model
     public function getExperienceLabelAttribute(): string
     {
         return match ($this->experience) {
-            'beginner'     => 'Pemula',
-            'junior'       => 'Junior',
+            'beginner' => 'Pemula',
+            'junior' => 'Junior',
             'intermediate' => 'Intermediate',
-            default        => $this->experience,
+            default => $this->experience,
         };
     }
 
@@ -111,11 +117,11 @@ class Talent extends Model
     public function getAvailabilityLabelAttribute(): string
     {
         return match ($this->availability) {
-            'lt10'     => '< 10 jam/minggu',
-            '10-20'    => '10–20 jam/minggu',
-            '20-40'    => '20–40 jam/minggu',
+            'lt10' => '< 10 jam/minggu',
+            '10-20' => '10–20 jam/minggu',
+            '20-40' => '20–40 jam/minggu',
             'fulltime' => 'Full-time',
-            default    => $this->availability,
+            default => $this->availability,
         };
     }
 
@@ -125,7 +131,14 @@ class Talent extends Model
     public function getCvUrlAttribute(): ?string
     {
         return $this->cv_path
-            ? asset('storage/' . $this->cv_path)
+            ? asset('storage/'.$this->cv_path)
             : null;
+    }
+
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()
+            ->logFillable()
+            ->logOnlyDirty();
     }
 }

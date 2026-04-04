@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'login') }}</title>
+    <title>@yield('title', $title ?? config('app.name', 'Laravel'))</title>
+    
+    {{-- SEO Primary --}}
+    <meta name="description" content="@yield('meta_description', 'Faisal Yusra Platform')" />
 
     <!-- Fonts -->
     <link rel="icon" href="{{ asset('img/loggo.webp') }}">

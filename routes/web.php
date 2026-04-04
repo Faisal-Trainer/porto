@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CostumerController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TalentController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -16,11 +17,13 @@ Route::get('/warungsiyas', fn () => view('portofolio.warungsiyas'))->name('warun
 Route::get('/ankparfume', fn () => view('portofolio.ankparfume'))->name('ankparfume');
 
 // Contact
-Route::post('/contact', [CostumerController::class, 'store'])->name('contact.store');
+Route::middleware('throttle:5,1')->group(function () {
+    Route::post('/contact', [CostumerController::class, 'store'])->name('contact.store');
+    Route::post('/talent', [TalentController::class, 'store'])->name('talent.store');
+});
 Route::get('/contact', [CostumerController::class, 'create'])->name('contact.create');
 
 // Talent
-Route::post('/talent', [TalentController::class, 'store'])->name('talent.store');
 Route::get('/talent', [TalentController::class, 'create'])->name('talent.create');
 
 // Auth protected (Email Verified)
@@ -43,6 +46,6 @@ Route::middleware([
 
     // Only approved users can access these routes
     Route::middleware(['approved'])->group(function () {
-        Route::get('/dashboard', fn () => view('dashboard'))->name('dashboard');
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     });
 });
