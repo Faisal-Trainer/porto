@@ -2,19 +2,21 @@
 
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TalentController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 // Public routes
-Route::get('/', fn() => view('pages.home'))->name('home');
-Route::get('/about', fn() => view('pages.about'))->name('about');
-Route::get('/service', fn() => view('pages.service'))->name('service');
-Route::get('/portfolio', fn() => view('pages.portfolio'))->name('portfolio');
+Route::get('/', fn () => view('pages.home'))->name('home');
+Route::get('/about', fn () => view('pages.about'))->name('about');
+Route::get('/service', fn () => view('pages.service'))->name('service');
+Route::get('/portfolio', fn () => view('pages.portfolio'))->name('portfolio');
 
 // portofolio
-Route::get('/warungsiyas', fn() => view('portofolio.warungsiyas'))->name('warungsiyas');
-Route::get('/ankparfume', fn() => view('portofolio.ankparfume'))->name('ankparfume');
+Route::get('/warungsiyas', fn () => view('portofolio.warungsiyas'))->name('warungsiyas');
+Route::get('/ankparfume', fn () => view('portofolio.ankparfume'))->name('ankparfume');
+Route::get('/portfolio/{project:slug}', [ProjectController::class, 'show'])->name('portfolio.show');
 
 // Contact
 Route::middleware('throttle:5,1')->group(function () {
@@ -48,11 +50,13 @@ Route::middleware([
     Route::middleware(['approved'])->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-        // Admin Only Routes
-        Route::middleware(['role:super_admin'])->prefix('admin')->name('admin.')->group(function () {
+        // Admin Only Routes (Separate from Filament)
+        Route::middleware(['role:super_admin'])->prefix('management')->name('admin.')->group(function () {
             Route::get('/customers', [CustomerController::class, 'index'])->name('customers.index');
             Route::get('/talents', [TalentController::class, 'index'])->name('talents.index');
+
+            // Projects Management
+            Route::resource('projects', ProjectController::class)->except(['show']);
         });
     });
 });
-

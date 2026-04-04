@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use BezhanSalleh\FilamentShield\Traits\HasPanelShield;
+use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -12,12 +13,11 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
-use Spatie\Activitylog\Support\LogOptions;
 use Spatie\Activitylog\Models\Concerns\LogsActivity;
+use Spatie\Activitylog\Support\LogOptions;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable implements MustVerifyEmail
-{
+class User extends Authenticatable implements MustVerifyEmail,FilamentUser{
     use HasApiTokens;
     use HasFactory;
     use HasPanelShield;
@@ -88,8 +88,13 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function canAccessPanel(Panel $panel): bool
     {
-        // Pastikan user memiliki role super_admin
-        return $this->hasRole('super_admin');
+        // Debug: Pastikan email anda terbaca dengan benar (Case Insensitive)
+        if (strtolower($this->email ?? '') === 'faisalyusra51@gmail.com') {
+            return true;
+        }
+
+        // Untuk user lain tetap gunakan aturan role & status
+        return $this->hasRole('super_admin') && $this->is_active;
     }
 
     public function getActivitylogOptions(): LogOptions
