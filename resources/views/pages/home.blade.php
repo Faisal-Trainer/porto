@@ -61,9 +61,9 @@
                     <span class="text-(--color-primary-700)">Faisal Yusra</span>
                 </h1>
 
-                <p class="text-lg md:text-xl font-medium text-(--color-primary-800)">
-                    Web App Developer & Digital Consultant
-                </p>
+                <h2 class="text-lg md:text-xl font-semibold text-(--color-primary-800)">
+                    Professional Web Developer & Digital Consultant Bukittinggi
+                </h2>
 
                 <p class="text-base text-(--color-primary-600) leading-relaxed max-w-lg mx-auto lg:mx-0">
                     Membantu UMKM tumbuh lewat teknologi yang relevan, dan memberdayakan talent muda lewat pengalaman

@@ -1,2 +1,7 @@
 User-agent: *
-Disallow:
+Disallow: /management
+Disallow: /admin
+Disallow: /approval
+Disallow: /api/
+
+Sitemap: https://faisalyusra.my.id/sitemap.xml
