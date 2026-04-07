@@ -192,12 +192,20 @@
                             class="w-full bg-white/10 border border-white/20 text-white text-sm rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-(--color-primary-400) transition ">
                             <option value="" disabled selected class="text-gray-800">Pilih skill utama kamu...
                             </option>
+                            <option value="frontend" class="text-gray-800" {{ old('skill') == 'frontend' ? 'selected' : '' }}>
+                                Frontend Development</option>
+                            <option value="backend" class="text-gray-800" {{ old('skill') == 'backend' ? 'selected' : '' }}>
+                                Backend Development</option>
+                            <option value="fullstack" class="text-gray-800" {{ old('skill') == 'fullstack' ? 'selected' : '' }}>
+                                Fullstack Development</option>
                             <option value="uiux" class="text-gray-800" {{ old('skill') == 'uiux' ? 'selected' : '' }}>
                                 UI/UX Design</option>
                             <option value="social_media" class="text-gray-800"
                                 {{ old('skill') == 'social_media' ? 'selected' : '' }}>Social Media & Content</option>
                             <option value="copywriting" class="text-gray-800"
-                                {{ old('skill') == 'copywriting' ? 'selected' : '' }}>Copy Writing</option>
+                                {{ old('skill') == 'copywriting' ? 'selected' : '' }}>Copywriting</option>
+                            <option value="it_support" class="text-gray-800" {{ old('skill') == 'it_support' ? 'selected' : '' }}>
+                                IT Support</option>
                             <option value="other" class="text-gray-800"
                                 {{ old('skill') == 'other' ? 'selected' : '' }}>Lainnya</option>
                         </select>

@@ -20,7 +20,7 @@ class StoreTalentRequest extends FormRequest
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255'],
             'phone' => ['required', 'string', 'max:20'],
-            'skill' => ['required', 'in:frontend,backend,fullstack,uiux,social_media,it_support,other'],
+            'skill' => ['required', 'in:frontend,backend,fullstack,uiux,social_media,copywriting,it_support,other'],
             'experience' => ['required', 'in:beginner,junior,intermediate'],
             'availability' => ['required', 'in:lt10,10-20,20-40,fulltime'],
             'bio' => ['required', 'string', 'min:20', 'max:1000'],

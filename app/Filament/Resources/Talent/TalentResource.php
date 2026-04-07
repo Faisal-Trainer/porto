@@ -30,7 +30,7 @@ class TalentResource extends Resource
 
     protected static ?int $navigationSort = 2;
 
-    public static function getBadge(): ?string
+    public static function getNavigationBadge(): ?string
     {
         $unread = Talent::unread()->count();
 

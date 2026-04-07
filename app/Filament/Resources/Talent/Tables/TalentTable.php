@@ -43,6 +43,7 @@ class TalentTable
                         'fullstack' => 'Fullstack',
                         'uiux' => 'UI/UX',
                         'social_media' => 'Social Media',
+                        'copywriting' => 'Copywriting',
                         'it_support' => 'IT Support',
                         default => 'Lainnya',
                     })
@@ -52,6 +53,7 @@ class TalentTable
                         'fullstack' => 'primary',
                         'uiux' => 'warning',
                         'social_media' => 'danger',
+                        'copywriting' => 'primary',
                         'it_support' => 'gray',
                         default => 'gray',
                     }),

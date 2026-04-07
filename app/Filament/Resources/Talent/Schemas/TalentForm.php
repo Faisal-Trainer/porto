@@ -39,6 +39,7 @@ class TalentForm
                             'fullstack' => 'Fullstack Development',
                             'uiux' => 'UI/UX Design',
                             'social_media' => 'Social Media & Content',
+                            'copywriting' => 'Copywriting',
                             'it_support' => 'IT Support',
                             'other' => 'Lainnya',
                         ])

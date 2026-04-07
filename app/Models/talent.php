@@ -12,6 +12,8 @@ class Talent extends Model
     use SoftDeletes;
     use LogsActivity;
 
+    protected $table = 'talent';
+
     protected $fillable = [
         'name',
         'email',
@@ -93,6 +95,7 @@ class Talent extends Model
             'fullstack' => 'Fullstack Development',
             'uiux' => 'UI/UX Design',
             'social_media' => 'Social Media & Content',
+            'copywriting' => 'Copywriting',
             'it_support' => 'IT Support',
             default => 'Lainnya',
         };

@@ -46,6 +46,7 @@ class TalentInfolist
                                     'fullstack' => 'Fullstack Development',
                                     'uiux' => 'UI/UX Design',
                                     'social_media' => 'Social Media & Content',
+                                    'copywriting' => 'Copywriting',
                                     'it_support' => 'IT Support',
                                     default => 'Lainnya',
                                 })
@@ -55,6 +56,7 @@ class TalentInfolist
                                     'fullstack' => 'primary',
                                     'uiux' => 'warning',
                                     'social_media' => 'danger',
+                                    'copywriting' => 'primary',
                                     'it_support' => 'gray',
                                     default => 'gray',
                                 }),
