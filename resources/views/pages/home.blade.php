@@ -1,20 +1,18 @@
 <x-app-layout>
 
-    @section('title', 'Faisal Yusra | Web Developer & Digital Consultant Bukittinggi')
+    @section('title', 'Jasa Pembuatan Website Bukittinggi | Faisal Yusra Web Developer & Consultant')
     @section('meta_description',
-        'Jasa web development & digital consulting untuk UMKM. Membangun solusi digital yang
-        relevan dan berkelanjutan. Konsultasi gratis!')
-    @section('meta_keywords', 'web developer Bukittinggi,web app,digital consultant UMKM, jasa website, talent')
+        'Web Developer Bukittinggi profesional untuk UMKM & Bisnis. Jasa pembuatan website, IT Support, & Konsultan Digital di Sumatera Barat. Bangun aset digital Anda bersama Faisal Yusra.')
+    @section('meta_keywords', 'jasa pembuatan website bukittinggi, web developer bukittinggi, konsultan digital bukittinggi, jasa website umkm, it support bukittinggi, muhammad faisal alyusra')
     @section('canonical', url()->current())
     <meta name="author" content="Muhammad Faisal Alyusra">
     <meta name="robots" content="index, follow">
 
     {{-- OPEN GRAPH --}}
     <meta property="og:type" content="website">
-    @section('og_title', 'Faisal Yusra | Web Developer & Digital Consultant Bukittinggi')
+    @section('og_title', 'Jasa Pembuatan Website Bukittinggi | Faisal Yusra')
     @section('og_description',
-        'Jasa web development & digital consulting untuk UMKM. Membangun solusi digital yang
-        relevan dan berkelanjutan. Konsultasi gratis')
+        'Solusi digital profesional untuk UMKM & Bisnis di Bukittinggi. Jasa pembuatan website dan konsultasi IT terpercaya.')
     @section('og_image', asset('img/profile.webp'))
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -23,8 +21,8 @@
 
     {{-- Twitter / X Card --}}
     <meta name="twitter:card" content="summary_large_image">
-    @section('twitter_title', 'landing page — faisal yursa')
-    @section('twitter_description', 'Landing Page')
+    @section('twitter_title', 'Jasa Pembuatan Website Bukittinggi | Faisal Yusra')
+    @section('twitter_description', 'Web Developer & Digital Consultant profesional di Bukittinggi, Sumatera Barat.')
     @section('twitter_image', asset('img/profile.webp'))
 
     {{-- ===================== HERO SECTION ===================== --}}

@@ -1,23 +1,19 @@
 <x-app-layout>
 
     {{-- SEO --}}
-    @section('title', 'Tentang Faisal Yusra | Web Developer di Bukittinggi')
+    @section('title', 'Tentang Faisal Yusra | Web Developer & Konsultan Digital Bukittinggi')
     @section('meta_description',
-        'Kenali Faisal Yusra, web developer spesialis Laravel & konsultan digital. Membantu
-        UMKM tumbuh dengan teknologi yang tepat. ')
-    @section('meta_keywords',
-        'tentang Faisal Yusra,web developer Laravel, programmer Bukittinggi,pengalaman web
-        developer Indonesia')
+        'Pelajari profil Faisal Yusra, Web Developer spesialis Laravel dan Konsultan Digital di Bukittinggi. Berpengalaman dalam memberdayakan UMKM dan talent muda melalui solusi teknologi.')
+    @section('meta_keywords', 'tentang Faisal Yusra, web developer bukittinggi, programmer laravel bukittinggi, konsultan it bukittinggi, profil developer sumatera barat')
     @section('canonical', url()->current())
     <meta name="author" content="Muhammad Faisal Alyusra">
     <meta name="robots" content="index, follow">
 
     {{-- OPEN GRAPH --}}
     <meta property="og:type" content="website">
-    @section('og_title', 'Tentang Faisal Yusra | Web Developer di Bukittinggi')
+    @section('og_title', 'Tentang Faisal Yusra | Web Developer & Konsultan Digital Bukittinggi')
     @section('og_description',
-        'Kenali Faisal Yusra, web developer spesialis Laravel & konsultan digital. Membantu UMKM
-        tumbuh dengan teknologi yang tepat.')
+        'Profil profesional Faisal Yusra: Web Developer dan Konsultan Digital berpengalaman di Bukittinggi, Sumatera Barat.')
     @section('og_image', asset('img/profile.webp'))
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -26,8 +22,8 @@
 
     {{-- Twitter / X Card --}}
     <meta name="twitter:card" content="summary_large_image">
-    @section('twitter_title', 'About — faisal yursa')
-    @section('twitter_description', 'About')
+    @section('twitter_title', 'Tentang Faisal Yusra | Web Developer Bukittinggi')
+    @section('twitter_description', 'Profil Web Developer dan Konsultan Digital spesialis UMKM di Bukittinggi.')
     @section('twitter_image', asset('img/profile.webp'))
 
     {{-- ===================== ABOUT HERO ===================== --}}

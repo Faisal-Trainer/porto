@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Post;
 use App\Models\Project;
 use Illuminate\Console\Command;
 use Spatie\Sitemap\Sitemap;
@@ -40,6 +41,12 @@ class GenerateSitemap extends Command
         $sitemap->add(Url::create(route('talent.create'))->setPriority(0.7)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY));
         $sitemap->add(Url::create(route('contact.create'))->setPriority(0.7)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY));
 
+        // Add SEO Local Aliases
+        $sitemap->add(Url::create('/jasa-pembuatan-website-bukittinggi')->setPriority(0.9)->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY));
+        $sitemap->add(Url::create('/web-developer-bukittinggi')->setPriority(0.8)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY));
+        $sitemap->add(Url::create('/portofolio-website-umkm')->setPriority(0.8)->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY));
+        $sitemap->add(Url::create('/konsultan-digital-bukittinggi')->setPriority(0.8)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY));
+
         // Adding explicit portfolio items mentioned in web.php if any
         if (view()->exists('portofolio.warungsiyas')) {
             $sitemap->add(Url::create(route('warungsiyas'))->setPriority(0.8));
@@ -54,6 +61,19 @@ class GenerateSitemap extends Command
                 Url::create(route('portfolio.show', $project))
                     ->setLastModificationDate($project->updated_at)
                     ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
+                    ->setPriority(0.8)
+            );
+        });
+
+        // Add Blog Index
+        $sitemap->add(Url::create(route('blog.index'))->setPriority(0.9)->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY));
+
+        // Add dynamic blog posts
+        Post::where('is_published', true)->get()->each(function (Post $post) use ($sitemap) {
+            $sitemap->add(
+                Url::create(route('blog.show', $post->slug))
+                    ->setLastModificationDate($post->updated_at)
+                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
                     ->setPriority(0.8)
             );
         });

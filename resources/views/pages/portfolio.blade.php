@@ -1,26 +1,29 @@
 <x-app-layout>
 
     {{-- SEO --}}
-    @section('title', 'Portofolio Proyek | Faisal Yusra Web Developer')
+    @section('title', 'Portofolio Proyek Web Developer Bukittinggi | Faisal Yusra')
     @section('meta_description',
-        'Lihat koleksi proyek web development untuk UMKM. Website app, landing page, dan solusi
-        digital yang telah saya bangun.')
-    @section('meta_keywords', 'portofolio web developer,portofolio website Bukittinggi, hasil kerja web developer')
+        'Lihat koleksi proyek website dan aplikasi web yang telah dibangun oleh Faisal Yusra untuk UMKM dan bisnis di Bukittinggi. Solusi digital nyata, modern, dan teruji.')
+    @section('meta_keywords', 'portofolio web developer bukittinggi, contoh website umkm, hasil kerja programmer bukittinggi, digital solutions bukittinggi, portofolio laravel indonesia')
     @section('canonical', url()->current())
     <meta name="author" content="Muhammad Faisal Alyusra">
     <meta name="robots" content="index, follow">
 
     {{-- OPEN GRAPH --}}
     <meta property="og:type" content="website">
-    @section('og_title', 'Portofolio Proyek | Faisal Yusra Web Developer')
+    @section('og_title', 'Portofolio Proyek Web Developer Bukittinggi | Faisal Yusra')
     @section('og_description',
-        'Lihat koleksi proyek web development untuk UMKM. Website app, landing page, dan solusi
-        digital yang telah saya bangun.')
+        'Koleksi proyek website dan aplikasi web profesional untuk UMKM. Lihat bagaimana kami membantu bisnis tumbuh melalui teknologi.')
     @section('og_image', asset('img/profile.webp'))
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:site_name" content="Faisal Yusra">
 
     {{-- Twitter / X Card --}}
-    @section('twitter_title', 'Portofolio — faisal yursa')
-    @section('twitter_description', 'Portofolio')
+    <meta name="twitter:card" content="summary_large_image">
+    @section('twitter_title', 'Portofolio Web Developer Bukittinggi | Faisal Yusra')
+    @section('twitter_description', 'Lihat hasil kerja nyata dan proyek digital kami untuk UMKM di Sumatera Barat.')
     @section('twitter_image', asset('img/profile.webp'))
 
     {{-- PORTOFOLIO SECTION --}}

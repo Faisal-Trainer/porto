@@ -1,23 +1,19 @@
 <x-app-layout>
 
     {{-- SEO --}}
-    @section('title', 'Layanan | Faisal Yusra Web Developer')
+    @section('title', 'Jasa Pembuatan Website Bukittinggi | Layanan & Harga | Faisal Yusra')
     @section('meta_description',
-        'Web app, IT support, UI/UX design, dan konsultasi digital untuk UMKM. Mulai dari
-        Rp500K. Konsultasi gratis, tanpa komitmen.')
-    @section('meta_keywords',
-        'jasa web development UMKM, IT support Bukittinggi,jasa buat website UMKM murah
-        Bukittinggi, konsultasi digital usaha kecil Sumatera Barat, harga jasa web developer Indonesia')
+        'Solusi pembuatan website, IT Support, UI/UX Design dan konsultasi digital untuk UMKM & Bisnis di Bukittinggi. Harga transparan mulai dari Rp500rb. Konsultasi gratis sekarang!')
+    @section('meta_keywords', 'jasa website bukittinggi, buat website bukittinggi, it support bukittinggi, jasa ui ux bukittinggi, harga pembuatan website bukittinggi, konsultan digital umkm')
     @section('canonical', url()->current())
     <meta name="author" content="Muhammad Faisal Alyusra">
     <meta name="robots" content="index, follow">
 
     {{-- OPEN GRAPH --}}
     <meta property="og:type" content="website">
-    @section('og_title', 'Layanan | Faisal Yusra Web Developer')
+    @section('og_title', 'Jasa Pembuatan Website Bukittinggi | Layanan & Harga')
     @section('og_description',
-        'Web app, IT support, UI/UX design, dan konsultasi digital untuk UMKM. Mulai dari Rp500K.
-        Konsultasi gratis, tanpa komitmen.')
+        'Layanan pembuatan website dan solusi digital profesional untuk UMKM di Bukittinggi. Cek paket harga dan layanan kami di sini.')
     @section('og_image', asset('img/profile.webp'))
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -26,8 +22,8 @@
 
     {{-- Twitter / X Card --}}
     <meta name="twitter:card" content="summary_large_image">
-    @section('twitter_title', 'Service — faisal yursa')
-    @section('twitter_description', 'Service')
+    @section('twitter_title', 'Layanan & Harga Pembuatan Website Bukittinggi | Faisal Yusra')
+    @section('twitter_description', 'Solusi digital terjangkau dan profesional untuk bisnis Anda di Bukittinggi.')
     @section('twitter_image', asset('img/profile.webp'))
 
 

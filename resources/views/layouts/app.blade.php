@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="sppRtu0hPAhZtFcVO9A6OJMMn6Eg6skizJaFOGDQT5Y" />
     <title>@yield('title', 'Faisal Yusra | Web Developer & Digital Consultant Bukittinggi')</title>
 
     {{-- SEO Primary --}}
@@ -38,37 +39,117 @@
 
     {{-- JSON-LD Structured Data --}}
     @php
-        echo '<script type="application/ld+json">' .
-            json_encode([
-                "@context" => "https://schema.org",
+        $personSchema = [
+            "@context" => "https://schema.org",
+            "@type" => "Person",
+            "@id" => "https://faisalyusra.my.id/#service",
+            "name" => "Muhammad Faisal Alyusra",
+            "alternateName" => "Faisal Yusra",
+            "url" => "https://faisalyusra.my.id",
+            "image" => asset('img/profile.webp'),
+            "jobTitle" => "IT Support Spesialis | Web Developer & Digital Consultant",
+            "description" => "Web Developer & Digital Consultant dari Bukittinggi yang membantu UMKM dan talent muda tumbuh melalui teknologi digital.",
+            "address" => [
+                "@type" => "PostalAddress",
+                "streetAddress" => "Bukittinggi",
+                "addressLocality" => "Bukittinggi",
+                "addressRegion" => "Sumatera Barat",
+                "addressCountry" => "ID"
+            ],
+            "areaServed" => [
+                "@type" => "Place",
+                "name" => "Indonesia"
+            ],
+            "alumniOf" => [
+                "@type" => "CollegeOrUniversity",
+                "name" => "UIN Sjech M Djamil Djambek Bukittinggi"
+            ],
+            "knowsAbout" => [
+                "Laravel",
+                "Livewire",
+                "Filament",
+                "Tailwind CSS",
+                "Web Application Development",
+                "IT Support",
+                "UI/UX Design",
+                "Digital Consulting",
+                "UMKM Empowerment"
+            ],
+            "sameAs" => [
+                "https://www.linkedin.com/in/faisalyusra41/",
+                "https://share.google/4uVCD3dAp3mktZF7B/",
+                "https://github.com/Faisal-Trainer",
+                "https://scholar.google.co.id/citations?view_op=list_works&hl=id&user=-4Ghx-0AAAAJ"
+            ]
+        ];
+
+        $localBusinessSchema = [
+            "@context" => "https://schema.org",
+            "@type" => "ProfessionalService",
+            "name" => "Faisal Yusra | Web Developer & Digital Consultant Bukittinggi",
+            "image" => asset('img/loggo.webp'),
+            "@id" => "https://faisalyusra.my.id/#service",
+            "url" => "https://faisalyusra.my.id",
+            "address" => [
+                "@type" => "PostalAddress",
+                "streetAddress" => "Bukittinggi",
+                "addressLocality" => "Bukittinggi",
+                "addressRegion" => "Sumatera Barat",
+                "postalCode" => "26115",
+                "addressCountry" => "ID"
+            ],
+            "founder" => [
                 "@type" => "Person",
-                "name" => "Muhammad Faisal Alyusra",
-                "alternateName" => "Faisal Yusra",
-                "url" => "https://faisalyusra.my.id",
-                "image" => asset('img/profile.webp'),
-                "jobTitle" => "IT Support Spesialis | Web Developer & Digital Consultant",
-                "description" => "Web Developer & Digital Consultant dari Bukittinggi yang membantu UMKM dan talent muda tumbuh melalui teknologi digital.",
-                "address" => [
-                    "@type" => "PostalAddress",
-                    "addressLocality" => "Bukittinggi",
-                    "addressRegion" => "Sumatera Barat",
-                    "addressCountry" => "ID"
+                "@id" => "https://faisalyusra.my.id/#person"
+            ],
+            "geo" => [
+                "@type" => "GeoCoordinates",
+                "latitude" => -0.311639,
+                "longitude" => 100.387250
+            ],
+            "areaServed" => [
+                "@type" => "Place",
+                "name" => "Indonesia"
+            ],
+            "openingHoursSpecification" => [
+                "@type" => "OpeningHoursSpecification",
+                "dayOfWeek" => [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday"
                 ],
-                "alumniOf" => [
-                    "@type" => "CollegeOrUniversity",
-                    "name" => "UIN Sjech M Djamil Djambek Bukittinggi"
-                ],
-                "knowsAbout" => [
-                    "Laravel", "Livewire", "Filament", "Tailwind CSS",
-                    "Jetstream", "Spatie", "Web Application Development",
-                    "IT Support", "UI/UX Design", "Digital Consulting",
-                    "UMKM Empowerment", "Talent Development"
-                ],
-                "sameAs" => [
-                    "https://www.linkedin.com/in/faisalyusra41/"
-                ]
-            ], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . '</script>';
+                "opens" => "08:00",
+                "closes" => "17:00"
+            ],
+            "sameAs" => [
+                "https://www.linkedin.com/in/faisalyusra41/",
+                "https://share.google/4uVCD3dAp3mktZF7B/",
+                "https://github.com/Faisal-Trainer",
+                "https://scholar.google.co.id/citations?view_op=list_works&hl=id&user=-4Ghx-0AAAAJ"
+            ]
+        ];
+
+        echo '<script type="application/ld+json">' . json_encode($personSchema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>';
+        echo '<script type="application/ld+json">' . json_encode($localBusinessSchema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>';
     @endphp
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NEX8Z7GJLK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-NEX8Z7GJLK');
+    </script>
+
+    @stack('schemas')
 
     {{-- Fonts --}}
     <link rel="preconnect" href="https://fonts.bunny.net">
