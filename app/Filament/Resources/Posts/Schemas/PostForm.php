@@ -22,11 +22,10 @@ class PostForm
     public static function configure(Schema $schema): Schema
     {
         return $schema
-            ->components([
-                Grid::make(3)
+        ->components([
+            Grid::make(1)
                     ->schema([
                         Section::make('Post Content')
-                            ->columnSpan(2)
                             ->schema([
                                 TextInput::make('title')
                                     ->required()
@@ -44,10 +43,9 @@ class PostForm
                                     ->rows(3)
                                     ->columnSpanFull(),
                             ]),
-
-                        Grid::make(1)
-                            ->columnSpan(1)
-                            ->schema([
+                    ]),
+            Grid::make(1)
+                    ->schema([
                                 Section::make('Status & Category')
                                     ->schema([
                                         Toggle::make('is_published')
@@ -94,7 +92,6 @@ class PostForm
                                         Textarea::make('meta_description'),
                                         TextInput::make('meta_keywords'),
                                     ]),
-                            ]),
                     ]),
             ]);
     }

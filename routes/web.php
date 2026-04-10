@@ -47,7 +47,6 @@ Route::get('/sitemap.xml', function () {
                 ->setPriority(0.8)
         );
     });
-
     return $sitemap->toResponse(request());
 });
 // Public routes

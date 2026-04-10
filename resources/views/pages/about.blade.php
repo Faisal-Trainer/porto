@@ -2,8 +2,10 @@
 
     {{-- SEO --}}
     @section('title', 'Tentang Faisal Yusra | Web Developer & Konsultan Digital Bukittinggi')
-    @section('meta_description',
-        'Pelajari profil Faisal Yusra, Web Developer spesialis Laravel dan Konsultan Digital di Bukittinggi. Berpengalaman dalam memberdayakan UMKM dan talent muda melalui solusi teknologi.')
+    @section(
+        'meta_description',
+        'Pelajari profil Faisal Yusra, Web Developer spesialis Laravel dan Konsultan Digital di Bukittinggi. Berpengalaman dalam memberdayakan UMKM dan talent muda melalui solusi teknologi.'
+    )
     @section('meta_keywords', 'tentang Faisal Yusra, web developer bukittinggi, programmer laravel bukittinggi, konsultan it bukittinggi, profil developer sumatera barat')
     @section('canonical', url()->current())
     <meta name="author" content="Muhammad Faisal Alyusra">
@@ -12,8 +14,10 @@
     {{-- OPEN GRAPH --}}
     <meta property="og:type" content="website">
     @section('og_title', 'Tentang Faisal Yusra | Web Developer & Konsultan Digital Bukittinggi')
-    @section('og_description',
-        'Profil profesional Faisal Yusra: Web Developer dan Konsultan Digital berpengalaman di Bukittinggi, Sumatera Barat.')
+    @section(
+        'og_description',
+        'Profil profesional Faisal Yusra: Web Developer dan Konsultan Digital berpengalaman di Bukittinggi, Sumatera Barat.'
+    )
     @section('og_image', asset('img/profile.webp'))
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -67,8 +71,9 @@
 
                 {{-- CTA --}}
                 <div class="flex flex-wrap gap-3 pt-2 mt-auto">
-                    {{-- Ganti href="#" dengan link CV asli setelah file CV tersedia --}}
-                    <a class="button text-sm px-5 py-2.5 rounded-xl font-semibold" href="#">
+                    <a class="button text-sm px-5 py-2.5 rounded-xl font-semibold"
+                    href="https://www.linkedin.com/posts/faisalyusra41_cv-muhammad-faishal-siap-untuk-peluang-activity-7270322339672666113-suBA?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEuuADIBiIjPHgeHPI-tKNJ9KJeSmq8hDRQ"
+                    target="_blank" rel="noopener noreferrer">
                         Download CV
                     </a>
                     <a class="px-5 py-2.5 text-sm font-semibold rounded-xl border-2 border-(--color-primary-300) text-(--color-primary-700) hover:bg-(--color-primary-100) transition-colors duration-200"
@@ -79,7 +84,7 @@
             </div>
 
             {{-- Skills --}}
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
                 <div class="card p-5 flex flex-col gap-3">
                     <div class="flex items-center gap-2">
