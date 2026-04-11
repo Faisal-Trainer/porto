@@ -821,4 +821,37 @@
         opacity: 0.16;
         transform: translateX(-50%) scale(1.2);
     }
+
+    /* ── Blog Content Styling ── */
+    .prose h4 {
+        margin-top: 1.5em;
+        margin-bottom: 0.5em;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--color-primary-950);
+    }
+
+    .prose btn {
+        display: inline-block;
+        padding: 0.75rem 1.75rem;
+        background-color: var(--color-primary-600);
+        color: white !important;
+        border-radius: 12px;
+        font-weight: 700;
+        text-decoration: none !important;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: none;
+        margin: 1rem 0;
+        text-transform: uppercase;
+        font-size: 0.875rem;
+        letter-spacing: 0.05em;
+        box-shadow: 0 4px 12px rgba(169, 33, 252, 0.2);
+    }
+
+    .prose btn:hover {
+        background-color: var(--color-primary-800);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(169, 33, 252, 0.4);
+    }
 }

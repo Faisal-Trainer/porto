@@ -2,11 +2,12 @@
 
     {{-- SEO --}}
     @section('title', 'Tentang Faisal Yusra | Web Developer & Konsultan Digital Bukittinggi')
-    @section(
-        'meta_description',
-        'Pelajari profil Faisal Yusra, Web Developer spesialis Laravel dan Konsultan Digital di Bukittinggi. Berpengalaman dalam memberdayakan UMKM dan talent muda melalui solusi teknologi.'
-    )
-    @section('meta_keywords', 'tentang Faisal Yusra, web developer bukittinggi, programmer laravel bukittinggi, konsultan it bukittinggi, profil developer sumatera barat')
+    @section('meta_description',
+        'Pelajari profil Faisal Yusra, Web Developer spesialis Laravel dan Konsultan Digital di
+        Bukittinggi. Berpengalaman dalam memberdayakan UMKM dan talent muda melalui solusi teknologi.')
+    @section('meta_keywords',
+        'tentang Faisal Yusra, web developer bukittinggi, programmer laravel bukittinggi,
+        konsultan it bukittinggi, profil developer sumatera barat')
     @section('canonical', url()->current())
     <meta name="author" content="Muhammad Faisal Alyusra">
     <meta name="robots" content="index, follow">
@@ -14,10 +15,9 @@
     {{-- OPEN GRAPH --}}
     <meta property="og:type" content="website">
     @section('og_title', 'Tentang Faisal Yusra | Web Developer & Konsultan Digital Bukittinggi')
-    @section(
-        'og_description',
-        'Profil profesional Faisal Yusra: Web Developer dan Konsultan Digital berpengalaman di Bukittinggi, Sumatera Barat.'
-    )
+    @section('og_description',
+        'Profil profesional Faisal Yusra: Web Developer dan Konsultan Digital berpengalaman di
+        Bukittinggi, Sumatera Barat.')
     @section('og_image', asset('img/profile.webp'))
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -59,7 +59,6 @@
                     </p>
                     <p>
                         Perjalanan saya ditempa oleh berbagai pengalaman yang menuntut ketahanan, strategi, dan disiplin
-                        —
                         membentuk pola pikir visioner, daya juang, serta konsistensi nilai yang kini saya terapkan
                         dalam setiap proyek digital.
                     </p>
@@ -71,15 +70,14 @@
 
                 {{-- CTA --}}
                 <div class="flex flex-wrap gap-3 pt-2 mt-auto">
-                    <a class="button text-sm px-5 py-2.5 rounded-xl font-semibold"
-                    href="https://www.linkedin.com/posts/faisalyusra41_cv-muhammad-faishal-siap-untuk-peluang-activity-7270322339672666113-suBA?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEuuADIBiIjPHgeHPI-tKNJ9KJeSmq8hDRQ"
-                    target="_blank" rel="noopener noreferrer">
+                    <x-button-primary-purple
+                        href="https://www.linkedin.com/posts/faisalyusra41_cv-muhammad-faishal-siap-untuk-peluang-activity-7270322339672666113-suBA?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEuuADIBiIjPHgeHPI-tKNJ9KJeSmq8hDRQ"
+                        target="_blank" rel="noopener noreferrer">
                         Download CV
-                    </a>
-                    <a class="px-5 py-2.5 text-sm font-semibold rounded-xl border-2 border-(--color-primary-300) text-(--color-primary-700) hover:bg-(--color-primary-100) transition-colors duration-200"
-                        href="{{ route('portfolio') }}">
+                    </x-button-primary-purple>
+                    <x-button-secondary-purple href="{{ route('portfolio') }}">
                         See My Work →
-                    </a>
+                    </x-button-secondary-purple>
                 </div>
             </div>
 
@@ -190,10 +188,8 @@
             <p class="text-sm text-(--color-primary-700) mb-6 leading-relaxed">
                 Kalau kamu punya proyek, ide, atau sekadar ingin diskusi — pintu selalu terbuka.
             </p>
-            <a href="{{ route('contact.create') }}"
-                class="inline-block button text-sm font-semibold px-8 py-3 rounded-xl">
-                Hubungi Saya →
-            </a>
+            <x-button-primary-purple href="{{ route('contact.create') }}">
+                Hubungi Saya →</x-button-primary-purple>
         </div>
     </section>
 

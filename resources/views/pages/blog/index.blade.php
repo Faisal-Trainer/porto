@@ -24,7 +24,7 @@
     @section('twitter_description','Temukan artikel menarik seputar pengembangan website, IT support, dan solusi digital untuk UMKM di Bukittinggi. Wawasan teraktual dari Faisal Yusra.')
     @section('twitter_image', asset('img/loggo.webp'))
 
-    <section
+    <section x-data="{ active: 'all' }"
         class="min-h-screen py-16 px-4 md:px-8 bg-linear-to-br from-(--color-primary-50) via-white to-(--color-primary-100)">
         <div class="max-w-6xl mx-auto">
             {{-- Header --}}
@@ -38,19 +38,37 @@
                     Bukittinggi tetap relevan di era digital.
                 </p>
             </div>
+            {{-- Filters --}}
+            @php
+                $categories = $posts->pluck('category.name')->unique()->filter();
+            @endphp
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <x-button-secondary-purple filter="all">
+                    All Blog
+                </x-button-secondary-purple>
+                
+                <x-button-secondary-purple filter="journal">
+                    Scientific Journal
+                </x-button-secondary-purple>
 
+                @foreach ($categories as $categoryName)
+                    <x-button-secondary-purple filter="{{ $categoryName }}">
+                        {{ $categoryName }}
+                    </x-button-secondary-purple>
+                @endforeach
+            </div>
             {{-- Post Grid --}}
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                 @forelse($posts as $post)
-                    <article
+                    <article x-show="active === 'all' || (active === 'journal' && @js($post->is_journal)) || active === '{{ $post->category->name }}'"
                         class="card overflow-hidden group hover:scale-[1.02] transition-transform duration-300 flex flex-col">
                         {{-- Image --}}
                         <div class="relative aspect-video overflow-hidden">
-                            @if($post->image)
-                                <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}"
+                            @if($post->is_journal)
+                                <img src="{{ asset('banners/journal.webp') }}" alt="{{ $post->title }}"
                                     class="w-full h-full object-cover">
                             @else
-                                <img src="{{ asset('img/loggo.webp') }}" alt="{{ $post->title }}"
+                                <img src="{{ asset('banners/article.webp') }}" alt="{{ $post->title }}"
                                     class="w-full h-full object-cover">
                             @endif
 

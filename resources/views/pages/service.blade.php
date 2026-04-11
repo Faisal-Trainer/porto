@@ -2,8 +2,10 @@
 
     {{-- SEO --}}
     @section('title', 'Jasa Pembuatan Website Bukittinggi | Layanan & Harga | Faisal Yusra')
-    @section('meta_description',
-        'Solusi pembuatan website, IT Support, UI/UX Design dan konsultasi digital untuk UMKM & Bisnis di Bukittinggi. Harga transparan mulai dari Rp500rb. Konsultasi gratis sekarang!')
+    @section(
+        'meta_description',
+        'Solusi pembuatan website, IT Support, UI/UX Design dan konsultasi digital untuk UMKM & Bisnis di Bukittinggi. Harga transparan mulai dari Rp500rb. Konsultasi gratis sekarang!'
+    )
     @section('meta_keywords', 'jasa website bukittinggi, buat website bukittinggi, it support bukittinggi, jasa ui ux bukittinggi, harga pembuatan website bukittinggi, konsultan digital umkm')
     @section('canonical', url()->current())
     <meta name="author" content="Muhammad Faisal Alyusra">
@@ -12,8 +14,10 @@
     {{-- OPEN GRAPH --}}
     <meta property="og:type" content="website">
     @section('og_title', 'Jasa Pembuatan Website Bukittinggi | Layanan & Harga')
-    @section('og_description',
-        'Layanan pembuatan website dan solusi digital profesional untuk UMKM di Bukittinggi. Cek paket harga dan layanan kami di sini.')
+    @section(
+        'og_description',
+        'Layanan pembuatan website dan solusi digital profesional untuk UMKM di Bukittinggi. Cek paket harga dan layanan kami di sini.'
+    )
     @section('og_image', asset('img/profile.webp'))
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -205,10 +209,8 @@
                     <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> Tanpa biaya
                         hosting server</li>
                 </ul>
-                <a href="{{ route('contact.create') }}"
-                    class="block text-center border border-white/40 hover:bg-white/20 text-white text-sm font-semibold py-2.5 rounded-xl transition-colors duration-200">
-                    Mulai dari sini →
-                </a>
+                <x-button-secondary-orange href="{{ route('contact.create') }}">
+                    Mulai dari sini →</x-button-secondary-orange>
             </div>
 
             {{-- Web 2.0 --}}
@@ -237,10 +239,8 @@
                     <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> Performance
                         Optimization</li>
                 </ul>
-                <a href="{{ route('contact.create') }}"
-                    class="block text-center border border-white/40 hover:bg-white/20 text-white text-sm font-semibold py-2.5 rounded-xl transition-colors duration-200">
-                    Konsultasi gratis →
-                </a>
+                <x-button-secondary-orange href="{{ route('contact.create') }}">
+                    Konsultasi Gratis →</x-button-secondary-orange>
             </div>
 
             {{-- Web 2.5 --}}
@@ -276,10 +276,8 @@
                     <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> Ongoing
                         Strategic Consultation</li>
                 </ul>
-                <a href="{{ route('contact.create') }}"
-                    class="block text-center bg-white text-(--color-primary-900) hover:bg-(--color-primary-100) text-sm font-semibold py-2.5 rounded-xl transition-colors duration-200">
-                    Apply for Partnership →
-                </a>
+                <x-button-primary-orange href="{{ route('contact.create') }}">
+                    Apply for Partnership →</x-button-primary-orange>
             </div>
 
         </div>

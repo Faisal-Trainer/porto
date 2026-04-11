@@ -1,7 +1,30 @@
 User-agent: *
-Disallow: /management
+Allow: /
+Allow: /build/
+Allow: /css/
+Allow: /js/
+Allow: /img/
+Allow: /icons/
+Allow: /fonts/
+
+# Block Private Routes
 Disallow: /admin
-Disallow: /approval
+Disallow: /login
+Disallow: /register
+Disallow: /password/
 Disallow: /api/
+Disallow: /telescope
+Disallow: /horizon
+Disallow: /_debugbar
+Disallow: /dashboard
+Disallow: /management/
+Disallow: /approval
+
+# Block Duplicate Content/Parameters
+Disallow: /*?*
+
+# Standard Googlebot Directives
+User-agent: Googlebot
+Allow: /
 
 Sitemap: https://faisalyusra.my.id/sitemap.xml

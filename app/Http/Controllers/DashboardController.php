@@ -6,13 +6,15 @@ use App\Models\Customer;
 use App\Models\Project;
 use App\Models\Talent;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\View\View;
 
 class DashboardController
 {
-    public function index()
+    public function index(): View
     {
         /** @var User $user */
-        $user = auth()->user();
+        $user = Auth::user();
 
         $stats = [
             'total_contacts' => Customer::count(),

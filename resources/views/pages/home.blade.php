@@ -2,8 +2,11 @@
 
     @section('title', 'Jasa Pembuatan Website Bukittinggi | Faisal Yusra Web Developer & Consultant')
     @section('meta_description',
-        'Web Developer Bukittinggi profesional untuk UMKM & Bisnis. Jasa pembuatan website, IT Support, & Konsultan Digital di Sumatera Barat. Bangun aset digital Anda bersama Faisal Yusra.')
-    @section('meta_keywords', 'jasa pembuatan website bukittinggi, web developer bukittinggi, konsultan digital bukittinggi, jasa website umkm, it support bukittinggi, muhammad faisal alyusra')
+        'Web Developer Bukittinggi profesional untuk UMKM & Bisnis. Jasa pembuatan website, IT
+        Support, & Konsultan Digital di Sumatera Barat. Bangun aset digital Anda bersama Faisal Yusra.')
+    @section('meta_keywords',
+        'jasa pembuatan website bukittinggi, web developer bukittinggi, konsultan digital
+        bukittinggi, jasa website umkm, it support bukittinggi, muhammad faisal alyusra')
     @section('canonical', url()->current())
     <meta name="author" content="Muhammad Faisal Alyusra">
     <meta name="robots" content="index, follow">
@@ -12,7 +15,8 @@
     <meta property="og:type" content="website">
     @section('og_title', 'Jasa Pembuatan Website Bukittinggi | Faisal Yusra')
     @section('og_description',
-        'Solusi digital profesional untuk UMKM & Bisnis di Bukittinggi. Jasa pembuatan website dan konsultasi IT terpercaya.')
+        'Solusi digital profesional untuk UMKM & Bisnis di Bukittinggi. Jasa pembuatan website
+        dan konsultasi IT terpercaya.')
     @section('og_image', asset('img/profile.webp'))
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -70,13 +74,9 @@
 
                 {{-- CTA Buttons --}}
                 <div class="flex flex-wrap gap-3 justify-center lg:justify-start pt-2">
-                    <a href="{{ route('portfolio') }}" class="button px-6 py-2.5 text-sm font-semibold rounded-xl">
-                        Lihat Portofolio →
-                    </a>
-                    <a href="{{ route('about') }}"
-                        class="px-6 py-2.5 text-sm font-semibold rounded-xl border-2 border-(--color-primary-300) text-(--color-primary-700) hover:bg-(--color-primary-100) transition-colors duration-200">
-                        Tentang Saya
-                    </a>
+                    <x-button-primary-purple href="{{ route('portfolio') }}">Lihat Portofolio
+                        →</x-button-primary-purple>
+                    <x-button-secondary-purple href="{{ route('about') }}">Tentang Saya</x-button-secondary-purple>
                 </div>
 
                 {{-- Social Media --}}
@@ -186,10 +186,9 @@
         </div>
 
         <div class="text-center mt-8">
-            <a href="{{ route('service') }}"
-                class="inline-block border-2 border-(--color-primary-100) text-(--color-primary-100) hover:bg-(--color-primary-500) text-sm font-semibold px-6 py-2.5 rounded-xl transition-colors duration-200">
+            <x-button-primary-orange href="{{ route('service') }}">
                 Lihat Detail & Harga →
-            </a>
+            </x-button-primary-orange>
         </div>
     </section>
 
@@ -462,10 +461,9 @@
                     <li class="flex items-start gap-2"><span class="text-(--color-primary-500) mt-0.5">→</span>
                         Pengalaman membangun portofolio</li>
                 </ul>
-                <a href="{{ route('talent.create') }}"
-                    class="button mt-auto inline-block text-center text-sm px-5 py-2.5 rounded-xl font-semibold">
+                <x-button-secondary-purple href="{{ route('talent.create') }}">
                     Join as Talent →
-                </a>
+                </x-button-secondary-purple>
             </div>
 
             <div class="card p-6 flex flex-col gap-4">
@@ -478,10 +476,9 @@
                     <li class="flex items-start gap-2"><span class="text-(--color-primary-500) mt-0.5">→</span>
                         Kolaborasi dengan talent terlatih</li>
                 </ul>
-                <a href="{{ route('contact.create') }}"
-                    class="button mt-auto inline-block text-center text-sm px-5 py-2.5 rounded-xl font-semibold">
+                <x-button-secondary-purple href="{{ route('contact.create') }}">
                     Join as UMKM →
-                </a>
+                </x-button-secondary-purple>
             </div>
 
         </div>
