@@ -190,6 +190,44 @@
 
                 </div>
             </div>
+
+            {{-- Sticky Sub-navigation for Eras --}}
+            <div x-data="{ 
+                     activeEra: 'web10',
+                     init() {
+                         window.addEventListener('scroll', () => {
+                             const eras = ['web10', 'web20', 'web25', 'web30'];
+                             for (const era of eras) {
+                                 const el = document.getElementById(era);
+                                 if (el) {
+                                     const rect = el.getBoundingClientRect();
+                                     if (rect.top <= 100 && rect.bottom >= 100) {
+                                         this.activeEra = era;
+                                     }
+                                 }
+                             }
+                         });
+                     }
+                 }" 
+                 class="sticky top-12 md:top-20 z-40 py-4 bg-(--color-bg-light)/80 backdrop-blur-md border-b border-(--color-primary-200) -mx-2.5 md:-mx-5 px-2.5 md:px-5">
+                <div class="flex justify-center gap-2 md:gap-4 overflow-x-auto no-scrollbar">
+                    <template x-for="(era, index) in [
+                        { id: 'web10', label: '1.0', icon: '🌐' },
+                        { id: 'web20', label: '2.0', icon: '⚡' },
+                        { id: 'web25', label: '2.5', icon: '🚀' },
+                        { id: 'web30', label: '3.0', icon: '🔭' }
+                    ]" :key="index">
+                        <a :href="'#' + era.id" 
+                           class="flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-bold transition-all duration-300 whitespace-nowrap"
+                           :class="activeEra === era.id 
+                                ? 'bg-(--color-primary-600) text-white shadow-md transform scale-105' 
+                                : 'bg-(--color-primary-100) text-(--color-primary-700) hover:bg-(--color-primary-200)'">
+                            <span x-text="era.icon"></span>
+                            <span x-text="era.label"></span>
+                        </a>
+                    </template>
+                </div>
+            </div>
         </section>
     </header>
 
@@ -703,25 +741,66 @@
     </section>
 
     {{-- ═══════════════════════════════════════════
+         PROJECT NAVIGATION FOOTER
+    ═══════════════════════════════════════════ --}}
+    <section class="py-12 px-4 md:px-8 bg-white border-t border-(--color-primary-100)">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-xl font-bold text-(--color-primary-950) mb-8 text-center uppercase tracking-wider">
+                Explore More Projects
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {{-- Previous Project --}}
+                @if($prevProject)
+                <a href="{{ route('projects.show', $prevProject->slug) }}" class="group block p-6 rounded-2xl bg-(--color-primary-50) border border-(--color-primary-100) hover:border-(--color-primary-300) transition-all duration-300">
+                    <div class="flex items-center gap-4">
+                        <div class="w-20 h-20 rounded-xl overflow-hidden shrink-0 border border-(--color-primary-200)">
+                            <img src="{{ asset('storage/' . $prevProject->thumbnail) }}" alt="{{ $prevProject->judul }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-(--color-primary-400) uppercase tracking-widest">Previous Project</span>
+                            <h4 class="text-lg font-bold text-(--color-primary-900) group-hover:text-(--color-primary-600)">{{ $prevProject->judul }}</h4>
+                        </div>
+                    </div>
+                </a>
+                @endif
+
+                {{-- Next Project --}}
+                @if($nextProject)
+                <a href="{{ route('projects.show', $nextProject->slug) }}" class="group block p-6 rounded-2xl bg-(--color-primary-50) border border-(--color-primary-100) hover:border-(--color-primary-300) transition-all duration-300 md:text-right">
+                    <div class="flex items-center md:flex-row-reverse gap-4">
+                        <div class="w-20 h-20 rounded-xl overflow-hidden shrink-0 border border-(--color-primary-200)">
+                            <img src="{{ asset('storage/' . $nextProject->thumbnail) }}" alt="{{ $nextProject->judul }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-(--color-primary-400) uppercase tracking-widest">Next Project</span>
+                            <h4 class="text-lg font-bold text-(--color-primary-900) group-hover:text-(--color-primary-600)">{{ $nextProject->judul }}</h4>
+                        </div>
+                    </div>
+                </a>
+                @endif
+            </div>
+        </div>
+    </section>
+
+    {{-- ═══════════════════════════════════════════
          CTA SECTION
     ═══════════════════════════════════════════ --}}
     <section class="py-16 px-4 md:px-8 bg-(--color-primary-950) text-center">
-        <p class="text-(--color-primary-400) text-sm mb-2 uppercase tracking-widest font-semibold">Tertarik?</p>
-        <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
-            Bangun solusi digital untuk bisnis kamu
+        <p class="text-(--color-primary-400) text-sm mb-2 uppercase tracking-widest font-semibold">Tertarik Berkolaborasi?</p>
+        <h2 class="text-2xl md:text-4xl font-bold text-white mb-4">
+            Siap membawa bisnis kamu ke level berikutnya?
         </h2>
-        <p class="text-(--color-primary-300) text-base mb-8 max-w-lg mx-auto">
-            Mulai dari landing page sederhana hingga web app kompleks — semuanya bisa disesuaikan dengan kebutuhan dan
-            budget kamu.
+        <p class="text-(--color-primary-300) text-base md:text-lg mb-8 max-w-2xl mx-auto italic">
+            "Teknologi bukan sekadar alat, tapi jembatan antara ide dan realitas."
         </p>
-        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="{{ route('contact.create') }}"
-                class="inline-block bg-(--color-accent-500) hover:bg-(--color-accent-600) text-(--color-primary-900) font-bold px-8 py-3 rounded-xl transition-colors duration-200">
-                Konsultasi Gratis →
+                class="inline-block bg-(--color-accent-500) hover:bg-(--color-accent-600) text-(--color-primary-900) font-bold px-10 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-amber-500/20 transform hover:-translate-y-1">
+                Jadwalkan Konsultasi Gratis →
             </a>
             <a href="{{ route('portfolio') }}"
-                class="inline-block border border-white/20 hover:bg-white/10 text-white font-semibold px-8 py-3 rounded-xl transition-colors duration-200">
-                ← Lihat Project Lain
+                class="inline-block border border-white/20 hover:bg-white/10 text-white font-semibold px-10 py-4 rounded-xl transition-all duration-300">
+                ← Portofolio Lainnya
             </a>
         </div>
     </section>

@@ -22,7 +22,7 @@
         "laravel/tinker": "^2.10.1",
         "livewire/livewire": "^3.7",
         "owenvoke/blade-fontawesome": "^2.9",
-        "spatie/laravel-activitylog": "*",
+        "spatie/laravel-activitylog": "^4.9",
         "spatie/laravel-permission": "^6.24",
         "spatie/laravel-sitemap": "^8.0"
     },

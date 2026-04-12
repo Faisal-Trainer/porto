@@ -8,6 +8,7 @@ use App\Mail\NewTalentMail;
 use App\Models\Talent;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class TalentController
 {
@@ -28,7 +29,7 @@ class TalentController
 
         $cvPath = null;
         if ($request->hasFile('cv')) {
-            $cvPath = $request->file('cv')->store('talents/cv', 'public');
+            $cvPath = $request->file('cv')->store('talents/cv', 'local');
         }
 
         $talent = Talent::create([
@@ -71,12 +72,24 @@ class TalentController
     }
 
     /**
+     * Download CV (admin only)
+     */
+    public function downloadCv(Talent $talent): BinaryFileResponse
+    {
+        if (! $talent->cv_path || ! Storage::disk('local')->exists($talent->cv_path)) {
+            abort(404, 'File tidak ditemukan.');
+        }
+
+        return response()->download(Storage::disk('local')->path($talent->cv_path), "CV_{$talent->name}");
+    }
+
+    /**
      * Hapus data talent (admin only)
      */
     public function destroy(Talent $talent)
     {
         if ($talent->cv_path) {
-            Storage::disk('public')->delete($talent->cv_path);
+            Storage::disk('local')->delete($talent->cv_path);
         }
 
         $talent->delete();

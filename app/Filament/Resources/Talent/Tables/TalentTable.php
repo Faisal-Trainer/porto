@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Talent\Tables;
 
+use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\ForceDeleteBulkAction;
@@ -121,6 +122,13 @@ class TalentTable
             ])
             ->recordActions([
                 ViewAction::make(),
+                Action::make('download_cv')
+                    ->label('Download CV')
+                    ->icon('heroicon-o-arrow-down-tray')
+                    ->color('info')
+                    ->url(fn ($record) => $record->cv_url)
+                    ->openUrlInNewTab()
+                    ->visible(fn ($record) => ! empty($record->cv_path)),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

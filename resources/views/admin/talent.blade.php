@@ -76,20 +76,25 @@
                                 </div>
                             </div>
 
-                            @if ($talent->cv_path)
-                                <div class="mt-4">
-                                    <a href="{{ Storage::url($talent->cv_path) }}" target="_blank"
-                                        class="w-full flex items-center justify-center px-4 py-2 bg-gray-50 dark:bg-gray-700/50 hover:bg-indigo-50 dark:hover:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 border border-gray-200 dark:border-gray-600 rounded-lg text-sm font-semibold transition-colors">
+                                <div class="mt-4 flex gap-2">
+                                    <a href="{{ route('admin.talents.download-cv', $talent) }}" target="_blank"
+                                        class="flex-1 flex items-center justify-center px-4 py-2 bg-gray-50 dark:bg-gray-700/50 hover:bg-indigo-50 dark:hover:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 border border-gray-200 dark:border-gray-600 rounded-lg text-sm font-semibold transition-colors">
                                         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor"
                                             viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
                                             </path>
                                         </svg>
-                                        Lihat CV (Resume)
+                                        Download CV
                                     </a>
+                                    <form action="{{ route('admin.talents.destroy', $talent) }}" method="POST" onsubmit="return confirm('Hapus data talent ini?')">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="p-2 text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 border border-transparent hover:border-red-100 dark:hover:border-red-800 rounded-lg transition-all" title="Hapus">
+                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-4v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                        </button>
+                                    </form>
                                 </div>
-                            @endif
 
                             <div
                                 class="mt-4 text-xs text-center text-gray-400 font-medium border-t border-gray-100 dark:border-gray-700 pt-3">

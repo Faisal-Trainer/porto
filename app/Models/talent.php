@@ -4,8 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Spatie\Activitylog\Support\LogOptions;
-use Spatie\Activitylog\Models\Concerns\LogsActivity;
+use Spatie\Activitylog\LogOptions;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 class Talent extends Model
 {
@@ -22,6 +22,13 @@ class Talent extends Model
         'experience',
         'availability',
         'bio',
+        'cv_path',
+        'read_at',
+    ];
+
+    protected $hidden = [
+        'email',
+        'phone',
         'cv_path',
         'read_at',
     ];
@@ -129,12 +136,12 @@ class Talent extends Model
     }
 
     /**
-     * URL file CV kalau ada
+     * URL file CV kalau ada (menggunakan route aman)
      */
     public function getCvUrlAttribute(): ?string
     {
         return $this->cv_path
-            ? asset('storage/'.$this->cv_path)
+            ? route('admin.talents.download-cv', $this)
             : null;
     }
 

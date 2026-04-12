@@ -4,14 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Spatie\Activitylog\Support\LogOptions;
-use Spatie\Activitylog\Models\Concerns\LogsActivity;
+use Spatie\Activitylog\LogOptions;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 class Customer extends Model
 {
     use LogsActivity;
     use SoftDeletes;
-
 
     protected $fillable = [
         'username',
@@ -19,6 +18,11 @@ class Customer extends Model
         'phone',
         'category',
         'message',
+    ];
+
+    protected $hidden = [
+        'email',
+        'phone',
     ];
 
     public function getActivitylogOptions(): LogOptions

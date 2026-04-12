@@ -40,8 +40,17 @@
                                 "{!! nl2br(e($customer->message)) !!}"
                             </div>
                             
-                            <div class="mt-4 text-xs text-right text-gray-400 font-medium">
-                                {{ $customer->created_at->diffForHumans() }}
+                            <div class="mt-4 flex items-center justify-between text-xs font-medium">
+                                <span class="text-gray-400">
+                                    {{ $customer->created_at->diffForHumans() }}
+                                </span>
+                                <form action="{{ route('admin.customers.destroy', $customer) }}" method="POST" onsubmit="return confirm('Hapus data kontak ini?')">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="text-red-500 hover:text-red-700 transition-colors">
+                                        Hapus
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>

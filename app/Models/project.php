@@ -6,9 +6,12 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use Spatie\Activitylog\Support\LogOptions;
-use Spatie\Activitylog\Models\Concerns\LogsActivity;
+use Spatie\Activitylog\LogOptions;
+use Spatie\Activitylog\Traits\LogsActivity;
 
+/**
+ * @property \Carbon\Carbon|null $tanggal_rilis
+ */
 class Project extends Model
 {
     use HasFactory;
@@ -24,9 +27,12 @@ class Project extends Model
         'tanggal_rilis',
     ];
 
-    protected $casts = [
-        'tanggal_rilis' => 'date',
-    ];
+    protected function casts(): array
+    {
+        return [
+            'tanggal_rilis' => 'date',
+        ];
+    }
 
     public function technologies()
     {

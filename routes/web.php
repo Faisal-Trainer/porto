@@ -47,6 +47,7 @@ Route::get('/sitemap.xml', function () {
                 ->setPriority(0.8)
         );
     });
+
     return $sitemap->toResponse(request());
 });
 // Public routes
@@ -105,7 +106,12 @@ Route::middleware([
         // Admin Only Routes (Separate from Filament)
         Route::middleware(['role:super_admin'])->prefix('management')->name('admin.')->group(function () {
             Route::get('/customers', [CustomerController::class, 'index'])->name('customers.index');
+            Route::delete('/customers/{customer}', [CustomerController::class, 'destroy'])->name('customers.destroy');
+
             Route::get('/talents', [TalentController::class, 'index'])->name('talents.index');
+            Route::get('/talents/{talent}', [TalentController::class, 'show'])->name('talents.show');
+            Route::get('/talents/{talent}/download', [TalentController::class, 'downloadCv'])->name('talents.download-cv');
+            Route::delete('/talents/{talent}', [TalentController::class, 'destroy'])->name('talents.destroy');
 
             // Projects Management
             Route::resource('projects', ProjectController::class)->except(['show']);

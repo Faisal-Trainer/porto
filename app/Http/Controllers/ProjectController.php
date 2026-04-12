@@ -64,7 +64,11 @@ class ProjectController
     {
         $project->load('technologies');
 
-        return view('portofolio.detail', compact('project'));
+        // Fetch next and previous projects for navigation
+        $nextProject = Project::where('id', '>', $project->id)->oldest('id')->first();
+        $prevProject = Project::where('id', '<', $project->id)->latest('id')->first();
+
+        return view('portofolio.detail', compact('project', 'nextProject', 'prevProject'));
     }
 
     /**
