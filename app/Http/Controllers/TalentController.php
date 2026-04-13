@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Actions\NotifyAdmins;
 use App\Http\Requests\StoreTalentRequest;
-use App\Mail\NewTalentMail;
+use App\Mail\OtpMail;
 use App\Models\Talent;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
@@ -29,10 +29,10 @@ class TalentController
 
         $cvPath = null;
         if ($request->hasFile('cv')) {
-            $cvPath = $request->file('cv')->store('talents/cv', 'local');
+            $cvPath = $request->file('cv')->store('talents/temp', 'local');
         }
 
-        $talent = Talent::create([
+        $data = [
             'name' => $validated['name'],
             'email' => $validated['email'],
             'phone' => $validated['phone'],
@@ -41,13 +41,16 @@ class TalentController
             'availability' => $validated['availability'],
             'bio' => $validated['bio'],
             'cv_path' => $cvPath,
-        ]);
+        ];
 
-        Mail::to(config('mail.admin_email'))->queue(new NewTalentMail($talent));
-        NotifyAdmins::newTalent($talent);
+        $otp = (string) random_int(100000, 999999);
 
-        return redirect()->route('talent.create')
-            ->with('success', 'Pendaftaran berhasil! Saya akan menghubungi kamu segera lewat WhatsApp atau email.');
+        session(['pending_talent_data' => $data]);
+        Cache::put("otp_{$data['email']}", $otp, now()->addMinutes(10));
+
+        Mail::to($data['email'])->send(new OtpMail($otp));
+
+        return redirect()->route('otp.show', ['type' => 'talent']);
     }
 
     /**

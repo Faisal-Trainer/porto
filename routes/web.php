@@ -3,6 +3,7 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\OtpController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TalentController;
 use App\Models\Post;
@@ -11,6 +12,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
+use App\Http\Controllers\McpController;
 
 Route::get('/sitemap.xml', function () {
     $sitemap = Sitemap::create()
@@ -71,6 +73,10 @@ Route::get('/portfolio/{project:slug}', [ProjectController::class, 'show'])->nam
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 
+// OTP Verification
+Route::get('/verify-otp', [OtpController::class, 'show'])->name('otp.show');
+Route::post('/verify-otp', [OtpController::class, 'verify'])->name('otp.verify');
+
 // Contact
 Route::middleware('throttle:5,1')->group(function () {
     Route::post('/contact', [CustomerController::class, 'store'])->name('contact.store');
@@ -80,6 +86,9 @@ Route::middleware('throttle:5,1')->group(function () {
 // Talent
 Route::get('/talent', [TalentController::class, 'create'])->name('talent.create');
 Route::get('/contact', [CustomerController::class, 'create'])->name('contact.create');
+
+// routes/api.php
+Route::post('/mcp', [McpController::class, 'handle']);
 
 // Auth protected (Email Verified)
 Route::middleware([

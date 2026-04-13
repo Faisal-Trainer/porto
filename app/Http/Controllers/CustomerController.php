@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Actions\NotifyAdmins;
 use App\Http\Requests\StoreContactRequest;
-use App\Mail\NewContactMail;
+use App\Mail\OtpMail;
 use App\Models\Customer;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Mail;
 
 class CustomerController
@@ -24,12 +24,15 @@ class CustomerController
 
     public function store(StoreContactRequest $request)
     {
-        $customer = Customer::create($request->validated());
+        $data = $request->validated();
+        $otp = (string) random_int(100000, 999999);
 
-        Mail::to(config('mail.admin_email'))->queue(new NewContactMail($customer));
-        NotifyAdmins::newContact($customer);
+        session(['pending_contact_data' => $data]);
+        Cache::put("otp_{$data['email']}", $otp, now()->addMinutes(10));
 
-        return redirect()->route('contact.create')->with('success', 'Terima kasih, pesan kamu sudah kami terima! Kami akan segera menghubungi kamu.');
+        Mail::to($data['email'])->send(new OtpMail($otp));
+
+        return redirect()->route('otp.show', ['type' => 'contact']);
     }
 
     public function destroy(Customer $customer)
@@ -39,4 +42,3 @@ class CustomerController
         return redirect()->back()->with('success', 'Data berhasil dihapus.');
     }
 }
-
