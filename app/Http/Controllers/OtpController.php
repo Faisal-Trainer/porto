@@ -49,7 +49,7 @@ class OtpController
         $email = $data['email'];
         $cachedOtp = Cache::get("otp_{$email}");
 
-        if ($request->otp !== $cachedOtp) {
+        if ((string) $request->otp !== (string) $cachedOtp) {
             return back()->withErrors(['otp' => 'Kode OTP yang kamu masukkan tidak valid atau sudah kadaluarsa.']);
         }
 
@@ -70,8 +70,17 @@ class OtpController
 
             if ($tempCvPath && Storage::disk('local')->exists($tempCvPath)) {
                 $finalName = str_replace('talents/temp/', 'talents/cv/', $tempCvPath);
-                Storage::disk('local')->move($tempCvPath, $finalName);
-                $finalCvPath = $finalName;
+
+                // Ensure directory exists
+                if (! Storage::disk('local')->exists('talents/cv')) {
+                    Storage::disk('local')->makeDirectory('talents/cv');
+                }
+
+                if (Storage::disk('local')->move($tempCvPath, $finalName)) {
+                    $finalCvPath = $finalName;
+                } else {
+                    $finalCvPath = $tempCvPath; // Fallback to temp if move fails
+                }
             }
 
             $talentData = $data;

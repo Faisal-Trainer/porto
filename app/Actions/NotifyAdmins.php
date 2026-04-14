@@ -14,18 +14,23 @@ class NotifyAdmins
      */
     public static function newContact(Customer $customer): void
     {
-        $admins = User::role('super_admin')->get();
+        try {
+            $admins = User::role('super_admin')->get();
 
-        if ($admins->isEmpty()) {
+            if ($admins->isEmpty()) {
+                return;
+            }
+
+            Notification::make()
+                ->title('📬 Pesan Baru Masuk')
+                ->body("Dari: {$customer->username} · Kategori: ".self::categoryLabel($customer->category))
+                ->icon('heroicon-o-envelope')
+                ->success()
+                ->sendToDatabase($admins);
+        } catch (\Exception $e) {
+            // Role might not exist or other notification issue
             return;
         }
-
-        Notification::make()
-            ->title('📬 Pesan Baru Masuk')
-            ->body("Dari: {$customer->username} · Kategori: ".self::categoryLabel($customer->category))
-            ->icon('heroicon-o-envelope')
-            ->success()
-            ->sendToDatabase($admins);
     }
 
     /**
@@ -33,18 +38,23 @@ class NotifyAdmins
      */
     public static function newTalent(Talent $talent): void
     {
-        $admins = User::role('super_admin')->get();
+        try {
+            $admins = User::role('super_admin')->get();
 
-        if ($admins->isEmpty()) {
+            if ($admins->isEmpty()) {
+                return;
+            }
+
+            Notification::make()
+                ->title('🎯 Talent Baru Mendaftar')
+                ->body("Nama: {$talent->name} · Skill: {$talent->skill_label} · Level: {$talent->experience_label}")
+                ->icon('heroicon-o-user-plus')
+                ->info()
+                ->sendToDatabase($admins);
+        } catch (\Exception $e) {
+            // Role might not exist or other notification issue
             return;
         }
-
-        Notification::make()
-            ->title('🎯 Talent Baru Mendaftar')
-            ->body("Nama: {$talent->name} · Skill: {$talent->skill_label} · Level: {$talent->experience_label}")
-            ->icon('heroicon-o-user-plus')
-            ->info()
-            ->sendToDatabase($admins);
     }
 
     private static function categoryLabel(string $category): string

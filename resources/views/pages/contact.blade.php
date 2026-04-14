@@ -234,26 +234,26 @@
                                 <option value="" disabled selected class="text-gray-800">Pilih layanan...
                                 </option>
                                 <option value="web_application" class="text-gray-800"
-                                    {{ old('kategori') == 'web_application' ? 'selected' : '' }}>Web Application
+                                    {{ old('category') == 'web_application' ? 'selected' : '' }}>Web Application
                                 </option>
                                 <option value="it_support" class="text-gray-800"
-                                    {{ old('kategori') == 'it_support' ? 'selected' : '' }}>IT Support & Maintenance
+                                    {{ old('category') == 'it_support' ? 'selected' : '' }}>IT Support & Maintenance
                                 </option>
                                 <option value="ui_ux" class="text-gray-800"
-                                    {{ old('kategori') == 'ui_ux' ? 'selected' : '' }}>UI/UX Design</option>
+                                    {{ old('category') == 'ui_ux' ? 'selected' : '' }}>UI/UX Design</option>
                                 <option value="digital_consulting" class="text-gray-800"
-                                    {{ old('kategori') == 'digital_consulting' ? 'selected' : '' }}>Digital Consulting
+                                    {{ old('category') == 'digital_consulting' ? 'selected' : '' }}>Digital Consulting
                                 </option>
                                 <option value="goes_to_school" class="text-gray-800"
-                                    {{ old('kategori') == 'goes_to_school' ? 'selected' : '' }}>Goes To School Program
+                                    {{ old('category') == 'goes_to_school' ? 'selected' : '' }}>Goes To School Program
                                 </option>
                                 <option value="social_media" class="text-gray-800"
-                                    {{ old('kategori') == 'social_media' ? 'selected' : '' }}>Social Media Handling
+                                    {{ old('category') == 'social_media' ? 'selected' : '' }}>Social Media Handling
                                 </option>
                                 <option value="other" class="text-gray-800"
-                                    {{ old('kategori') == 'other' ? 'selected' : '' }}>Lainnya</option>
+                                    {{ old('category') == 'other' ? 'selected' : '' }}>Lainnya</option>
                             </select>
-                            @error('kategori')
+                            @error('category')
                                 <span class="text-red-400 text-xs">{{ $message }}</span>
                             @enderror
                         </div>

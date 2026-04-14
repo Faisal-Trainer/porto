@@ -88,7 +88,7 @@ Route::get('/talent', [TalentController::class, 'create'])->name('talent.create'
 Route::get('/contact', [CustomerController::class, 'create'])->name('contact.create');
 
 // routes/api.php
-Route::post('/mcp', [McpController::class, 'handle']);
+Route::match(['get', 'post'], '/mcp', [McpController::class, 'handle']);
 
 // Auth protected (Email Verified)
 Route::middleware([
