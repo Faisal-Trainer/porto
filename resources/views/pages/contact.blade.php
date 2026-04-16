@@ -270,10 +270,9 @@
                             @enderror
                         </div>
 
-                        <button type="submit"
-                            class="w-full bg-white text-(--color-primary-900) hover:bg-(--color-primary-100) font-bold text-sm py-3 rounded-xl transition-colors duration-200 shadow-lg">
+                        <x-button-primary-orange type="submit" class="w-full">
                             Kirim Pesan →
-                        </button>
+                        </x-button-primary-orange>
 
                         <p class="text-center text-(--color-primary-400) text-xs">
                             Dengan mengirim pesan, kamu menyetujui <a href="{{ route('policy.show') }}"

@@ -4,9 +4,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Project;
+use App\Models\Category;
+use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class McpController
 {
@@ -57,12 +60,37 @@ class McpController
             'result' => [
                 'tools' => [
                     [
-                        'name' => 'get_portfolio_info',
-                        'description' => 'Get information about Faisal portfolio, skills, and projects',
+                        'name' => 'create_blog_post',
+                        'description' => 'Create a new blog post. Restricted to "CREATE" only.',
                         'inputSchema' => [
                             'type' => 'object',
-                            'properties' => new \stdClass,
-                            'required' => [],
+                            'properties' => [
+                                'title' => [
+                                    'type' => 'string',
+                                    'description' => 'The title of the blog post',
+                                ],
+                                'content' => [
+                                    'type' => 'string',
+                                    'description' => 'The main content of the blog post',
+                                ],
+                                'excerpt' => [
+                                    'type' => 'string',
+                                    'description' => 'A short summary of the blog post',
+                                ],
+                                'category_id' => [
+                                    'type' => 'integer',
+                                    'description' => 'The ID of the category',
+                                ],
+                                'user_id' => [
+                                    'type' => 'integer',
+                                    'description' => 'The ID of the author/user',
+                                ],
+                                'published_at' => [
+                                    'type' => 'string',
+                                    'description' => 'The scheduled publication date (YYYY-MM-DD HH:MM:SS)',
+                                ],
+                            ],
+                            'required' => ['title', 'content'],
                         ],
                     ],
                 ],
@@ -76,8 +104,8 @@ class McpController
         $args = $params['arguments'] ?? [];
 
         $result = match ($toolName) {
-            'get_portfolio_info' => $this->getPortfolioInfo($args),
-            default => ['error' => "Tool '$toolName' not found"],
+            'create_blog_post' => $this->createBlogPost($args),
+            default => ['error' => "Tool '$toolName' not found or restricted"],
         };
 
         return response()->json([
@@ -94,36 +122,43 @@ class McpController
         ]);
     }
 
-private function getPortfolioInfo(array $args): array
-{
-    try {
-        $projects = Project::with('technologies')
-            ->latest('tanggal_rilis')
-            ->get(['judul', 'slug', 'category', 'deskripsi', 'tanggal_rilis'])
-            ->map(fn ($project) => [
-                'title'        => $project->judul,
-                'category'     => $project->category,
-                'description'  => $project->deskripsi,
-                'release_date' => $project->tanggal_rilis?->toDateString(),
-                'technologies' => $project->technologies->pluck('name')->toArray(),
-            ]); 
+    private function createBlogPost(array $args): array
+    {
+        try {
+            $title = $args['title'] ?? null;
+            $content = $args['content'] ?? null;
+            $userId = $args['user_id'] ?? User::first()?->id;
+            $categoryId = $args['category_id'] ?? Category::first()?->id;
 
-        return [
-            'name'     => 'Faisal Yusra',
-            'role'     => 'Web Developer',
-            'skills'   => ['Laravel', 'PHP', 'Tailwind CSS', 'Alpine.js', 'Livewire', 'MySQL'],
-            'projects' => $projects->toArray(),
-        ];
-    } catch (\Exception $e) {
-        return [
-            'error'   => $e->getMessage(),
-            'name'    => 'Faisal Yusra',
-            'role'    => 'Web Developer',
-            'skills'  => ['Laravel', 'PHP', 'Tailwind CSS', 'Alpine.js', 'Livewire', 'MySQL'],
-            'projects' => [],
-        ];
+            if (! $userId) {
+                return ['error' => 'No author (user) found in database. Please create a user first.'];
+            }
+
+            $post = Post::create([
+                'user_id' => $userId,
+                'category_id' => $categoryId,
+                'title' => $title,
+                'slug' => Str::slug($title),
+                'content' => $content,
+                'excerpt' => $args['excerpt'] ?? Str::limit(strip_tags($content), 160),
+                'is_published' => false,
+                'published_at' => $args['published_at'] ?? null,
+            ]);
+
+            return [
+                'status' => 'success',
+                'message' => 'Blog post created successfully as draft.',
+                'post_id' => $post->id,
+                'slug' => $post->slug,
+                'url' => url("/blog/{$post->slug}"),
+            ];
+        } catch (\Exception $e) {
+            return [
+                'status' => 'error',
+                'message' => 'Failed to create blog post: '.$e->getMessage(),
+            ];
+        }
     }
-}
 
     private function methodNotFound(mixed $id, string $method): JsonResponse
     {

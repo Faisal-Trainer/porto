@@ -1,8 +1,11 @@
-
 <x-app-layout>
     @section('title', 'Blog & Wawasan Digital | Faisal Yusra Web Developer Bukittinggi')
-    @section('meta_description', 'Temukan artikel menarik seputar pengembangan website, IT support, dan solusi digital untuk UMKM di Bukittinggi. Wawasan teraktual dari Faisal Yusra.')
-    @section('meta_keywords', 'blog IT bukittinggi, wawasan digital umkm, artikel web developer, faisal yusra blog, jurnal digital bukittinggi')
+    @section('meta_description',
+        'Temukan artikel menarik seputar pengembangan website, IT support, dan solusi digital
+        untuk UMKM di Bukittinggi. Wawasan teraktual dari Faisal Yusra.')
+    @section('meta_keywords',
+        'blog IT bukittinggi, wawasan digital umkm, artikel web developer, faisal yusra blog,
+        jurnal digital bukittinggi')
     @section('canonical', url()->current())
     <meta name="author" content="Muhammad Faisal Alyusra">
     <meta name="robots" content="index, follow">
@@ -11,7 +14,8 @@
     <meta property="og:type" content="website">
     @section('og_title', 'Blog & Wawasan Digital | Faisal Yusra Web Developer Bukittinggi')
     @section('og_description',
-        'Temukan artikel menarik seputar pengembangan website, IT support, dan solusi digital untuk UMKM di Bukittinggi. Wawasan teraktual dari Faisal Yusra.')
+        'Temukan artikel menarik seputar pengembangan website, IT support, dan solusi digital
+        untuk UMKM di Bukittinggi. Wawasan teraktual dari Faisal Yusra.')
     @section('og_image', asset('img/loggo.webp'))
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -21,7 +25,9 @@
     {{-- Twitter / X Card --}}
     <meta name="twitter:card" content="summary_large_image">
     @section('twitter_title', 'Blog & Wawasan Digital Faisal yusra | Web Developer Bukittinggi')
-    @section('twitter_description','Temukan artikel menarik seputar pengembangan website, IT support, dan solusi digital untuk UMKM di Bukittinggi. Wawasan teraktual dari Faisal Yusra.')
+    @section('twitter_description',
+        'Temukan artikel menarik seputar pengembangan website, IT support, dan solusi
+        digital untuk UMKM di Bukittinggi. Wawasan teraktual dari Faisal Yusra.')
     @section('twitter_image', asset('img/loggo.webp'))
 
     <section x-data="{ active: 'all' }"
@@ -42,17 +48,17 @@
             @php
                 $categories = $posts->pluck('category.name')->unique()->filter();
             @endphp
-            <div class="flex flex-wrap justify-center gap-4 mb-12">
-                <x-button-secondary-purple filter="all">
+            <div class="flex flex-wrap justify-center gap-1 md:gap-4 mb-12">
+                <x-button-secondary-purple filter="all" class="px-2! md:px-6! py-1! md:py-3!">
                     All Blog
                 </x-button-secondary-purple>
-                
-                <x-button-secondary-purple filter="journal">
+
+                <x-button-secondary-purple filter="journal" class="px-2! md:px-6! py-1! md:py-3!">
                     Scientific Journal
                 </x-button-secondary-purple>
 
                 @foreach ($categories as $categoryName)
-                    <x-button-secondary-purple filter="{{ $categoryName }}">
+                    <x-button-secondary-purple filter="{{ $categoryName }}" class="px-2! md:px-6! py-1! md:py-3!">
                         {{ $categoryName }}
                     </x-button-secondary-purple>
                 @endforeach
@@ -60,11 +66,12 @@
             {{-- Post Grid --}}
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                 @forelse($posts as $post)
-                    <article x-show="active === 'all' || (active === 'journal' && @js($post->is_journal)) || active === '{{ $post->category->name }}'"
+                    <article
+                        x-show="active === 'all' || (active === 'journal' && @js($post->is_journal)) || active === '{{ $post->category->name }}'"
                         class="card overflow-hidden group hover:scale-[1.02] transition-transform duration-300 flex flex-col">
                         {{-- Image --}}
                         <div class="relative aspect-video overflow-hidden">
-                            @if($post->is_journal)
+                            @if ($post->is_journal)
                                 <img src="{{ asset('banners/journal.webp') }}" alt="{{ $post->title }}"
                                     class="w-full h-full object-cover">
                             @else
@@ -73,7 +80,7 @@
                             @endif
 
                             {{-- Journal Badge --}}
-                            @if($post->is_journal)
+                            @if ($post->is_journal)
                                 <div
                                     class="absolute top-4 left-4 bg-blue-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-tighter">
                                     Scientific Journal
@@ -88,7 +95,8 @@
 
                         {{-- Content --}}
                         <div class="p-6 flex-1 flex flex-col">
-                            <div class="flex items-center gap-2 text-[10px] text-(--color-primary-500) font-semibold mb-3">
+                            <div
+                                class="flex items-center gap-2 text-[10px] text-(--color-primary-500) font-semibold mb-3">
                                 <span>{{ $post->published_at?->format('d M Y') }}</span>
                                 <span>•</span>
                                 <span>{{ $post->author->name }}</span>
@@ -96,7 +104,8 @@
 
                             <a href="{{ route('blog.show', $post->slug) }}"
                                 class="group-hover:text-(--color-primary-700) transition-colors">
-                                <h2 class="text-xl font-bold text-(--color-primary-950) line-clamp-2 mb-3 leading-tight">
+                                <h2
+                                    class="text-xl font-bold text-(--color-primary-950) line-clamp-2 mb-3 leading-tight">
                                     {{ $post->title }}
                                 </h2>
                             </a>
