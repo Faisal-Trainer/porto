@@ -9,13 +9,7 @@ class BlogController
 {
     public function index(): View
     {
-        $posts = Post::with('category', 'author')
-            ->where('is_published', true)
-            ->whereNotNull('published_at')
-            ->latest('published_at')
-            ->paginate(9);
-
-        return view('pages.blog.index', compact('posts'));
+        return view('pages.blog.index');
     }
 
     public function show(string $slug): View
