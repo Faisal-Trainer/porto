@@ -136,19 +136,6 @@
         echo '<script type="application/ld+json">' . json_encode($localBusinessSchema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>';
     @endphp
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NEX8Z7GJLK"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-NEX8Z7GJLK');
-    </script>
-
     @stack('schemas')
 
     {{-- Fonts --}}
@@ -156,6 +143,7 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet">
 
     {{-- Icons --}}
+    <link rel="preconnect" href="https://cdn-uicons.flaticon.com" crossorigin>
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css">
     <link rel="stylesheet"
         href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css">
@@ -184,6 +172,18 @@
     @stack('modals')
     @livewireScripts
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NEX8Z7GJLK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-NEX8Z7GJLK');
+    </script>
 </body>
 
 </html>
