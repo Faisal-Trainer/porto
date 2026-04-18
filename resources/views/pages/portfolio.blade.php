@@ -7,7 +7,7 @@
     @section('meta_keywords',
         'portofolio web developer bukittinggi, contoh website umkm, hasil kerja programmer
         bukittinggi, digital solutions bukittinggi, portofolio laravel indonesia')
-    @section('canonical', url()->current())
+    @section('canonical', route('portfolio'))
     <meta name="author" content="Muhammad Faisal Alyusra" />
     <meta name="robots" content="index, follow" />
 
@@ -28,6 +28,13 @@
     @section('twitter_title', 'Portofolio Web Developer Bukittinggi | Faisal Yusra')
     @section('twitter_description', 'Lihat hasil kerja nyata dan proyek digital kami untuk UMKM di Sumatera Barat.')
     @section('twitter_image', asset('img/profile.webp'))
+
+    @push('schemas')
+        <x-seo-breadcrumb :items="[
+            ['name' => 'Home', 'url' => route('home')],
+            ['name' => 'Portofolio Proyek'],
+        ]" />
+    @endpush
 
     {{-- PORTOFOLIO SECTION --}}
     <section x-data="{ active: 'all' }" class="p-2.5 md:p-5">

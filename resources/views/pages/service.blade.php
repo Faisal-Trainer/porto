@@ -30,6 +30,67 @@
     @section('twitter_description', 'Solusi digital terjangkau dan profesional untuk bisnis Anda di Bukittinggi.')
     @section('twitter_image', asset('img/profile.webp'))
 
+    @push('schemas')
+        @php
+            $serviceSchema = [
+                '@context' => 'https://schema.org',
+                '@type' => 'OfferCatalog',
+                'name' => 'Layanan Digital Faisal Yusra',
+                'url' => route('service'),
+                'description' => 'Layanan web development, IT support, UI/UX design, dan konsultasi digital untuk UMKM di Bukittinggi.',
+                'provider' => [
+                    '@type' => 'Person',
+                    '@id' => 'https://faisalyusra.my.id/#person',
+                    'name' => 'Faisal Yusra',
+                ],
+                'areaServed' => [
+                    '@type' => 'Place',
+                    'name' => 'Bukittinggi, Sumatera Barat, Indonesia',
+                ],
+                'itemListElement' => [
+                    [
+                        '@type' => 'Offer',
+                        'name' => 'Web Application',
+                        'description' => 'Membangun web app modern yang cepat, aman, dan relevan — dari landing page sederhana sampai sistem yang kompleks.',
+                        'priceCurrency' => 'IDR',
+                        'price' => '500000',
+                    ],
+                    [
+                        '@type' => 'Offer',
+                        'name' => 'IT Support & Maintenance',
+                        'description' => 'Dukungan teknis menyeluruh agar sistem bisnis berjalan stabil, aman, dan tidak tiba-tiba down.',
+                    ],
+                    [
+                        '@type' => 'Offer',
+                        'name' => 'UI/UX Design',
+                        'description' => 'Desain antarmuka yang intuitif, fungsional, dan relevan dengan perilaku pasar lokal.',
+                    ],
+                    [
+                        '@type' => 'Offer',
+                        'name' => 'Digital Consulting for UMKM',
+                        'description' => 'Membantu UMKM menentukan strategi digital yang realistis dan sesuai kondisi bisnis.',
+                    ],
+                    [
+                        '@type' => 'Offer',
+                        'name' => 'Goes To School Program',
+                        'description' => 'Program edukasi yang membekali talenta muda dengan skill nyata, mindset industri, dan pengalaman proyek langsung.',
+                    ],
+                    [
+                        '@type' => 'Offer',
+                        'name' => 'Social Media Handling',
+                        'description' => 'Kelola media sosial bisnis secara konsisten dan terarah untuk branding yang kuat.',
+                    ],
+                ],
+            ];
+
+            echo '<script type="application/ld+json">' . json_encode($serviceSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) . '</script>';
+        @endphp
+
+        <x-seo-breadcrumb :items="[
+            ['name' => 'Home', 'url' => route('home')],
+            ['name' => 'Layanan & Harga'],
+        ]" />
+    @endpush
 
 
     {{-- ===================== SERVICE SECTION ===================== --}}

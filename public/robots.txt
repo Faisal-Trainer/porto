@@ -20,9 +20,6 @@ Disallow: /dashboard
 Disallow: /management/
 Disallow: /approval
 
-# Block Duplicate Content/Parameters
-Disallow: /*?*
-
 # Standard Googlebot Directives
 User-agent: Googlebot
 Allow: /

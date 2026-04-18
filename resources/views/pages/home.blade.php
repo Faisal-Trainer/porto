@@ -29,6 +29,35 @@
     @section('twitter_description', 'Web Developer & Digital Consultant profesional di Bukittinggi, Sumatera Barat.')
     @section('twitter_image', asset('img/profile.webp'))
 
+    {{-- WebSite Schema + Sitelinks Searchbox --}}
+    @push('schemas')
+        @php
+            $websiteSchema = [
+                '@context' => 'https://schema.org',
+                '@type' => 'WebSite',
+                '@id' => 'https://faisalyusra.my.id/#website',
+                'name' => 'Faisal Yusra — Web Developer & Digital Consultant Bukittinggi',
+                'url' => 'https://faisalyusra.my.id',
+                'description' => 'Jasa pembuatan website profesional untuk UMKM & bisnis di Bukittinggi, Sumatera Barat.',
+                'inLanguage' => 'id-ID',
+                'publisher' => [
+                    '@type' => 'Person',
+                    '@id' => 'https://faisalyusra.my.id/#person',
+                ],
+                'potentialAction' => [
+                    '@type' => 'SearchAction',
+                    'target' => [
+                        '@type' => 'EntryPoint',
+                        'urlTemplate' => 'https://faisalyusra.my.id/blog?q={search_term_string}',
+                    ],
+                    'query-input' => 'required name=search_term_string',
+                ],
+            ];
+
+            echo '<script type="application/ld+json">' . json_encode($websiteSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) . '</script>';
+        @endphp
+    @endpush
+
     {{-- ===================== HERO SECTION ===================== --}}
     <section class="relative min-h-screen flex items-center overflow-hidden px-4 md:px-8 py-16">
 

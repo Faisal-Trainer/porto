@@ -40,96 +40,90 @@
     {{-- JSON-LD Structured Data --}}
     @php
         $personSchema = [
-            "@context" => "https://schema.org",
-            "@type" => "Person",
-            "@id" => "https://faisalyusra.my.id/#service",
-            "name" => "Muhammad Faisal Alyusra",
-            "alternateName" => "Faisal Yusra",
-            "url" => "https://faisalyusra.my.id",
-            "image" => asset('img/profile.webp'),
-            "jobTitle" => "IT Support Spesialis | Web Developer & Digital Consultant",
-            "description" => "Web Developer & Digital Consultant dari Bukittinggi yang membantu UMKM dan talent muda tumbuh melalui teknologi digital.",
-            "address" => [
-                "@type" => "PostalAddress",
-                "streetAddress" => "Bukittinggi",
-                "addressLocality" => "Bukittinggi",
-                "addressRegion" => "Sumatera Barat",
-                "addressCountry" => "ID"
+            '@context' => 'https://schema.org',
+            '@type' => 'Person',
+            '@id' => 'https://faisalyusra.my.id/#person',
+            'name' => 'Muhammad Faisal Alyusra',
+            'alternateName' => 'Faisal Yusra',
+            'url' => 'https://faisalyusra.my.id',
+            'image' => asset('img/profile.webp'),
+            'jobTitle' => 'IT Support Spesialis | Web Developer & Digital Consultant',
+            'description' =>
+                'Web Developer & Digital Consultant dari Bukittinggi yang membantu UMKM dan talent muda tumbuh melalui teknologi digital.',
+            'address' => [
+                '@type' => 'PostalAddress',
+                'streetAddress' => 'Bukittinggi',
+                'addressLocality' => 'Bukittinggi',
+                'addressRegion' => 'Sumatera Barat',
+                'addressCountry' => 'ID',
             ],
-            "areaServed" => [
-                "@type" => "Place",
-                "name" => "Indonesia"
+            'areaServed' => [
+                '@type' => 'Place',
+                'name' => 'Indonesia',
             ],
-            "alumniOf" => [
-                "@type" => "CollegeOrUniversity",
-                "name" => "UIN Sjech M Djamil Djambek Bukittinggi"
+            'alumniOf' => [
+                '@type' => 'CollegeOrUniversity',
+                'name' => 'UIN Sjech M Djamil Djambek Bukittinggi',
             ],
-            "knowsAbout" => [
-                "Laravel",
-                "Livewire",
-                "Filament",
-                "Tailwind CSS",
-                "Web Application Development",
-                "IT Support",
-                "UI/UX Design",
-                "Digital Consulting",
-                "UMKM Empowerment"
+            'knowsAbout' => [
+                'Laravel',
+                'Livewire',
+                'Filament',
+                'Tailwind CSS',
+                'Web Application Development',
+                'IT Support',
+                'UI/UX Design',
+                'Digital Consulting',
+                'UMKM Empowerment',
             ],
-            "sameAs" => [
-                "https://www.linkedin.com/in/faisalyusra41/",
-                "https://share.google/4uVCD3dAp3mktZF7B/",
-                "https://github.com/Faisal-Trainer",
-                "https://scholar.google.co.id/citations?view_op=list_works&hl=id&user=-4Ghx-0AAAAJ"
-            ]
+            'sameAs' => [
+                'https://www.linkedin.com/in/faisalyusra41/',
+                'https://share.google/4uVCD3dAp3mktZF7B/',
+                'https://github.com/Faisal-Trainer',
+                'https://scholar.google.co.id/citations?view_op=list_works&hl=id&user=-4Ghx-0AAAAJ',
+            ],
         ];
 
         $localBusinessSchema = [
-            "@context" => "https://schema.org",
-            "@type" => "ProfessionalService",
-            "name" => "Faisal Yusra | Web Developer & Digital Consultant Bukittinggi",
-            "image" => asset('img/loggo.webp'),
-            "@id" => "https://faisalyusra.my.id/#service",
-            "url" => "https://faisalyusra.my.id",
-            "address" => [
-                "@type" => "PostalAddress",
-                "streetAddress" => "Bukittinggi",
-                "addressLocality" => "Bukittinggi",
-                "addressRegion" => "Sumatera Barat",
-                "postalCode" => "26115",
-                "addressCountry" => "ID"
+            '@context' => 'https://schema.org',
+            '@type' => 'ProfessionalService',
+            'name' => 'Faisal Yusra | Web Developer & Digital Consultant Bukittinggi',
+            'image' => asset('img/loggo.webp'),
+            '@id' => 'https://faisalyusra.my.id/#service',
+            'url' => 'https://faisalyusra.my.id',
+            'address' => [
+                '@type' => 'PostalAddress',
+                'streetAddress' => 'Bukittinggi',
+                'addressLocality' => 'Bukittinggi',
+                'addressRegion' => 'Sumatera Barat',
+                'postalCode' => '26115',
+                'addressCountry' => 'ID',
             ],
-            "founder" => [
-                "@type" => "Person",
-                "@id" => "https://faisalyusra.my.id/#person"
+            'founder' => [
+                '@type' => 'Person',
+                '@id' => 'https://faisalyusra.my.id/#person',
             ],
-            "geo" => [
-                "@type" => "GeoCoordinates",
-                "latitude" => -0.311639,
-                "longitude" => 100.387250
+            'geo' => [
+                '@type' => 'GeoCoordinates',
+                'latitude' => -0.311639,
+                'longitude' => 100.38725,
             ],
-            "areaServed" => [
-                "@type" => "Place",
-                "name" => "Indonesia"
+            'areaServed' => [
+                '@type' => 'Place',
+                'name' => 'Indonesia',
             ],
-            "openingHoursSpecification" => [
-                "@type" => "OpeningHoursSpecification",
-                "dayOfWeek" => [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday"
-                ],
-                "opens" => "08:00",
-                "closes" => "17:00"
+            'openingHoursSpecification' => [
+                '@type' => 'OpeningHoursSpecification',
+                'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+                'opens' => '08:00',
+                'closes' => '17:00',
             ],
-            "sameAs" => [
-                "https://www.linkedin.com/in/faisalyusra41/",
-                "https://share.google/4uVCD3dAp3mktZF7B/",
-                "https://github.com/Faisal-Trainer",
-                "https://scholar.google.co.id/citations?view_op=list_works&hl=id&user=-4Ghx-0AAAAJ"
-            ]
+            'sameAs' => [
+                'https://www.linkedin.com/in/faisalyusra41/',
+                'https://share.google/4uVCD3dAp3mktZF7B/',
+                'https://github.com/Faisal-Trainer',
+                'https://scholar.google.co.id/citations?view_op=list_works&hl=id&user=-4Ghx-0AAAAJ',
+            ],
         ];
 
         echo '<script type="application/ld+json">' . json_encode($personSchema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>';
@@ -137,7 +131,6 @@
     @endphp
 
     @stack('schemas')
-
     {{-- Fonts --}}
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet">

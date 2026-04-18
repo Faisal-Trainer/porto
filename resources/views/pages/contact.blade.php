@@ -24,6 +24,57 @@
             konsultasi digital untuk UMKM.')
         @section('twitter_image', asset('img/profile.webp'))
 
+        @push('schemas')
+            @php
+                $faqSchema = [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'FAQPage',
+                    'mainEntity' => [
+                        [
+                            '@type' => 'Question',
+                            'name' => 'Apakah konsultasi pertama gratis?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'Ya, diskusi awal sepenuhnya gratis dan tanpa komitmen.',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => 'Berapa lama respons biasanya?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => '1×24 jam di hari kerja. Untuk keperluan mendesak, dapat menghubungi langsung melalui WhatsApp.',
+                            ],
+                        ],
+                        [
+                            '@type' => 'Question',
+                            'name' => 'Apakah bisa kerja remote?',
+                            'acceptedAnswer' => [
+                                '@type' => 'Answer',
+                                'text' => 'Ya, sebagian besar proyek dikerjakan secara remote. Untuk klien lokal Bukittinggi tersedia opsi tatap muka.',
+                            ],
+                        ],
+                    ],
+                ];
+
+                $contactPageSchema = [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'ContactPage',
+                    'name' => 'Hubungi Faisal Yusra',
+                    'url' => route('contact.create'),
+                    'description' => 'Hubungi Faisal Yusra, Web Developer & Digital Consultant Bukittinggi. Konsultasi pertama gratis.',
+                ];
+
+                echo '<script type="application/ld+json">' . json_encode($faqSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) . '</script>';
+                echo '<script type="application/ld+json">' . json_encode($contactPageSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) . '</script>';
+            @endphp
+
+            <x-seo-breadcrumb :items="[
+                ['name' => 'Home', 'url' => route('home')],
+                ['name' => 'Hubungi Saya'],
+            ]" />
+        @endpush
+
 
         <section
             class="relative min-h-screen py-16 px-4 md:px-8 overflow-hidden bg-linear-to-br from-(--color-primary-900) via-(--color-primary-800) to-(--color-primary-950) flex items-center">

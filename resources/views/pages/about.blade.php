@@ -8,7 +8,7 @@
     @section('meta_keywords',
         'tentang Faisal Yusra, web developer bukittinggi, programmer laravel bukittinggi,
         konsultan it bukittinggi, profil developer sumatera barat')
-    @section('canonical', url()->current())
+    @section('canonical', route('about'))
     <meta name="author" content="Muhammad Faisal Alyusra">
     <meta name="robots" content="index, follow">
 
@@ -29,6 +29,13 @@
     @section('twitter_title', 'Tentang Faisal Yusra | Web Developer Bukittinggi')
     @section('twitter_description', 'Profil Web Developer dan Konsultan Digital spesialis UMKM di Bukittinggi.')
     @section('twitter_image', asset('img/profile.webp'))
+
+    @push('schemas')
+        <x-seo-breadcrumb :items="[
+            ['name' => 'Home', 'url' => route('home')],
+            ['name' => 'Tentang Saya'],
+        ]" />
+    @endpush
 
     {{-- ===================== ABOUT HERO ===================== --}}
     <header class="py-16 md:py-24 px-5">

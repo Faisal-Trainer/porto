@@ -1,9 +1,5 @@
 <div class="relative overflow-hidden">
-    {{-- Decorative Background Orbs --}}
-    <div class="hidden md:block absolute top-0 left-0 w-[500px] h-[500px] bg-(--orb-purple) opacity-30 blur-[100px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
-    <div class="hidden md:block absolute bottom-0 right-0 w-[600px] h-[600px] bg-(--orb-gold) opacity-20 blur-[120px] translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
-
-    <section class="relative min-h-screen py-8 md:py-24 px-4 md:px-6">
+    <section class="relative min-h-screen px-4 md:px-6">
         <div class="max-w-6xl mx-auto">
             {{-- Header --}}
             <div class="text-center mb-10 md:mb-20">

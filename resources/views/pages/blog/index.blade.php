@@ -1,12 +1,11 @@
 <x-app-layout>
     @section('title', 'Blog & Wawasan Digital | Faisal Yusra Web Developer Bukittinggi')
-    @section('meta_description',
-        'Temukan artikel menarik seputar pengembangan website, IT support, dan solusi digital
-        untuk UMKM di Bukittinggi. Wawasan teraktual dari Faisal Yusra.')
+    @section('meta_description', 'Artikel praktis seputar web development, SEO lokal, dan solusi digital untuk UMKM
+        Bukittinggi. Tips, tutorial, dan wawasan dari Faisal Yusra, Web Developer & Digital Consultant')
     @section('meta_keywords',
         'blog IT bukittinggi, wawasan digital umkm, artikel web developer, faisal yusra blog,
         jurnal digital bukittinggi')
-    @section('canonical', url()->current())
+    @section('canonical', route('blog.index'))
     <meta name="author" content="Muhammad Faisal Alyusra">
     <meta name="robots" content="index, follow">
 
@@ -29,6 +28,13 @@
         'Temukan artikel menarik seputar pengembangan website, IT support, dan solusi
         digital untuk UMKM di Bukittinggi. Wawasan teraktual dari Faisal Yusra.')
     @section('twitter_image', asset('img/loggo.webp'))
+
+    @push('schemas')
+        <x-seo-breadcrumb :items="[
+            ['name' => 'Home', 'url' => route('home')],
+            ['name' => 'Blog & Wawasan Digital'],
+        ]" />
+    @endpush
 
     <livewire:blog-index />
 </x-app-layout>

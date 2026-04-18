@@ -1,5 +1,5 @@
 <x-app-layout>
-    @section('title', ($post->meta_title ?? $post->title) . ' | Faisal Yusra Blog')
+    @section('title', ($post->meta_title ?? $post->title) . ' | Faisal Yusra — Web Developer & Consultant')
     @section('meta_description', $post->meta_description ?? $post->excerpt)
     @section('meta_keywords', $post->meta_keywords ?? 'blog, bukittinggi, teknologi, umkm')
     @section('canonical', route('blog.show', $post->slug))
@@ -8,45 +8,65 @@
 
     {{-- OPEN GRAPH --}}
     <meta property="og:type" content="article">
-    @section('og_title', ($post->meta_title ?? $post->title) . ' | Faisal Yusra Blog')
+    @section('og_title', ($post->meta_title ?? $post->title) . ' | Faisal Yusra')
     @section('og_description', $post->meta_description ?? $post->excerpt)
-    @section('og_image', $post->is_journal ? asset('banners/journal.webp') : asset('banners/article.webp'))
+    @section('og_image', $post->image ? asset('storage/' . $post->image) : ($post->is_journal ? asset('banners/journal.webp') : asset('banners/article.webp')))
     <meta property="og:url" content="{{ route('blog.show', $post->slug) }}">
     <meta property="og:site_name" content="Faisal Yusra">
     <meta property="article:published_time" content="{{ $post->published_at->toIso8601String() }}">
 
     {{-- Twitter / X Card --}}
     <meta name="twitter:card" content="summary_large_image">
-    @section('twitter_title', ($post->meta_title ?? $post->title) . ' | Faisal Yusra Blog')
+    @section('twitter_title', ($post->meta_title ?? $post->title) . ' | Faisal Yusra')
     @section('twitter_description', $post->meta_description ?? $post->excerpt)
-    @section('twitter_image', $post->is_journal ? asset('banners/journal.webp') : asset('banners/article.webp'))
+    @section('twitter_image', $post->image ? asset('storage/' . $post->image) : ($post->is_journal ? asset('banners/journal.webp') : asset('banners/article.webp')))
 
     {{-- JSON-LD Schema --}}
     @push('schemas')
-        <script type="application/ld+json">
-                                        {
-                                            "@@context": "https://schema.org",
-                                            "@@type": "{{ $post->is_journal ? 'ScholarlyArticle' : 'BlogPosting' }}",
-                                            "headline": "{{ $post->title }}",
-                                            "description": "{{ $post->excerpt }}",
-                                            "image": "{{ $post->is_journal ? asset('banners/journal.webp') : asset('banners/article.webp') }}",
-                                            "author": {
-                                                "@@type": "Person",
-                                                "name": "{{ $post->author->name }}",
-                                                "url": "https://faisalyusra.my.id"
-                                            },
-                                            "publisher": {
-                                                "@@type": "ProfessionalService",
-                                                "name": "Faisal Yusra",
-                                                "logo": {
-                                                    "@@type": "ImageObject",
-                                                    "url": "{{ asset('img/loggo.webp') }}"
-                                                }
-                                            },
-                                            "datePublished": "{{ $post->published_at->toIso8601String() }}",
-                                            "dateModified": "{{ $post->updated_at->toIso8601String() }}"
-                                        }
-                                        </script>
+        @php
+            $ogImage = $post->image
+                ? asset('storage/' . $post->image)
+                : ($post->is_journal ? asset('banners/journal.webp') : asset('banners/article.webp'));
+
+            $blogPostingSchema = [
+                '@context' => 'https://schema.org',
+                '@type' => $post->is_journal ? 'ScholarlyArticle' : 'BlogPosting',
+                'headline' => $post->title,
+                'description' => $post->excerpt,
+                'image' => $ogImage,
+                'url' => route('blog.show', $post->slug),
+                'mainEntityOfPage' => [
+                    '@type' => 'WebPage',
+                    '@id' => route('blog.show', $post->slug),
+                ],
+                'author' => [
+                    '@type' => 'Person',
+                    '@id' => 'https://faisalyusra.my.id/#person',
+                    'name' => $post->author->name,
+                    'url' => 'https://faisalyusra.my.id',
+                ],
+                'publisher' => [
+                    '@type' => 'Organization',
+                    'name' => 'Faisal Yusra',
+                    'logo' => [
+                        '@type' => 'ImageObject',
+                        'url' => asset('img/loggo.webp'),
+                    ],
+                ],
+                'datePublished' => $post->published_at->toIso8601String(),
+                'dateModified' => $post->updated_at->toIso8601String(),
+                'keywords' => $post->meta_keywords ?? 'blog, bukittinggi, teknologi, umkm',
+                'inLanguage' => 'id-ID',
+            ];
+
+            echo '<script type="application/ld+json">' . json_encode($blogPostingSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) . '</script>';
+        @endphp
+
+        <x-seo-breadcrumb :items="[
+            ['name' => 'Home', 'url' => route('home')],
+            ['name' => 'Blog', 'url' => route('blog.index')],
+            ['name' => $post->title],
+        ]" />
     @endpush
 
     <article class="min-h-screen py-20 px-4 md:px-8 bg-white">
@@ -68,7 +88,7 @@
                         class="bg-(--color-primary-100) text-(--color-primary-700) px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider">
                         {{ $post->category->name ?? 'Insight' }}
                     </span>
-                    @if($post->is_journal)
+                    @if ($post->is_journal)
                         <span
                             class="bg-blue-600 text-white px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider">
                             Scientific Journal
@@ -98,10 +118,12 @@
 
             {{-- Featured Image --}}
             <div class="mb-12 rounded-3xl overflow-hidden shadow-2xl">
-                @if($post->is_journal)
-                    <img src="{{ asset('banners/journal.webp') }}" alt="{{ $post->title }}" class="w-full object-cover">
+                @if ($post->is_journal)
+                    <img src="{{ asset('banners/journal.webp') }}" alt="{{ $post->title }}"
+                        class="w-full object-cover">
                 @else
-                    <img src="{{ asset('banners/article.webp') }}" alt="{{ $post->title }}" class="w-full object-cover">
+                    <img src="{{ asset('banners/article.webp') }}" alt="{{ $post->title }}"
+                        class="w-full object-cover">
                 @endif
             </div>
 

@@ -3,6 +3,7 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\McpController;
 use App\Http\Controllers\OtpController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TalentController;
@@ -12,7 +13,6 @@ use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
-use App\Http\Controllers\McpController;
 
 Route::get('/sitemap.xml', function () {
     $sitemap = Sitemap::create()
@@ -21,7 +21,7 @@ Route::get('/sitemap.xml', function () {
         ->add(Url::create(url('/service'))->setPriority(0.9)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY))
         ->add(Url::create(url('/portfolio'))->setPriority(0.9)->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY))
         ->add(Url::create(url('/talent'))->setPriority(0.7)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY))
-        ->add(Url::create(url('/contact'))->setPriority(0.7)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY))
+        ->add(Url::create(url('/contact'))->setPriority(0.8)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY))
         ->add(Url::create(url('/jasa-pembuatan-website-bukittinggi'))->setPriority(0.9))
         ->add(Url::create(url('/web-developer-bukittinggi'))->setPriority(0.8))
         ->add(Url::create(url('/portofolio-website-umkm'))->setPriority(0.8))
