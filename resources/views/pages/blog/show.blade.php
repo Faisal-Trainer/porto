@@ -69,7 +69,7 @@
         ]" />
     @endpush
 
-    <article class="min-h-screen py-20 px-4 md:px-8 bg-white">
+    <article class="min-h-screen pt-28 pb-12 md:pt-36 md:pb-24 px-4 md:px-8 bg-white">
         <div class="max-w-3xl mx-auto">
             {{-- Breadcrumb --}}
             <nav
@@ -94,10 +94,14 @@
                             Scientific Journal
                         </span>
                     @endif
-                    <time class="text-xs text-gray-400 font-medium"
+                    <time class="text-xs text-gray-500 font-bold"
                         datetime="{{ $post->published_at->toIso8601String() }}">
-                        {{ $post->published_at->format('d M Y') }}
+                        <i class="fi fi-rr-calendar"></i> {{ $post->published_at->format('d M Y') }}
                     </time>
+                    <span class="text-xs text-gray-300">•</span>
+                    <span class="text-xs text-gray-500 font-bold">
+                        <i class="fi fi-rr-clock-three"></i> ⏳ {{ max(1, ceil(str_word_count(strip_tags($post->content)) / 250)) }} Menit Baca
+                    </span>
                 </div>
 
                 <h1 class="text-3xl md:text-5xl font-extrabold text-(--color-primary-950) leading-tight mb-8">
@@ -117,13 +121,13 @@
             </header>
 
             {{-- Featured Image --}}
-            <div class="mb-12 rounded-3xl overflow-hidden shadow-2xl">
-                @if ($post->is_journal)
-                    <img src="{{ asset('banners/journal.webp') }}" alt="{{ $post->title }}"
-                        class="w-full object-cover">
+            <div class="mb-12 rounded-3xl overflow-hidden border border-[rgba(0,0,0,0.05)] shadow-xl">
+                @if ($post->image)
+                    <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}" class="w-full object-cover aspect-[21/9]">
+                @elseif ($post->is_journal)
+                    <img src="{{ asset('banners/journal.webp') }}" alt="{{ $post->title }}" class="w-full object-cover aspect-[21/9]">
                 @else
-                    <img src="{{ asset('banners/article.webp') }}" alt="{{ $post->title }}"
-                        class="w-full object-cover">
+                    <img src="{{ asset('banners/article.webp') }}" alt="{{ $post->title }}" class="w-full object-cover aspect-[21/9]">
                 @endif
             </div>
 
@@ -133,8 +137,48 @@
                 {!! str_replace('@', '&#64;', $post->content) !!}
             </div>
 
-            {{-- Footer / Share --}}
-            <section class="mt-20 pt-10 border-t border-gray-100">
+            {{-- Tags & Share --}}
+            <div class="mt-12 pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-6">
+                {{-- Tags --}}
+                <div class="flex flex-wrap gap-2">
+                    @if($post->meta_keywords)
+                        @foreach(explode(',', $post->meta_keywords) as $tag)
+                            <span class="px-3 py-1 bg-gray-100 text-gray-600 text-[10px] font-bold rounded-full uppercase tracking-wider">#{{ trim($tag) }}</span>
+                        @endforeach
+                    @endif
+                </div>
+
+                {{-- Share --}}
+                <div class="flex items-center gap-3">
+                    <span class="text-sm font-bold text-gray-500">Bagikan:</span>
+                    <a href="https://api.whatsapp.com/send?text={{ urlencode($post->title . ' - ' . route('blog.show', $post->slug)) }}" target="_blank" class="w-10 h-10 rounded-full bg-green-500 text-white flex items-center justify-center hover:scale-110 transition-transform shadow-md">
+                        <i class="fi fi-brands-whatsapp text-lg mt-1"></i>
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?url={{ urlencode(route('blog.show', $post->slug)) }}&text={{ urlencode($post->title) }}" target="_blank" class="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center hover:scale-110 transition-transform shadow-md">
+                        <i class="fi fi-brands-twitter text-lg mt-1"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ urlencode(route('blog.show', $post->slug)) }}" target="_blank" class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center hover:scale-110 transition-transform shadow-md">
+                        <i class="fi fi-brands-linkedin text-lg mt-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            {{-- Artikel Selanjutnya / CTA --}}
+            <div class="mt-12 p-8 bg-(--color-primary-50) rounded-3xl border border-(--color-primary-100) flex flex-col items-center text-center shadow-sm">
+                <div class="w-16 h-16 bg-(--color-primary-100) text-(--color-primary-600) rounded-full flex items-center justify-center text-2xl mb-4 shadow-sm border border-(--color-primary-200)">
+                    <i class="fi fi-rr-book-alt mt-1"></i>
+                </div>
+                <h3 class="text-xl md:text-2xl font-extrabold text-(--color-primary-950) mb-2">Eksplorasi Insight Lainnya</h3>
+                <p class="text-(--color-primary-700) mb-6 text-sm max-w-lg">
+                    Tingkatkan wawasan Anda seputar dunia digital, edukasi, dan pengembangan teknologi bersama Faisal Yusra.
+                </p>
+                <x-button-primary-purple href="{{ route('blog.index') }}">
+                    Baca Artikel Lainnya &rarr;
+                </x-button-primary-purple>
+            </div>
+
+            {{-- Footer Consultation --}}
+            <section class="mt-12 pt-10 border-t border-gray-100">
                 <div class="flex flex-col md:flex-row justify-between items-center gap-6">
                     <div>
                         <h4 class="text-sm font-bold text-(--color-primary-950) mb-2">Tertarik berdiskusi lebih lanjut?

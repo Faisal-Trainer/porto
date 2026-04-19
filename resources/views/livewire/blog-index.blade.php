@@ -1,5 +1,5 @@
 <div class="relative overflow-hidden">
-    <section class="relative min-h-screen px-4 md:px-6">
+    <section class="relative min-h-screen px-4 md:px-6 pt-10">
         <div class="max-w-6xl mx-auto">
             {{-- Header --}}
             <div class="text-center mb-10 md:mb-20">

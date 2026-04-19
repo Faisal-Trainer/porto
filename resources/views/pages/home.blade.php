@@ -160,9 +160,9 @@
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
+        <div class="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4 max-w-6xl mx-auto">
 
-            <div class="card p-5 flex flex-col gap-3">
+            <div class="card p-2 md:p-5 flex flex-col gap-3">
                 <div class="service-icon"><i class="fi fi-rr-code-simple"></i></div>
                 <h3 class="text-lg md:text-xl text-(--color-primary-950) font-bold">Web Application</h3>
                 <p class="text-sm text-(--color-primary-800) leading-relaxed flex-1">
@@ -171,7 +171,7 @@
                 </p>
             </div>
 
-            <div class="card p-5 flex flex-col gap-3">
+            <div class="card p-2 md:p-5 flex flex-col gap-3">
                 <div class="service-icon"><i class="fi fi-rr-microchip"></i></div>
                 <h3 class="text-lg md:text-xl text-(--color-primary-950) font-bold">IT Support & Maintenance</h3>
                 <p class="text-sm text-(--color-primary-800) leading-relaxed flex-1">
@@ -179,7 +179,7 @@
                 </p>
             </div>
 
-            <div class="card p-5 flex flex-col gap-3">
+            <div class="card p-2 md:p-5 flex flex-col gap-3">
                 <div class="service-icon"><i class="fi fi-rr-layout-fluid"></i></div>
                 <h3 class="text-lg md:text-xl text-(--color-primary-950) font-bold">UI/UX Design</h3>
                 <p class="text-sm text-(--color-primary-800) leading-relaxed flex-1">
@@ -187,7 +187,7 @@
                 </p>
             </div>
 
-            <div class="card p-5 flex flex-col gap-3">
+            <div class="card p-2 md:p-5 flex flex-col gap-3">
                 <div class="service-icon"><i class="fi fi-rr-chart-line-up"></i></div>
                 <h3 class="text-lg md:text-xl text-(--color-primary-950) font-bold">Digital Consulting</h3>
                 <p class="text-sm text-(--color-primary-800) leading-relaxed flex-1">
@@ -196,7 +196,7 @@
                 </p>
             </div>
 
-            <div class="card p-5 flex flex-col gap-3">
+            <div class="card p-2 md:p-5 flex flex-col gap-3">
                 <div class="service-icon"><i class="fi fi-rr-school"></i></div>
                 <h3 class="text-lg md:text-xl text-(--color-primary-950) font-bold">Goes To School Program</h3>
                 <p class="text-sm text-(--color-primary-800) leading-relaxed flex-1">
@@ -204,7 +204,7 @@
                 </p>
             </div>
 
-            <div class="card p-5 flex flex-col gap-3">
+            <div class="card p-2 md:p-5 flex flex-col gap-3">
                 <div class="service-icon"><i class="fi fi-rr-share"></i></div>
                 <h3 class="text-lg md:text-xl text-(--color-primary-950) font-bold">Social Media Handling</h3>
                 <p class="text-sm text-(--color-primary-800) leading-relaxed flex-1">
@@ -235,9 +235,9 @@
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
+        <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
 
-            <div class="card p-5 bg-(--color-primary-50) flex flex-col gap-3">
+            <div class="card p-2 md:p-5 bg-(--color-primary-50) flex flex-col gap-3">
                 <div
                     class="bg-(--color-primary-200) text-(--color-primary-800) p-2 w-min border border-(--color-primary-300) rounded-full">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="20"
@@ -270,7 +270,7 @@
                 </p>
             </div>
 
-            <div class="card p-5 bg-(--color-primary-50) flex flex-col gap-3">
+            <div class="card p-2 md:p-5 bg-(--color-primary-50) flex flex-col gap-3">
                 <div
                     class="bg-(--color-primary-200) text-(--color-primary-800) p-2 w-min border border-(--color-primary-300) rounded-full">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="20"
@@ -293,7 +293,7 @@
                 </p>
             </div>
 
-            <div class="card p-5 bg-(--color-primary-50) flex flex-col gap-3">
+            <div class="card p-2 md:p-5 bg-(--color-primary-50) flex flex-col gap-3">
                 <div
                     class="bg-(--color-primary-200) text-(--color-primary-800) p-2 w-min border border-(--color-primary-300) rounded-full">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="20"
@@ -324,7 +324,7 @@
                 </p>
             </div>
 
-            <div class="card p-5 bg-(--color-primary-50) flex flex-col gap-3">
+            <div class="card p-2 md:p-5 bg-(--color-primary-50) flex flex-col gap-3">
                 <div
                     class="bg-(--color-primary-200) text-(--color-primary-800) p-2 w-min border border-(--color-primary-300) rounded-full">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="20"
@@ -359,7 +359,7 @@
                 </p>
             </div>
 
-            <div class="card p-5 bg-(--color-primary-50) flex flex-col gap-3">
+            <div class="card p-2 md:p-5 bg-(--color-primary-50) flex flex-col gap-3">
                 <div
                     class="bg-(--color-primary-200) text-(--color-primary-800) p-2 w-min border border-(--color-primary-300) rounded-full">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="20"
@@ -384,7 +384,7 @@
                 </p>
             </div>
 
-            <div class="card p-5 bg-(--color-primary-50) flex flex-col gap-3">
+            <div class="card p-2 md:p-5 bg-(--color-primary-50) flex flex-col gap-3">
                 <div
                     class="bg-(--color-primary-200) text-(--color-primary-800) p-2 w-min border border-(--color-primary-300) rounded-full">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="20"

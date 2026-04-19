@@ -147,7 +147,7 @@
             </div>
         @endauth
         @guest
-            <div class="navbar-action flex justify-center items-center">
+            <div class="flex justify-center items-center">
                 <x-button-primary-purple href="{{ route('contact.create') }}">Contact</x-button-primary-purple>
             </div>
         @endguest
