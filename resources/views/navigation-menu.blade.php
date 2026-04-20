@@ -3,7 +3,7 @@
         class="flex justify-between m-2.5 md:m-5 p-2.5 md:p-5 rounded-2xl lg:rounded-4xl bg-white/50 backdrop-blur-md shadow-xl">
         <!-- Logo -->
         <div class="flex h-15 md:h-20 text-(--color-primary-950)">
-            <a href="{{ route('home') }}">
+            <a href="{{ route('home') }}" aria-label="Faisal Yusra - Personal Website">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-full" version="1.0" viewBox="0 0 1500 1377"
                     fill="currentColor">
                     <path
@@ -98,8 +98,8 @@
                                 @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                                     <button
                                         class="flex text-sm border-2 border-transparent rounded-full focus:outline-hidden focus:border-gray-300 transition">
-                                        <img class="size-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}"
-                                            alt="{{ Auth::user()->name }}" />
+                                        <img class="size-8 rounded-full object-cover"
+                                            src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                                     </button>
                                 @else
                                     <span class="inline-flex rounded-md">
@@ -191,8 +191,7 @@
                             {{ __('profile') }}
                         </a>
                         @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                            <x-responsive-nav-link href="{{ route('api-tokens.index') }}"
-                                :active="request()->routeIs('api-tokens.index')">
+                            <x-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
                                 {{ __('API Tokens') }}
                             </x-responsive-nav-link>
                         @endif
@@ -221,8 +220,7 @@
                             </x-responsive-nav-link>
 
                             @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
-                                <x-responsive-nav-link href="{{ route('teams.create') }}"
-                                    :active="request()->routeIs('teams.create')">
+                                <x-responsive-nav-link href="{{ route('teams.create') }}" :active="request()->routeIs('teams.create')">
                                     {{ __('Create New Team') }}
                                 </x-responsive-nav-link>
                             @endcan

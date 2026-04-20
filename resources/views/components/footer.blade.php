@@ -7,7 +7,7 @@
             {{-- Brand --}}
             <div class="lg:col-span-2 flex flex-col gap-4">
                 <div>
-                    <span class="font-bold text-xl text-(--color-primary-950)">Faisal Yusra</span>
+                    <h2 class="font-bold text-xl text-(--color-primary-950)">Faisal Yusra</h2>
                     <p class="text-(--color-primary-100) text-sm mt-1.5 leading-relaxed">
                         IT Support Spesialis · Web Developer & Digital Consultant<br>
                         Empowering SMEs & Talents Through Technology
@@ -39,7 +39,7 @@
 
             {{-- Service list --}}
             <div class="flex flex-col gap-3">
-                <h4 class="font-bold text-base text-(--color-primary-950)">Layanan</h4>
+                <h2 class="font-bold text-base text-(--color-primary-950)">Layanan</h2>
                 <ul class="flex flex-col gap-1.5 text-sm">
                     <li><a href="{{ route('service') }}"
                             class="text-(--color-primary-900) hover:text-(--color-primary-100) transition-colors duration-150">Web
@@ -64,7 +64,7 @@
 
             {{-- Quick links --}}
             <div class="flex flex-col gap-3">
-                <h4 class="font-bold text-base text-(--color-primary-950)">Quick Link</h4>
+                <h2 class="font-bold text-base text-(--color-primary-950)">Quick Link</h2>
                 <ul class="flex flex-col gap-1.5 text-sm">
                     <li><a href="{{ route('home') }}"
                             class="text-(--color-primary-900) hover:text-(--color-primary-100) transition-colors duration-150">Home</a>

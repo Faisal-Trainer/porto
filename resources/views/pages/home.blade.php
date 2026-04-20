@@ -38,7 +38,8 @@
                 '@id' => 'https://faisalyusra.my.id/#website',
                 'name' => 'Faisal Yusra — Web Developer & Digital Consultant Bukittinggi',
                 'url' => 'https://faisalyusra.my.id',
-                'description' => 'Jasa pembuatan website profesional untuk UMKM & bisnis di Bukittinggi, Sumatera Barat.',
+                'description' =>
+                    'Jasa pembuatan website profesional untuk UMKM & bisnis di Bukittinggi, Sumatera Barat.',
                 'inLanguage' => 'id-ID',
                 'publisher' => [
                     '@type' => 'Person',
@@ -111,14 +112,17 @@
                 {{-- Social Media --}}
                 <div class="flex items-center gap-5 justify-center lg:justify-start pt-2">
                     <a href="https://instagram.com/faisalyusra51" target="_blank" rel="noopener noreferrer"
+                        aria-label="Kunjungi Instagram Faisal Yusra"
                         class="text-(--color-primary-400) hover:text-(--color-primary-700) transition-colors duration-200 text-3xl">
                         <i class="fi fi-brands-instagram"></i>
                     </a>
                     <a href="https://linkedin.com/in/faisalyusra41" target="_blank" rel="noopener noreferrer"
+                        aria-label="Kunjungi linkedin Faisal Yusra"
                         class="text-(--color-primary-400) hover:text-(--color-primary-700) transition-colors duration-200 text-3xl">
                         <i class="fi fi-brands-linkedin"></i>
                     </a>
                     <a href="https://github.com/Faisal-Trainer" target="_blank" rel="noopener noreferrer"
+                        aria-label="Kunjungi github Faisal Yusra"
                         class="text-(--color-primary-400) hover:text-(--color-primary-700) transition-colors duration-200 text-3xl">
                         <i class="fi fi-brands-github"></i>
                     </a>
