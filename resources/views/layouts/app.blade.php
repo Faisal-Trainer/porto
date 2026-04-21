@@ -10,7 +10,7 @@
     {{-- SEO Primary --}}
     <meta name="description" content="@yield('meta_description', 'Default description')" />
     <meta name="keywords" content="@yield('meta_keywords', 'default, keywords')" />
-    <meta name="author" content="Muhammad Faishal">
+    <meta name="author" content="Faisal Yusra">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="@yield('canonical', url()->current())" />
 
@@ -83,7 +83,13 @@
                 'https://scholar.google.co.id/citations?view_op=list_works&hl=id&user=-4Ghx-0AAAAJ',
             ],
         ];
-
+        $blogSchema = [
+            "@context" => "https://schema.org",
+            "@type" => "Blog",
+            "name" => "Blog Faisal Yusra",
+            "url" => "https://faisalyusra.my.id/blog",
+            "description" => "Artikel web development, SEO lokal, dan solusi digital untuk UMKM Bukittinggi.",
+        ];
         $localBusinessSchema = [
             '@context' => 'https://schema.org',
             '@type' => 'ProfessionalService',
