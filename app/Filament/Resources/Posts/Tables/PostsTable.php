@@ -24,7 +24,7 @@ class PostsTable
                 TextColumn::make('title')
                     ->searchable()
                     ->sortable()
-                    ->wrap(),
+                    ->limit(50),
                 TextColumn::make('category.name')
                     ->badge()
                     ->sortable(),

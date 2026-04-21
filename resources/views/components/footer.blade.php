@@ -9,7 +9,7 @@
                 <div>
                     <h2 class="font-bold text-xl text-(--color-primary-950)">Faisal Yusra</h2>
                     <p class="text-(--color-primary-100) text-sm mt-1.5 leading-relaxed">
-                        IT Support Spesialis · Web Developer & Digital Consultant<br>
+                        Web Developer & Digital Consultant Bukittinggi<br>
                         Empowering SMEs & Talents Through Technology
                     </p>
                 </div>
