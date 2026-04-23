@@ -1,5 +1,5 @@
 <div class="relative overflow-hidden">
-    <section class="relative min-h-screen px-4 md:px-6 pt-10">
+    <section class="relative min-h-screen px-1 md:px-6 pt-10">
         <div class="max-w-6xl mx-auto">
             {{-- Header --}}
             <div class="text-center mb-10 md:mb-20">
@@ -46,7 +46,7 @@
             </div>
 
             {{-- Filters: Mobile Horizontal Scroll, Desktop Centered --}}
-            <div class="relative mb-12">
+            <div class="relative mb-4 md:mb-8">
                 <div
                     class="flex items-center justify-start md:justify-center gap-3 overflow-x-auto pb-4 md:pb-0 no-scrollbar snap-x touch-pan-x">
                     <div class="flex flex-nowrap md:flex-wrap gap-2 md:gap-4 px-4 md:px-0">
@@ -79,7 +79,7 @@
 
             {{-- Post Grid --}}
             <div wire:loading.class="opacity-40 blur-sm scale-[0.98] pointer-events-none"
-                class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-8 transition-all duration-500 ease-in-out">
+                class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 md:gap-6 transition-all duration-500 ease-in-out">
                 @forelse($posts as $post)
                     <div class="animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both"
                         style="animation-delay: {{ $loop->index * 50 }}ms">
@@ -104,7 +104,7 @@
             </div>
 
             {{-- Pagination --}}
-            <div class="mt-16">
+            <div class="mt-16 mb-2.5">
                 {{ $posts->links() }}
             </div>
         </div>

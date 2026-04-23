@@ -37,10 +37,12 @@
     {{-- Favicon --}}
     <link rel="icon" href="{{ asset('img/loggo.webp') }}">
 
-    {{-- JSON-LD Structured Data --}}
+    {{-- JSON-LD Structured Data - FULL REFACTOR (1 script + @graph) --}}
     @php
+        // ==============================================
+        // 1. Person Schema (Author/Owner) - tetap sama
+        // ==============================================
         $personSchema = [
-            '@context' => 'https://schema.org',
             '@type' => 'Person',
             '@id' => 'https://faisalyusra.my.id/#person',
             'name' => 'Muhammad Faisal Alyusra',
@@ -83,15 +85,11 @@
                 'https://scholar.google.co.id/citations?view_op=list_works&hl=id&user=-4Ghx-0AAAAJ',
             ],
         ];
-        $blogSchema = [
-            "@context" => "https://schema.org",
-            "@type" => "Blog",
-            "name" => "Blog Faisal Yusra",
-            "url" => "https://faisalyusra.my.id/blog",
-            "description" => "Artikel web development, SEO lokal, dan solusi digital untuk UMKM Bukittinggi.",
-        ];
+
+        // ==============================================
+        // 2. ProfessionalService (Publisher) - tetap sama
+        // ==============================================
         $localBusinessSchema = [
-            '@context' => 'https://schema.org',
             '@type' => 'ProfessionalService',
             'name' => 'Faisal Yusra | Web Developer & Digital Consultant Bukittinggi',
             'image' => asset('img/loggo.webp'),
@@ -132,8 +130,48 @@
             ],
         ];
 
-        echo '<script type="application/ld+json">' . json_encode($personSchema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>';
-        echo '<script type="application/ld+json">' . json_encode($localBusinessSchema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>';
+        // ==============================================
+        // 3. WebPage + Blog (khusus halaman /blog)
+        // ==============================================
+        $graphItems = [$personSchema, $localBusinessSchema];
+
+        $webPageSchema = [
+            '@type' => 'WebPage',
+            '@id' => url()->current() . '#webpage',
+            'url' => url()->current(),
+            'name' => 'Faisal Yusra | Web Developer & Digital Consultant Bukittinggi',
+            'description' =>
+                'Web Developer & Digital Consultant dari Bukittinggi yang membantu UMKM dan talent muda tumbuh melalui teknologi digital.',
+            'publisher' => ['@id' => 'https://faisalyusra.my.id/#service'],
+        ];
+
+        // Kalau halaman ini adalah /blog → upgrade jadi Blog + WebPage
+        if (request()->is('blog')) {
+            $webPageSchema['@type'] = ['WebPage', 'Blog'];
+            $webPageSchema['name'] = 'Blog & Wawasan Digital | Faisal Yusra';
+            $webPageSchema['description'] =
+                'Artikel web development, SEO lokal, Livewire, Filament, dan solusi digital untuk UMKM Bukittinggi.';
+            $webPageSchema['mainEntity'] = [
+                '@type' => 'Blog',
+                'name' => 'Blog Faisal Yusra',
+                'url' => 'https://faisalyusra.my.id/blog',
+                'description' => 'Artikel web development, SEO lokal, dan solusi digital untuk UMKM Bukittinggi.',
+            ];
+        }
+
+        $graphItems[] = $webPageSchema;
+
+        // ==============================================
+        // Output SATU script JSON-LD saja (best practice 2026)
+        // ==============================================
+        $schemas = [
+            '@context' => 'https://schema.org',
+            '@graph' => $graphItems,
+        ];
+
+        echo '<script type="application/ld+json">' .
+         json_encode($schemas, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) .
+         '</script>';
     @endphp
 
     @stack('schemas')

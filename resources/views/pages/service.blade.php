@@ -7,7 +7,7 @@
         'Solusi pembuatan website, IT Support, UI/UX Design dan konsultasi digital untuk UMKM & Bisnis di Bukittinggi. Harga transparan mulai dari Rp500rb. Konsultasi gratis sekarang!'
     )
     @section('meta_keywords', 'jasa website bukittinggi, buat website bukittinggi, it support bukittinggi, jasa ui ux bukittinggi, harga pembuatan website bukittinggi, konsultan digital umkm')
-    @section('canonical', url()->current())
+    @section('canonical', route('service'))
     <meta name="author" content="Muhammad Faisal Alyusra">
     <meta name="robots" content="index, follow">
 
