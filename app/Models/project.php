@@ -27,6 +27,8 @@ class Project extends Model
         'tanggal_rilis',
     ];
 
+    protected $with = ['user', 'technologies'];
+
     protected function casts(): array
     {
         return [

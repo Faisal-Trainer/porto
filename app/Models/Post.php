@@ -27,6 +27,8 @@ class Post extends Model
         'meta_keywords',
     ];
 
+    protected $with = ['author', 'category'];
+
     protected function casts(): array
     {
         return [
@@ -44,5 +46,13 @@ class Post extends Model
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function readingTime(): int
+    {
+        $words = str_word_count(strip_tags($this->content));
+        $minutes = ceil($words / 200);
+
+        return (int) ($minutes < 1 ? 1 : $minutes);
     }
 }

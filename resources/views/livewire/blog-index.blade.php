@@ -35,12 +35,16 @@
                             placeholder="Cari artikel inovatif..."
                             class="block w-full pl-14 pr-12 py-5 bg-white/40 backdrop-blur-xl border-2 border-white/50 rounded-3xl text-(--color-primary-950) placeholder-(--color-primary-300) focus:outline-none focus:ring-4 focus:ring-(--color-primary-500)/10 focus:border-(--color-primary-500) transition-all shadow-xl shadow-purple-950/5 hover:bg-white/60">
 
+                        <div class="absolute inset-y-0 right-0 pr-5 flex items-center gap-3">
+                        <i wire:loading wire:target="search" class="fi fi-rr-spinner animate-spin text-lg text-(--color-primary-400)"></i>
                         @if ($search)
                             <button wire:click="clearSearch"
-                                class="absolute inset-y-0 right-0 pr-5 flex items-center text-(--color-primary-400) hover:text-red-500 transition-colors">
+                                aria-label="Hapus pencarian"
+                                class="text-(--color-primary-400) hover:text-red-500 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 rounded-full flex items-center">
                                 <i class="fi fi-rr-cross-circle text-lg"></i>
                             </button>
                         @endif
+                    </div>
                     </div>
                 </div>
             </div>
@@ -77,8 +81,23 @@
                 </div>
             </div>
 
+            {{-- Skeleton Loading --}}
+            <div wire:loading wire:target="search, setCategory, toggleJournal" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 md:gap-6 mb-8">
+                @for ($i = 0; $i < 8; $i++)
+                    <div class="bg-white/50 backdrop-blur-xl rounded-3xl p-3 md:p-5 border border-white/50 shadow-xl shadow-purple-900/5 animate-pulse">
+                        <div class="bg-gray-200/60 aspect-[16/10] rounded-2xl mb-4"></div>
+                        <div class="h-4 bg-gray-200/60 rounded-full w-3/4 mb-3"></div>
+                        <div class="h-3 bg-gray-200/60 rounded-full w-1/2 mb-6"></div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 bg-gray-200/60 rounded-full"></div>
+                            <div class="h-3 bg-gray-200/60 rounded-full w-20"></div>
+                        </div>
+                    </div>
+                @endfor
+            </div>
+
             {{-- Post Grid --}}
-            <div wire:loading.class="opacity-40 blur-sm scale-[0.98] pointer-events-none"
+            <div wire:loading.remove wire:target="search, setCategory, toggleJournal"
                 class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 md:gap-6 transition-all duration-500 ease-in-out">
                 @forelse($posts as $post)
                     <div class="animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both"
@@ -94,10 +113,15 @@
                         <h3 class="text-xl font-bold text-(--color-primary-900)">Belum Ada Artikel</h3>
                         <p class="text-(--color-primary-600) max-w-sm mx-auto mt-2 text-sm">
                             @if ($search)
-                                Tidak ada hasil untuk pencarian "{{ $search }}". Coba gunakan kata kunci lain.
-                            @else
-                                Maaf, sepertinya saat ini belum ada konten untuk kategori ini.
-                            @endif
+                            Tidak ada hasil untuk pencarian "{{ $search }}". Coba gunakan kata kunci lain.
+                        @else
+                            Maaf, sepertinya saat ini belum ada konten untuk kategori ini.
+                            <div class="mt-6 flex justify-center">
+                                <button wire:click="setCategory('all')" class="inline-flex items-center px-5 py-2.5 bg-(--color-primary-100) text-(--color-primary-700) hover:bg-(--color-primary-200) hover:text-(--color-primary-800) text-sm font-medium rounded-full transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-(--color-primary-500)">
+                                    <i class="fi fi-rr-apps mr-2"></i> Lihat Semua Artikel
+                                </button>
+                            </div>
+                        @endif
                         </p>
                     </div>
                 @endforelse
