@@ -89,8 +89,8 @@ class User extends Authenticatable implements FilamentUser, MustVerifyEmail
 
     public function canAccessPanel(Panel $panel): bool
     {
-        // Debug: Pastikan email anda terbaca dengan benar (Case Insensitive)
-        if (strtolower($this->email ?? '') === 'faisalyusra51@gmail.com') {
+        // Dynamic Admin Check: Use configuration instead of hardcoded email
+        if (strtolower($this->email ?? '') === strtolower(config('app.admin_email'))) {
             return true;
         }
 

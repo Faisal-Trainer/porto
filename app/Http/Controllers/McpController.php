@@ -15,6 +15,20 @@ class McpController
 {
     public function handle(Request $request): JsonResponse
     {
+        // Security Check: Verify MCP Token
+        $token = $request->header('X-MCP-Token');
+        $expectedToken = config('services.mcp.token');
+
+        if ($expectedToken && $token !== $expectedToken) {
+            return response()->json([
+                'jsonrpc' => '2.0',
+                'error' => [
+                    'code' => -32001,
+                    'message' => 'Unauthorized: Invalid or missing MCP Token',
+                ],
+            ], 401);
+        }
+
         if ($request->isMethod('GET')) {
             return response()->json([
                 'message' => 'MCP (Model Context Protocol) Server is running.',
@@ -93,6 +107,33 @@ class McpController
                             'required' => ['title', 'content'],
                         ],
                     ],
+                    [
+                        'name' => 'list_blog_posts',
+                        'description' => 'List all blog posts with their IDs, titles, and slugs.',
+                        'inputSchema' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'limit' => [
+                                    'type' => 'integer',
+                                    'description' => 'Maximum number of posts to return (default: 10)',
+                                ],
+                            ],
+                        ],
+                    ],
+                    [
+                        'name' => 'read_blog_post',
+                        'description' => 'Read the full content of a specific blog post.',
+                        'inputSchema' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'slug' => [
+                                    'type' => 'string',
+                                    'description' => 'The slug of the blog post to read',
+                                ],
+                            ],
+                            'required' => ['slug'],
+                        ],
+                    ],
                 ],
             ],
         ]);
@@ -105,6 +146,8 @@ class McpController
 
         $result = match ($toolName) {
             'create_blog_post' => $this->createBlogPost($args),
+            'list_blog_posts' => $this->listBlogPosts($args),
+            'read_blog_post' => $this->readBlogPost($args),
             default => ['error' => "Tool '$toolName' not found or restricted"],
         };
 
@@ -120,6 +163,49 @@ class McpController
                 ],
             ],
         ]);
+    }
+
+    private function listBlogPosts(array $args): array
+    {
+        $limit = $args['limit'] ?? 10;
+        $posts = Post::latest()
+            ->limit($limit)
+            ->get(['id', 'title', 'slug', 'is_published', 'published_at']);
+
+        return [
+            'status' => 'success',
+            'count' => $posts->count(),
+            'posts' => $posts->toArray(),
+        ];
+    }
+
+    private function readBlogPost(array $args): array
+    {
+        $slug = $args['slug'] ?? null;
+
+        if (! $slug) {
+            return ['error' => 'Slug is required to read a blog post'];
+        }
+
+        $post = Post::where('slug', $slug)->first();
+
+        if (! $post) {
+            return ['error' => "Blog post with slug '$slug' not found"];
+        }
+
+        return [
+            'status' => 'success',
+            'post' => [
+                'id' => $post->id,
+                'title' => $post->title,
+                'slug' => $post->slug,
+                'content' => $post->content,
+                'excerpt' => $post->excerpt,
+                'author' => $post->author?->name,
+                'category' => $post->category?->name,
+                'published_at' => $post->published_at,
+            ],
+        ];
     }
 
     private function createBlogPost(array $args): array

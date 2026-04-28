@@ -1,0 +1,17 @@
+{
+  "id": "AUDIT-1777366232791",
+  "type": "AUDIT_REPORT",
+  "timestamp": "2026-04-28T08:50:32.791Z",
+  "target": "C:\\xampp\\htdocs\\portofolio",
+  "findings": [
+    {
+      "severity": "SECURITY",
+      "message": ".env detected",
+      "file": ".env"
+    }
+  ],
+  "metadata": {
+    "mode": "efficient",
+    "allowSensitive": true
+  }
+}

@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
 use App\Models\Technology;
 use App\Models\User;
+use App\Services\ImageService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -15,6 +16,9 @@ use Illuminate\View\View;
 
 class ProjectController
 {
+    public function __construct(
+        protected ImageService $imageService
+    ) {}
     /**
      * Display a listing of projects for management.
      */
@@ -43,7 +47,7 @@ class ProjectController
         $validated = $request->validated();
 
         if ($request->hasFile('thumbnail')) {
-            $validated['thumbnail'] = $request->file('thumbnail')->store('projects', 'public');
+            $validated['thumbnail'] = $this->imageService->uploadToWebp($request->file('thumbnail'), 'projects');
         }
 
         /** @var User $user */
@@ -93,7 +97,7 @@ class ProjectController
             if ($project->thumbnail) {
                 Storage::disk('public')->delete($project->thumbnail);
             }
-            $validated['thumbnail'] = $request->file('thumbnail')->store('projects', 'public');
+            $validated['thumbnail'] = $this->imageService->uploadToWebp($request->file('thumbnail'), 'projects');
         }
 
         // Re-generate slug if title changed (handled by boot method in model, but manual update works too)

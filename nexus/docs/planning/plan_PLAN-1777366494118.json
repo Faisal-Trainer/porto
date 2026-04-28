@@ -1,0 +1,13 @@
+{
+  "id": "PLAN-1777366494118",
+  "type": "IMPLEMENTATION_PLAN",
+  "auditRef": "AUDIT-1777366494099",
+  "timestamp": "2026-04-28T08:54:54.118Z",
+  "tasks": [
+    {
+      "id": 1,
+      "description": "Fix SECURITY: .env detected",
+      "status": "pending"
+    }
+  ]
+}

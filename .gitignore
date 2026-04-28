@@ -21,3 +21,10 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+
+# Nexus
+/nexus/*.log
+/nexus/*.json
+/nexus/docs/records/*.log
+/nexus/docs/summary/*.json
+!/nexus/docs/**/*.md
