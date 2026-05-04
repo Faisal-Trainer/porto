@@ -60,12 +60,7 @@
     @endpush
 
     {{-- ===================== HERO SECTION ===================== --}}
-    <section class="relative min-h-screen flex items-center overflow-hidden px-4 md:px-8 py-16">
-
-        {{-- Background subtle gradient --}}
-        <div
-            class="absolute inset-0 bg-linear-to-br from-(--color-primary-50) via-white to-(--color-primary-100) pointer-events-none">
-        </div>
+    <section class="relative min-h-screen bg-(--color-bg-light) flex items-center overflow-hidden px-4 md:px-8 py-16">
 
         {{-- Decorative blob kiri atas --}}
         <div
@@ -113,17 +108,17 @@
                 <div class="flex items-center gap-5 justify-center lg:justify-start pt-2">
                     <a href="https://instagram.com/faisalyusra51" target="_blank" rel="noopener noreferrer"
                         aria-label="Kunjungi Instagram Faisal Yusra"
-                        class="text-(--color-primary-400) hover:text-(--color-primary-700) transition-colors duration-200 text-3xl">
+                        class="text-(--color-primary-900) hover:brightness-200 transition-colors duration-200 text-3xl">
                         <i class="fi fi-brands-instagram"></i>
                     </a>
                     <a href="https://linkedin.com/in/faisalyusra41" target="_blank" rel="noopener noreferrer"
                         aria-label="Kunjungi linkedin Faisal Yusra"
-                        class="text-(--color-primary-400) hover:text-(--color-primary-700) transition-colors duration-200 text-3xl">
+                        class="text-(--color-primary-900) hover:brightness-200 transition-colors duration-200 text-3xl">
                         <i class="fi fi-brands-linkedin"></i>
                     </a>
                     <a href="https://github.com/Faisal-Trainer" target="_blank" rel="noopener noreferrer"
                         aria-label="Kunjungi github Faisal Yusra"
-                        class="text-(--color-primary-400) hover:text-(--color-primary-700) transition-colors duration-200 text-3xl">
+                        class="text-(--color-primary-900) hover:brightness-200 transition-colors duration-200 text-3xl">
                         <i class="fi fi-brands-github"></i>
                     </a>
                 </div>
@@ -154,12 +149,12 @@
     </section>
 
     {{-- ===================== SERVICE SECTION ===================== --}}
-    <section class="bg-(--color-primary-400) py-14 px-4 md:px-8">
+    <section class="bg-(--color-bg-light) py-14 px-4 md:px-8">
         <div class="text-center max-w-xl mx-auto mb-10">
-            <span class="text-xs font-bold uppercase tracking-widest text-(--color-primary-200) mb-2 block">Apa yang
+            <span class="text-xs font-bold uppercase tracking-widest text-(--color-primary-400) mb-2 block">Apa yang
                 Saya Tawarkan</span>
-            <h2 class="text-2xl md:text-4xl font-bold text-(--color-primary-100) mb-3">Layanan Kami</h2>
-            <p class="text-(--color-primary-200) text-sm leading-relaxed">
+            <h2 class="text-2xl md:text-4xl font-bold text-(--color-primary-900) mb-3">Layanan Kami</h2>
+            <p class="text-(--color-primary-700) text-sm leading-relaxed">
                 Solusi terintegrasi untuk membina talent digital dan mempercepat pertumbuhan UMKM secara berkelanjutan.
             </p>
         </div>
@@ -425,18 +420,18 @@
     </section>
 
     {{-- ===================== ECOSYSTEM SECTION ===================== --}}
-    <section class="bg-(--color-primary-400) py-14 px-4 md:px-8">
+    <section class="bg-(--color-bg-light) py-14 px-4 md:px-8">
         <div class="text-center max-w-xl mx-auto mb-10">
             <span
-                class="text-xs font-bold uppercase tracking-widest text-(--color-primary-200) mb-2 block">Ekosistem</span>
-            <h2 class="text-2xl md:text-4xl font-bold text-(--color-primary-100) mb-3">About The Ecosystem</h2>
-            <p class="text-(--color-primary-200) text-sm leading-relaxed">Menghubungkan UMKM dan talent untuk tumbuh
+                class="text-xs font-bold uppercase tracking-widest text-(--color-primary-700) mb-2 block">Ekosistem</span>
+            <h2 class="text-2xl md:text-4xl font-bold text-(--color-primary-900) mb-3">About The Ecosystem</h2>
+            <p class="text-(--color-primary-700) text-sm leading-relaxed">Menghubungkan UMKM dan talent untuk tumbuh
                 bersama.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto items-start">
 
-            <div class="text-(--color-primary-100) space-y-4 text-sm leading-relaxed">
+            <div class="text-(--color-primary-800) space-y-4 text-sm leading-relaxed">
                 <p>
                     Banyak UMKM memiliki potensi besar namun terkendala teknologi, sementara banyak talent muda memiliki
                     kemampuan namun minim pengalaman nyata.

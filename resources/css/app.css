@@ -694,7 +694,7 @@
     .line {
         content: "";
         height: 3px;
-        background: var(--color-primary-950);
+        background: var(--color-accent-500);
     }
 
     /* ===== SCROLL ANIMATIONS ===== */

@@ -1,4 +1,4 @@
-<footer class="bg-(--color-primary-400) pt-10 pb-6 px-4 md:px-8">
+<footer class="bg-(--color-primary-900) pt-10 pb-6 px-4 md:px-8">
     <div class="max-w-6xl mx-auto">
 
         {{-- Main grid --}}
@@ -7,7 +7,7 @@
             {{-- Brand --}}
             <div class="lg:col-span-2 flex flex-col gap-4">
                 <div>
-                    <h2 class="font-bold text-xl text-(--color-primary-950)">Faisal Yusra</h2>
+                    <h2 class="font-bold text-xl text-(--color-primary-100)">Faisal Yusra</h2>
                     <p class="text-(--color-primary-100) text-sm mt-1.5 leading-relaxed">
                         Web Developer & Digital Consultant Bukittinggi<br>
                         Empowering SMEs & Talents Through Technology
@@ -39,47 +39,47 @@
 
             {{-- Service list --}}
             <div class="flex flex-col gap-3">
-                <h2 class="font-bold text-base text-(--color-primary-950)">Layanan</h2>
+                <h2 class="font-bold text-base text-(--color-primary-100)">Layanan</h2>
                 <ul class="flex flex-col gap-1.5 text-sm">
                     <li><a href="{{ route('service') }}"
-                            class="text-(--color-primary-900) hover:text-(--color-primary-100) transition-colors duration-150">Web
+                            class="text-(--color-accent-500) hover:brightness-200 transition-colors duration-150">Web
                             Development</a></li>
                     <li><a href="{{ route('service') }}"
-                            class="text-(--color-primary-900) hover:text-(--color-primary-100) transition-colors duration-150">IT
+                            class="text-(--color-accent-500) hover:brightness-200 transition-colors duration-150">IT
                             Support</a></li>
                     <li><a href="{{ route('service') }}"
-                            class="text-(--color-primary-900) hover:text-(--color-primary-100) transition-colors duration-150">UI/UX
+                            class="text-(--color-accent-500) hover:brightness-200 transition-colors duration-150">UI/UX
                             Design</a></li>
                     <li><a href="{{ route('service') }}"
-                            class="text-(--color-primary-900) hover:text-(--color-primary-100) transition-colors duration-150">Digital
+                            class="text-(--color-accent-500) hover:brightness-200 transition-colors duration-150">Digital
                             Consulting</a></li>
                     <li><a href="{{ route('service') }}"
-                            class="text-(--color-primary-900) hover:text-(--color-primary-100) transition-colors duration-150">Goes
+                            class="text-(--color-accent-500) hover:brightness-200 transition-colors duration-150">Goes
                             to School Program</a></li>
                     <li><a href="{{ route('service') }}"
-                            class="text-(--color-primary-900) hover:text-(--color-primary-100) transition-colors duration-150">Social
+                            class="text-(--color-accent-500) hover:brightness-200 transition-colors duration-150">Social
                             Media Handling</a></li>
                 </ul>
             </div>
 
             {{-- Quick links --}}
             <div class="flex flex-col gap-3">
-                <h2 class="font-bold text-base text-(--color-primary-950)">Quick Link</h2>
+                <h2 class="font-bold text-base text-(--color-primary-100)">Quick Link</h2>
                 <ul class="flex flex-col gap-1.5 text-sm">
                     <li><a href="{{ route('home') }}"
-                            class="text-(--color-primary-900) hover:text-(--color-primary-100) transition-colors duration-150">Home</a>
+                            class="text-(--color-accent-500) hover:brightness-200 transition-colors duration-150">Home</a>
                     </li>
                     <li><a href="{{ route('about') }}"
-                            class="text-(--color-primary-900) hover:text-(--color-primary-100) transition-colors duration-150">About</a>
+                            class="text-(--color-accent-500) hover:brightness-200 transition-colors duration-150">About</a>
                     </li>
                     <li><a href="{{ route('portfolio') }}"
-                            class="text-(--color-primary-900) hover:text-(--color-primary-100) transition-colors duration-150">Portofolio</a>
+                            class="text-(--color-accent-500) hover:brightness-200 transition-colors duration-150">Portofolio</a>
                     </li>
                     <li><a href="{{ route('service') }}"
-                            class="text-(--color-primary-900) hover:text-(--color-primary-100) transition-colors duration-150">Service</a>
+                            class="text-(--color-accent-500) hover:brightness-200 transition-colors duration-150">Service</a>
                     </li>
                     <li><a href="{{ route('contact.create') }}"
-                            class="text-(--color-primary-900) hover:text-(--color-primary-100) transition-colors duration-150">Contact</a>
+                            class="text-(--color-accent-500) hover:brightness-200 transition-colors duration-150">Contact</a>
                     </li>
                 </ul>
             </div>
