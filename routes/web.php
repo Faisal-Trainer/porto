@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 
 // Public routes
 Route::view('/', 'pages.home')->name('home');
+Route::get('/llms.txt', function () {
+    $posts = \App\Models\Post::all();
+    return response()->view('llms', compact('posts'))
+        ->header('Content-Type', 'text/plain');
+});
 Route::view('/about', 'pages.about')->name('about');
 Route::view('/service', 'pages.service')->name('service');
 Route::view('/portfolio', 'pages.portfolio')->name('portfolio');

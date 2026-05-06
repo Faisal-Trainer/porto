@@ -1,78 +1,72 @@
 # Terms of Service
 
-**Berlaku sejak: 18 Februari 2026**
+**Berlaku sejak: 6 Mei 2026**
 
-Dengan mengakses dan menggunakan website ini (faisalyusra.my.id) serta layanan yang tersedia di dalamnya, kamu menyetujui syarat dan ketentuan berikut. Harap dibaca dengan seksama sebelum melanjutkan.
-
----
-
-## 1. Penggunaan Website
-
-Website ini digunakan untuk menampilkan portofolio, layanan, dan informasi kontak Faisal Yusra selaku Web Developer & Digital Consultant. Kamu diperbolehkan mengakses dan menjelajahi konten website ini untuk keperluan informasi pribadi dan bisnis yang sah.
-
-Kamu **tidak diperbolehkan** untuk:
-
-- Menyalin, mendistribusikan, atau menggunakan konten website ini untuk kepentingan komersial tanpa izin tertulis
-- Melakukan tindakan yang dapat merusak, mengganggu, atau membebani infrastruktur website
-- Menggunakan website ini untuk tujuan yang melanggar hukum yang berlaku di Indonesia
+Dengan mengakses dan menggunakan website ini (**faisalyusra.my.id**) serta layanan yang tersedia di dalamnya, Anda menyetujui syarat dan ketentuan berikut. Harap dibaca dengan seksama sebelum melanjutkan.
 
 ---
 
-## 2. Layanan yang Ditawarkan
+## 1. Penggunaan Website & Konten
 
-Layanan yang tersedia melalui website ini meliputi:
+Website ini digunakan untuk menampilkan portofolio, layanan digital, dan sistem rekrutmen Faisal Yusra. Anda diperbolehkan mengakses dan menjelajahi konten website ini untuk keperluan informasi pribadi dan bisnis yang sah.
 
-- Web Application Development
-- IT Support & Maintenance
-- UI/UX Design
-- Digital Consulting untuk UMKM
-- Goes To School Program
-- Social Media Handling
-
-Detail, ruang lingkup, dan harga layanan akan didiskusikan dan disepakati bersama melalui proses konsultasi sebelum pekerjaan dimulai. Tidak ada kewajiban finansial sebelum adanya kesepakatan tertulis antara kedua pihak.
+Anda **tidak diperbolehkan** untuk:
+- Menyalin, mendistribusikan, atau menggunakan aset portofolio (gambar, kode, desain) untuk kepentingan komersial tanpa izin tertulis.
+- Melakukan tindakan yang dapat merusak, mengganggu, atau membebani infrastruktur website (DDoS, Scraping berlebih, dll).
+- Menggunakan identitas atau konten website ini untuk tujuan penipuan atau melanggar hukum di Indonesia.
 
 ---
 
-## 3. Komunikasi & Formulir Kontak
+## 2. Layanan Digital & Konsultasi
 
-Dengan mengirimkan pesan melalui formulir kontak di website ini, kamu menyetujui bahwa:
+Layanan yang ditawarkan meliputi pengembangan aplikasi web, konsultasi IT, dan solusi digital lainnya.
+- **Kesepakatan**: Detail proyek, harga, dan ruang lingkup pekerjaan akan diatur dalam perjanjian terpisah.
+- **Ketersediaan**: Informasi layanan di website dapat berubah sewaktu-waktu tanpa pemberitahuan sebelumnya.
 
-- Data yang kamu berikan (nama, email, nomor WhatsApp, pesan) digunakan semata-mata untuk keperluan komunikasi dan tindak lanjut proyek
-- Informasi tersebut tidak akan dijual atau dibagikan kepada pihak ketiga tanpa persetujuanmu
-- Respons akan diberikan dalam 1×24 jam di hari kerja
+---
+
+## 3. Program Talenta & Rekrutmen
+
+Dengan mengirimkan data profil atau CV melalui Portal Talenta, Anda menyatakan bahwa:
+- Data yang Anda kirimkan adalah benar, akurat, dan milik Anda pribadi.
+- Anda memberikan izin kepada Faisal Yusra untuk menyimpan dan meninjau data tersebut untuk keperluan evaluasi kolaborasi atau rekrutmen.
+- Kami berhak menghapus data talenta yang dianggap tidak relevan atau melanggar kebijakan konten tanpa pemberitahuan.
 
 ---
 
 ## 4. Hak Kekayaan Intelektual
 
-Seluruh konten yang terdapat di website ini — termasuk teks, desain, gambar, dan kode — adalah milik Faisal Yusra kecuali dinyatakan lain. Untuk proyek yang dikerjakan bersama klien, hak kepemilikan hasil akhir akan diatur dalam perjanjian kerja terpisah.
+Seluruh konten yang terdapat di website ini — termasuk teks, desain interface, gambar portofolio, dan arsitektur kode — adalah milik **Faisal Yusra** kecuali dinyatakan lain.
+- **Portofolio Proyek**: Hak cipta atas karya portofolio tetap berada pada Faisal Yusra atau klien terkait sesuai perjanjian masing-masing proyek.
+- **Software**: Penggunaan potongan kode dari website ini untuk tujuan pembelajaran diperbolehkan, namun penggunaan untuk produksi komersial memerlukan izin.
 
 ---
 
-## 5. Disclaimer
+## 5. Batasan Tanggung Jawab (Disclaimer)
 
-Website dan informasi di dalamnya disediakan "sebagaimana adanya". Meskipun saya berusaha menjaga keakuratan informasi, saya tidak memberikan jaminan atas kelengkapan atau kesesuaian informasi untuk tujuan tertentu.
-
-Saya tidak bertanggung jawab atas kerugian langsung maupun tidak langsung yang timbul dari penggunaan website ini atau layanan yang ditawarkan, di luar cakupan yang telah disepakati dalam perjanjian kerja.
+Website dan informasi di dalamnya disediakan "sebagaimana adanya". Faisal Yusra tidak bertanggung jawab atas kerugian langsung maupun tidak langsung yang timbul dari:
+- Kesalahan teknis atau gangguan akses pada website.
+- Penggunaan informasi atau konten yang ada di website untuk pengambilan keputusan bisnis tanpa konsultasi langsung.
+- Konten pihak ketiga yang mungkin terhubung melalui tautan eksternal.
 
 ---
 
 ## 6. Perubahan Syarat & Ketentuan
 
-Syarat dan ketentuan ini dapat diperbarui sewaktu-waktu tanpa pemberitahuan sebelumnya. Perubahan akan berlaku segera setelah dipublikasikan di halaman ini. Penggunaan berkelanjutan atas website ini setelah perubahan dianggap sebagai persetujuan terhadap syarat yang baru.
+Syarat dan ketentuan ini dapat diperbarui sewaktu-waktu. Perubahan akan berlaku segera setelah dipublikasikan di halaman ini. Penggunaan berkelanjutan atas website ini dianggap sebagai persetujuan terhadap syarat yang baru.
 
 ---
 
-## 7. Hukum yang Berlaku
+## 7. Hukum & Penyelesaian Sengketa
 
-Syarat dan ketentuan ini diatur oleh hukum yang berlaku di Republik Indonesia. Segala sengketa yang timbul akan diselesaikan secara musyawarah terlebih dahulu.
+Syarat dan ketentuan ini diatur oleh hukum yang berlaku di Republik Indonesia. Segala sengketa yang timbul akan diselesaikan secara musyawarah mufakat di wilayah hukum Bukittinggi/Sumatera Barat.
 
 ---
 
-## Hubungi Saya
+## Kontak Informasi
 
-Jika ada pertanyaan terkait Terms of Service ini, kamu bisa menghubungi saya melalui:
+Jika Anda memiliki pertanyaan terkait Terms of Service ini, silakan hubungi:
+- **Email**: faisalyusra51@gmail.com
+- **WhatsApp**: Tersedia melalui tombol kontak di website.
+- **Portal Kontak**: [faisalyusra.my.id/contact](https://faisalyusra.my.id/contact)
 
-- **Email:** faisalyusra51@gmail.com
-- **LinkedIn:** [linkedin.com/in/faisalyusra41](https://linkedin.com/in/faisalyusra41)
-- **Formulir Kontak:** [faisalyusra.my.id/contact](https://faisalyusra.my.id/contact)

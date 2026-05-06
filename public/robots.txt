@@ -24,4 +24,20 @@ Disallow: /approval
 User-agent: Googlebot
 Allow: /
 
+# AI Crawlers — explicitly allowed
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: GoogleExtendedBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
 Sitemap: https://faisalyusra.my.id/sitemap.xml
