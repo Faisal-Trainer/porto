@@ -437,7 +437,7 @@
                     kemampuan namun minim pengalaman nyata.
                 </p>
                 <p>
-                    Ekosistem ini hadir untuk menjembatani keduanya — melalui pembinaan talent dan pendampingan UMKM
+                    Ekosistem ini hadir untuk menjembatani keduanya melalui pembinaan talent dan pendampingan UMKM
                     berbasis solusi digital yang relevan dan berkelanjutan.
                 </p>
             </div>
